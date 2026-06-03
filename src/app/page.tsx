@@ -6,7 +6,7 @@ import {
   HeroSection,
   ChapterSection,
 } from "@/components/sections/ChapterSection";
-import { WhyHKMASection } from "@/components/sections/WhyHKMASection";
+import { RoleFitSection } from "@/components/sections/RoleFitSection";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { usePresenterMode } from "@/lib/presenter-mode";
@@ -28,15 +28,15 @@ export default function HomePage() {
         <ChapterSection key={chapter.id} chapter={chapter} />
       ))}
 
-      <WhyHKMASection />
+      <RoleFitSection />
 
       <section className="scroll-mt-20 bg-[var(--apple-black)] px-6 py-24 text-center text-[var(--apple-gray-100)] md:px-12 md:py-32">
         <div className="mx-auto max-w-[720px]">
           <h2 className="text-headline font-semibold tracking-tight">
-            Let&apos;s talk about HKMA.
+            Let&apos;s connect.
           </h2>
           <p className="mt-6 text-lg text-[var(--apple-gray-300)] md:text-xl">
-            AI Product Owner · PoC to production · Digital Twin roadmap.
+            AI Product Owner · PoC to production · regulated systems · enterprise AI.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button

@@ -23,7 +23,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         {project.headline}
       </p>
       <p className="mt-2 text-sm leading-relaxed text-[var(--apple-blue)]">
-        {project.hkmaRelevance}
+        {project.roleRelevance}
       </p>
 
       <div className="mt-4 flex flex-wrap gap-2">

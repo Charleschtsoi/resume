@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: `Work — ${profile.name}`,
   description:
-    "Curated GitHub projects for HKMA AI Product Owner — AI agents, product delivery, regulated rigour.",
+    "Curated GitHub projects — AI agents, product delivery, regulated rigour.",
 };
 
 const pillarOrder: WorkPillar[] = ["ai", "product", "rigour"];

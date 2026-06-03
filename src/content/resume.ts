@@ -11,8 +11,8 @@ export const profile = {
     github: "https://github.com/Charleschtsoi",
     medium: "https://medium.com/@charleschtsoi",
   },
-  roleFocus: "AI Product Owner · HKMA",
-  presenterHeadline: "AI Product Owner · HKMA",
+  roleFocus: "AI Product Owner",
+  presenterHeadline: "AI Product Owner",
   proofLine: "12+ years · Apple · AAHK · regulated systems",
   interviewerSubline:
     "Bridging business stakeholders and engineering — product → architecture → AI",
@@ -36,8 +36,8 @@ export type NarrativeChapter = {
   theme: "dark" | "light";
 };
 
-export const whyHKMA = {
-  title: "Why HKMA",
+export const roleFit = {
+  title: "Why this role",
   bullets: [
     "PoC → production: scope gatekeeping and evidence-based delivery (AAHK capacity agent, 10 weeks)",
     "Regulated environment: HKJC compliance APIs, Apple architectural review standard, Cathay legacy integration",
@@ -53,7 +53,7 @@ export const presenterChapterOrder = [
   "apple",
   "aahk",
   "fit",
-  "why-hkma",
+  "why-fit",
 ] as const;
 
 export const narrativeChapters: NarrativeChapter[] = [
@@ -120,7 +120,7 @@ export const narrativeChapters: NarrativeChapter[] = [
     subheadline: "iWork serverless · Genmoji delivery",
     paragraphs: [
       "Then Apple. Two years managing the iWork backend migration to serverless and supporting Genmoji delivery. What I took from Apple wasn't a specific technology — it was a standard. Every decision went through architectural review, every dependency was mapped, every release was evidence-based.",
-      "That level of rigour is exactly what I'd bring to a regulated environment like HKMA.",
+      "That level of rigour is exactly what I'd bring to any regulated, high-stakes environment.",
     ],
     metrics: [
       { value: "Evidence-based", label: "Every release decision" },
@@ -158,13 +158,13 @@ export const narrativeChapters: NarrativeChapter[] = [
   },
   {
     id: "fit",
-    label: "HKMA Fit",
+    label: "Role fit",
     period: "Education & next step",
     headline: "Built for this intersection.",
-    subheadline: "CUHK MSc · AI Product Owner at HKMA",
+    subheadline: "CUHK MSc · AI Product Owner",
     paragraphs: [
       "I'm also finishing my MSc in IT Management at CUHK, where I've deliberately steered my coursework toward AI and data science — not because the programme requires it, but because I wanted the hands-on technical credibility to back up the product decisions I'm making.",
-      "So when I saw this role — an AI Product Owner at HKMA, migrating from PoC to production, with a Digital Twin roadmap on the horizon — it felt like the exact intersection of everything I've been building toward.",
+      "AI Product Owner roles that move from PoC to production, with platform or digital-twin roadmaps on the horizon, are the exact intersection of everything I've been building toward.",
     ],
     highlights: [
       "MSc IT Management, CUHK — focus: Data Science, AI, System Design (Expected Q1 2027)",

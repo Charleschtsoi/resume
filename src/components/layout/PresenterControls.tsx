@@ -5,13 +5,13 @@ import { useReducedMotion } from "motion/react";
 import {
   narrativeChapters,
   presenterChapterOrder,
-  whyHKMA,
+  roleFit,
 } from "@/content/resume";
 import { usePresenterMode } from "@/lib/presenter-mode";
 
 const chapterLabels: Record<string, string> = {
   ...Object.fromEntries(narrativeChapters.map((c) => [c.id, c.label])),
-  "why-hkma": whyHKMA.title,
+  "why-fit": roleFit.title,
 };
 
 export function PresenterControls() {

@@ -1,12 +1,12 @@
 import Link from "next/link";
-import { whyHKMA } from "@/content/resume";
+import { roleFit } from "@/content/resume";
 import { Button } from "@/components/ui/button";
 
-export function WhyHKMASection() {
+export function RoleFitSection() {
   return (
     <section
-      id="why-hkma"
-      aria-labelledby="why-hkma-heading"
+      id="why-fit"
+      aria-labelledby="why-fit-heading"
       className="scroll-mt-20 bg-[var(--apple-gray-100)] px-6 py-20 md:px-12 md:py-24"
     >
       <div className="mx-auto max-w-[980px]">
@@ -14,13 +14,13 @@ export function WhyHKMASection() {
           Role fit
         </p>
         <h2
-          id="why-hkma-heading"
+          id="why-fit-heading"
           className="mt-4 text-headline font-semibold tracking-tight text-[var(--apple-black)]"
         >
-          {whyHKMA.title}
+          {roleFit.title}
         </h2>
         <ul className="mt-8 space-y-4">
-          {whyHKMA.bullets.map((bullet) => (
+          {roleFit.bullets.map((bullet) => (
             <li
               key={bullet.slice(0, 40)}
               className="rounded-xl border border-border bg-white px-5 py-4 text-base leading-relaxed text-muted-foreground shadow-sm"

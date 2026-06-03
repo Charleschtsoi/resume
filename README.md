@@ -1,14 +1,14 @@
 # Charles Tsoi — Motion Resume
 
-Apple-inspired scroll narrative resume built for **HKMA AI Product Owner** interviews. Screen-share friendly: presenter mode, chapter navigation, curated GitHub showcase, and downloadable PDF.
+Apple-inspired scroll narrative resume for AI Product Owner and solutions architecture roles. Screen-share friendly: presenter mode, chapter navigation, curated GitHub showcase, and downloadable PDF.
 
 **Repository:** [github.com/Charleschtsoi/resume](https://github.com/Charleschtsoi/resume)
 
 ## Features
 
-- **Homepage story** — Consistent thread narrative (Cathay → HKJC/Accenture → Apple → AAHK → education → HKMA fit)
+- **Homepage story** — Consistent thread narrative (Cathay → HKJC/Accenture → Apple → AAHK → education → role fit)
 - **Presenter mode** — `?present=1` or nav **Present**: shorter sections, full-opacity text, chapter toolbar, arrow-key navigation
-- **Work page** — Six curated repos with HKMA relevance lines and 30s talk tracks ([`/work`](http://localhost:3000/work))
+- **Work page** — Six curated repos with role relevance lines and 30s talk tracks ([`/work`](http://localhost:3000/work))
 - **Supporting pages** — Experience timeline, skills/certs, contact + PDF
 
 ## Stack
@@ -49,7 +49,7 @@ Best for live walkthroughs with interviewers:
 - [ ] Fullscreen browser; notifications off
 - [ ] Test chapter jumps and arrow keys once
 - [ ] Second tabs: **`/work`** (after AAHK) and **`/experience`** (depth Q&A)
-- [ ] ~10–12 min story: Hero (30s) → chapters (~2m each) → Why HKMA → close
+- [ ] ~10–12 min story: Hero (30s) → chapters (~2m each) → role fit → close
 - [ ] Short on time after AAHK: **`/work`** — LungLens + Interview_pack only
 
 ## Pages
@@ -82,7 +82,7 @@ npx vercel --prod
 
 ## Cursor: grill-me skill
 
-Interview prep skill (chat only, not on the site): [`.cursor/skills/grill-me/`](.cursor/skills/grill-me/) — based on [mattpocock/skills grill-me](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md). Example prompt: *"Grill me on my HKMA AI Product Owner pitch."*
+Interview prep skill (chat only, not on the site): [`.cursor/skills/grill-me/`](.cursor/skills/grill-me/) — based on [mattpocock/skills grill-me](https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md). Example prompt: *"Grill me on my AI Product Owner pitch."*
 
 ## License
 
