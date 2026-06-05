@@ -47,6 +47,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </p>
 
       <div className="mt-6 flex flex-wrap gap-3">
+        {project.productionSlug && (
+          <Link
+            href={`/showcase#${project.productionSlug}`}
+            className="text-sm font-semibold text-[var(--apple-blue)] hover:underline"
+          >
+            View production →
+          </Link>
+        )}
         <Link
           href={project.repoUrl}
           target="_blank"

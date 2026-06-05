@@ -6,6 +6,7 @@ export type WorkProject = {
   name: string;
   repoUrl: string;
   secondaryRepoUrl?: string;
+  productionSlug?: string;
   language?: string;
   stars?: number;
   pillar: WorkPillar;
@@ -51,6 +52,7 @@ export const featuredProjects: WorkProject[] = [
     name: "LungLens",
     repoUrl: "https://github.com/Charleschtsoi/LungLens",
     secondaryRepoUrl: "https://github.com/Charleschtsoi/lunglens-backend",
+    productionSlug: "lunglens",
     language: "TypeScript + Python",
     stars: 2,
     pillar: "ai",

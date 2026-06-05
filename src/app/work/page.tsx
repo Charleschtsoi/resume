@@ -43,6 +43,12 @@ export default function WorkPage() {
           {githubWorkIntro.framingParagraph}
         </p>
 
+        <div className="mt-6">
+          <Button asChild variant="outline">
+            <Link href="/showcase">See live deployments → Showcase</Link>
+          </Button>
+        </div>
+
         <div className="mt-8 rounded-2xl border border-[var(--apple-blue)]/30 bg-white p-6 shadow-sm">
           <p className="text-xs font-medium uppercase tracking-wider text-[var(--apple-blue)]">
             Opening line (15s)

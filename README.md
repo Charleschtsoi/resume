@@ -9,6 +9,7 @@ Apple-inspired scroll narrative resume for AI Product Owner and solutions archit
 - **Homepage story** — Consistent thread narrative (Cathay → HKJC/Accenture → Apple → AAHK → education → role fit)
 - **Presenter mode** — `?present=1` or nav **Present**: shorter sections, full-opacity text, chapter toolbar, arrow-key navigation
 - **Work page** — Six curated repos with role relevance lines and 30s talk tracks ([`/work`](http://localhost:3000/work))
+- **Showcase page** — Production deployments: live URLs, architecture, clone steps, APIs ([`/showcase`](http://localhost:3000/showcase))
 - **Supporting pages** — Experience timeline, skills/certs, contact + PDF
 
 ## Stack
@@ -48,7 +49,7 @@ Best for live walkthroughs with interviewers:
 - [ ] Present mode on (`?present=1` or toggle)
 - [ ] Fullscreen browser; notifications off
 - [ ] Test chapter jumps and arrow keys once
-- [ ] Second tabs: **`/work`** (after AAHK) and **`/experience`** (depth Q&A)
+- [ ] Second tabs: **`/work`**, **`/showcase`** (LungLens live URLs), and **`/experience`** (depth Q&A)
 - [ ] ~10–12 min story: Hero (30s) → chapters (~2m each) → role fit → close
 - [ ] Short on time after AAHK: **`/work`** — LungLens + Interview_pack only
 
@@ -60,6 +61,7 @@ Best for live walkthroughs with interviewers:
 | `/experience` | Full career timeline |
 | `/skills` | Skills, education, certifications |
 | `/work` | Curated GitHub (AI · product · rigour) + speaker scripts |
+| `/showcase` | Production deployments — URLs, architecture, APIs (expandable) |
 | `/contact` | Email, links, resume PDF |
 
 ## Edit content
@@ -68,7 +70,10 @@ Best for live walkthroughs with interviewers:
 |------|----------------|
 | [`src/content/resume.ts`](src/content/resume.ts) | Narrative chapters, experience, skills, profile |
 | [`src/content/github-work.ts`](src/content/github-work.ts) | Featured repos, talk tracks, pillar copy |
+| [`src/content/production-showcase.ts`](src/content/production-showcase.ts) | Live deployments, URLs, clone steps, APIs |
 | [`public/resume.pdf`](public/resume.pdf) | Downloadable resume (replace to update) |
+
+To add a new production project: copy a block in `production-showcase.ts`, set `status: "live"`, fill `liveLinks`, and optionally set `productionSlug` on the matching `/work` card.
 
 ## Deploy (Vercel)
 

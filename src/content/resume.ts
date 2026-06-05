@@ -312,5 +312,6 @@ export const navLinks = [
   { href: "/experience", label: "Experience" },
   { href: "/skills", label: "Skills" },
   { href: "/work", label: "Work" },
+  { href: "/showcase", label: "Showcase" },
   { href: "/contact", label: "Contact" },
 ];
