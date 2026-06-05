@@ -60,7 +60,7 @@ export default function ContactPage() {
           <Button
             asChild
             variant="outline"
-            className="border-[var(--apple-gray-400)] text-white hover:bg-white/10"
+            className="border-[var(--apple-gray-400)] bg-transparent text-white hover:bg-white/10 hover:text-white"
           >
             <Link href={profile.links.linkedin} target="_blank" rel="noopener noreferrer">
               LinkedIn
@@ -69,14 +69,14 @@ export default function ContactPage() {
           <Button
             asChild
             variant="outline"
-            className="border-[var(--apple-gray-400)] text-white hover:bg-white/10"
+            className="border-[var(--apple-gray-400)] bg-transparent text-white hover:bg-white/10 hover:text-white"
           >
             <Link href="/work">Curated work</Link>
           </Button>
           <Button
             asChild
             variant="outline"
-            className="border-[var(--apple-gray-400)] text-white hover:bg-white/10"
+            className="border-[var(--apple-gray-400)] bg-transparent text-white hover:bg-white/10 hover:text-white"
           >
             <Link href={profile.links.github} target="_blank" rel="noopener noreferrer">
               GitHub profile
@@ -85,7 +85,7 @@ export default function ContactPage() {
           <Button
             asChild
             variant="outline"
-            className="border-[var(--apple-gray-400)] text-white hover:bg-white/10"
+            className="border-[var(--apple-gray-400)] bg-transparent text-white hover:bg-white/10 hover:text-white"
           >
             <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
               Download resume (PDF)
@@ -94,7 +94,8 @@ export default function ContactPage() {
         </div>
 
         <p className="mt-16 rounded-2xl border border-white/10 bg-white/5 px-6 py-4 text-sm text-[var(--apple-gray-300)]">
-          Applying for: <span className="font-medium text-white">{profile.roleFocus}</span>
+          <span className="font-medium text-white">{profile.title}</span>
+          <span className="mt-2 block text-[var(--apple-gray-400)]">{profile.proofLine}</span>
         </p>
       </div>
     </main>

@@ -14,11 +14,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: `${profile.name} — AI Product Owner & Solutions Architecture`,
-  description:
-    "12+ years bridging business strategy and engineering execution. Apple, Airport Authority HK, HKJC. AI agents, regulated systems, PoC to production.",
+  title: `${profile.name} — ${profile.seoTitle}`,
+  description: profile.seoDescription,
   openGraph: {
-    title: `${profile.name} — AI Product Owner`,
+    title: `${profile.name} — ${profile.seoTitle}`,
     description: profile.tagline,
     type: "website",
   },

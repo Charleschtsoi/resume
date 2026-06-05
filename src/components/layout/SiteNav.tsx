@@ -9,7 +9,7 @@ import { usePresenterMode } from "@/lib/presenter-mode";
 import { Button } from "@/components/ui/button";
 
 const detailLinks = navLinks.filter(
-  (l) => l.href !== "/" && l.href !== "/contact"
+  (l) => l.href !== "/" && l.href !== "/story" && l.href !== "/contact"
 );
 
 export function SiteNav() {
@@ -17,8 +17,8 @@ export function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
   const reduceMotion = useReducedMotion();
   const { isPresenterMode, togglePresenterMode } = usePresenterMode();
-  const isHome = pathname === "/";
-  const minimalNav = isPresenterMode && isHome;
+  const isStory = pathname === "/story";
+  const minimalNav = isPresenterMode && isStory;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -38,7 +38,7 @@ export function SiteNav() {
       <header className={navClassName}>
         <NavInner
           pathname={pathname}
-          isHome={isHome}
+          isStory={isStory}
           minimalNav={minimalNav}
           isPresenterMode={isPresenterMode}
           onTogglePresent={togglePresenterMode}
@@ -56,7 +56,7 @@ export function SiteNav() {
     >
       <NavInner
         pathname={pathname}
-        isHome={isHome}
+        isStory={isStory}
         minimalNav={minimalNav}
         isPresenterMode={isPresenterMode}
         onTogglePresent={togglePresenterMode}
@@ -67,19 +67,19 @@ export function SiteNav() {
 
 function NavInner({
   pathname,
-  isHome,
+  isStory,
   minimalNav,
   isPresenterMode,
   onTogglePresent,
 }: {
   pathname: string;
-  isHome: boolean;
+  isStory: boolean;
   minimalNav: boolean;
   isPresenterMode: boolean;
   onTogglePresent: () => void;
 }) {
   const visibleLinks = minimalNav
-    ? navLinks.filter((l) => l.href === "/" || l.href === "/contact")
+    ? navLinks.filter((l) => l.href === "/story" || l.href === "/contact")
     : navLinks;
 
   return (
@@ -133,7 +133,7 @@ function NavInner({
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          {isHome && (
+          {isStory && (
             <button
               type="button"
               onClick={onTogglePresent}
@@ -147,8 +147,8 @@ function NavInner({
               {isPresenterMode ? "Presenting" : "Present"}
             </button>
           )}
-          <span className="hidden rounded-full border border-[var(--apple-blue)]/40 bg-[var(--apple-blue)]/10 px-3 py-1 text-xs font-medium text-[var(--apple-blue)] lg:inline">
-            {profile.roleFocus}
+          <span className="hidden rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-medium text-[var(--apple-gray-300)] lg:inline">
+            {profile.proofLine}
           </span>
           {!minimalNav && (
             <Button

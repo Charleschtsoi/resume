@@ -221,24 +221,6 @@ export const productionProjects: ProductionProject[] = [
     ],
   },
   {
-    slug: "interview-pack",
-    name: "Interview_pack",
-    status: "repo-only",
-    oneLiner:
-      "github.com/Charleschtsoi/Interview_pack — interview narrative website (5 stars). Add live URL when hosted.",
-    components: [
-      {
-        role: "frontend",
-        title: "Interview website",
-        repo: {
-          url: "https://github.com/Charleschtsoi/Interview_pack",
-          branch: "main",
-        },
-        contains: ["Interview-story UX — predecessor to this resume site"],
-      },
-    ],
-  },
-  {
     slug: "velora-beauty-tracker",
     name: "velora-beauty-tracker",
     status: "repo-only",
@@ -253,24 +235,6 @@ export const productionProjects: ProductionProject[] = [
           branch: "main",
         },
         contains: ["Mobile product — expiration tracking for beauty products"],
-      },
-    ],
-  },
-  {
-    slug: "hermes",
-    name: "Hermes",
-    status: "repo-only",
-    oneLiner:
-      "github.com/Charleschtsoi/Hermes — ExpiryScanner utility (TypeScript).",
-    components: [
-      {
-        role: "frontend",
-        title: "ExpiryScanner",
-        repo: {
-          url: "https://github.com/Charleschtsoi/Hermes",
-          branch: "main",
-        },
-        contains: ["Shipped TypeScript utility — expiry scanning"],
       },
     ],
   },

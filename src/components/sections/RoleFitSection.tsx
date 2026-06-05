@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { roleFit } from "@/content/resume";
+import { coreStrengths } from "@/content/resume";
 import { Button } from "@/components/ui/button";
 
 export function RoleFitSection() {
@@ -11,16 +11,16 @@ export function RoleFitSection() {
     >
       <div className="mx-auto max-w-[980px]">
         <p className="text-sm font-medium uppercase tracking-[0.15em] text-[var(--apple-blue)]">
-          Role fit
+          Core strengths
         </p>
         <h2
           id="why-fit-heading"
           className="mt-4 text-headline font-semibold tracking-tight text-[var(--apple-black)]"
         >
-          {roleFit.title}
+          {coreStrengths.title}
         </h2>
         <ul className="mt-8 space-y-4">
-          {roleFit.bullets.map((bullet) => (
+          {coreStrengths.bullets.map((bullet) => (
             <li
               key={bullet.slice(0, 40)}
               className="rounded-xl border border-border bg-white px-5 py-4 text-base leading-relaxed text-muted-foreground shadow-sm"

@@ -22,7 +22,7 @@ export const githubWorkIntro = {
   title: "Hands-on proof",
   subtitle: "Curated from GitHub — not a second resume",
   framingParagraph:
-    "Day job is enterprise AI at the airport. Separately, I keep a focused set of repositories to stay hands-on — AI delivery, shipping product, and security-aware design. I don't ask panels to browse all 33 repos; these six show what I bring to an AI Product Owner conversation.",
+    "Day job is enterprise AI at the airport. Separately, I keep a focused set of repositories to stay hands-on — AI delivery, shipping product, and security-aware design. I don't ask panels to browse all 33 repos; these four show what I bring to technical product and architecture conversations.",
   openingScript:
     "I don't ask the panel to browse all of GitHub — I curate a few repos that show how I stay current: AI delivery, shipping product, and security-aware design.",
   closingScript:
@@ -35,7 +35,7 @@ export const workPillars: Record<
 > = {
   ai: {
     title: "AI & agents",
-    description: "PoC mindset, LLM integration, and GenAI in product context",
+    description: "Scoped delivery, LLM integration, and GenAI in product context",
   },
   product: {
     title: "Product delivery",
@@ -85,30 +85,6 @@ export const featuredProjects: WorkProject[] = [
     tags: ["GenAI", "Product"],
   },
   {
-    name: "Interview_pack",
-    repoUrl: "https://github.com/Charleschtsoi/Interview_pack",
-    language: "JavaScript",
-    stars: 5,
-    pillar: "product",
-    headline: "Interview narrative websites",
-    roleRelevance: "Presenter-first UX — the lineage of this resume site",
-    talkTrack:
-      "Built interview-story sites before this resume — shows I think in presenter-first UX, not just backlogs.",
-    tags: ["Presentation", "UX"],
-  },
-  {
-    name: "Hermes",
-    repoUrl: "https://github.com/Charleschtsoi/Hermes",
-    language: "TypeScript",
-    stars: 3,
-    pillar: "product",
-    headline: "ExpiryScanner — shipped utility",
-    roleRelevance: "Small product end-to-end — scope and release discipline",
-    talkTrack:
-      "Small product shipped end-to-end — expiry scanning — discipline on scope and release.",
-    tags: ["TypeScript", "Shipped"],
-  },
-  {
     name: "security_alert",
     repoUrl: "https://github.com/Charleschtsoi/security_alert",
     language: "TypeScript",
@@ -147,6 +123,6 @@ export const optionalProjects: WorkProject[] = [
 ];
 
 export const githubBridge = {
-  text: "Hands-on repos: LungLens, localLLM, Interview_pack — curated on the Work page",
+  text: "Hands-on repos: LungLens, localLLM, security_alert — curated on the Work page",
   href: "/work",
 };

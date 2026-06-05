@@ -89,7 +89,7 @@ export default function WorkPage() {
           </p>
           <p className="mt-6 text-sm text-muted-foreground">
             Short on time? Show only <strong>LungLens</strong> +{" "}
-            <strong>Interview_pack</strong>, then link to full profile.
+            <strong>localLLM</strong>, then link to full profile.
           </p>
         </section>
 

@@ -1,64 +1,25 @@
 "use client";
 
-import { narrativeChapters } from "@/content/resume";
-import { ProgressRail } from "@/components/motion/ProgressRail";
-import {
-  HeroSection,
-  ChapterSection,
-} from "@/components/sections/ChapterSection";
-import { RoleFitSection } from "@/components/sections/RoleFitSection";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { usePresenterMode } from "@/lib/presenter-mode";
+import { ScrollProgress } from "@/components/motion/ScrollProgress";
+import { HomeHero } from "@/components/sections/HomeHero";
+import { ValuePillars } from "@/components/sections/ValuePillars";
+import { InteractiveTimeline } from "@/components/sections/InteractiveTimeline";
+import { StrengthTabs } from "@/components/sections/StrengthTabs";
+import { FeaturedWorkTeaser } from "@/components/sections/FeaturedWorkTeaser";
+import { HomeCTA } from "@/components/sections/HomeCTA";
 
 export default function HomePage() {
-  const hero = narrativeChapters[0];
-  const chapters = narrativeChapters.slice(1);
-  const { isPresenterMode } = usePresenterMode();
-
   return (
-    <main
-      id="main-content"
-      className={isPresenterMode ? "snap-y snap-mandatory pb-24" : undefined}
-    >
-      <ProgressRail />
-      {hero && <HeroSection chapter={hero} />}
-
-      {chapters.map((chapter) => (
-        <ChapterSection key={chapter.id} chapter={chapter} />
-      ))}
-
-      <RoleFitSection />
-
-      <section className="scroll-mt-20 bg-[var(--apple-black)] px-6 py-24 text-center text-[var(--apple-gray-100)] md:px-12 md:py-32">
-        <div className="mx-auto max-w-[720px]">
-          <h2 className="text-headline font-semibold tracking-tight">
-            Let&apos;s connect.
-          </h2>
-          <p className="mt-6 text-lg text-[var(--apple-gray-300)] md:text-xl">
-            AI Product Owner · PoC to production · regulated systems · enterprise AI.
-          </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button
-              asChild
-              size="lg"
-              className="bg-[var(--apple-blue)] px-8 text-white hover:bg-[var(--apple-blue-hover)]"
-            >
-              <Link href="/contact">Get in touch</Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="border-[var(--apple-gray-400)] bg-transparent text-white hover:bg-white/10"
-            >
-              <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                Download resume
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-    </main>
+    <>
+      <ScrollProgress />
+      <main id="main-content">
+        <HomeHero />
+        <ValuePillars />
+        <InteractiveTimeline />
+        <StrengthTabs />
+        <FeaturedWorkTeaser />
+        <HomeCTA />
+      </main>
+    </>
   );
 }

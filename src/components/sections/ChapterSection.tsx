@@ -45,7 +45,7 @@ export function HeroSection({ chapter }: { chapter: NarrativeChapter }) {
       <div className="sticky top-0 flex min-h-screen flex-col items-center justify-center px-6 md:px-12">
         <div className="relative z-10 mx-auto w-full max-w-[980px]">
           <p className="text-center text-sm font-medium uppercase tracking-[0.15em] text-[var(--apple-blue)] md:text-base">
-            {profile.presenterHeadline}
+            {profile.title}
           </p>
           <h1 className="mt-3 text-center text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl">
             {profile.name}

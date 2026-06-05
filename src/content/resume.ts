@@ -11,11 +11,14 @@ export const profile = {
     github: "https://github.com/Charleschtsoi",
     medium: "https://medium.com/@charleschtsoi",
   },
-  roleFocus: "AI Product Owner",
-  presenterHeadline: "AI Product Owner",
   proofLine: "12+ years · Apple · AAHK · regulated systems",
   interviewerSubline:
     "Bridging business stakeholders and engineering — product → architecture → AI",
+  ctaTagline:
+    "Regulated systems · enterprise delivery · hands-on technical leadership",
+  seoTitle: "Solutions Architecture & Technical Product Strategy",
+  seoDescription:
+    "12+ years bridging business strategy and engineering execution. Apple, Airport Authority HK, HKJC. Enterprise AI, regulated systems, and production delivery.",
 };
 
 export type ChapterMetric = {
@@ -36,13 +39,13 @@ export type NarrativeChapter = {
   theme: "dark" | "light";
 };
 
-export const roleFit = {
-  title: "Why this role",
+export const coreStrengths = {
+  title: "What I bring",
   bullets: [
-    "PoC → production: scope gatekeeping and evidence-based delivery (AAHK capacity agent, 10 weeks)",
-    "Regulated environment: HKJC compliance APIs, Apple architectural review standard, Cathay legacy integration",
+    "Delivery discipline: scope gatekeeping and evidence-based shipping (AAHK capacity agent, 10 weeks)",
+    "Regulated environments: HKJC compliance APIs, Apple architectural review standard, Cathay legacy integration",
     "Vendor & technical diligence: Microsoft ecosystem assessments — API, security, scalability",
-    "Digital Twin readiness: systems thinking from event-driven architecture to enterprise AI agents",
+    "Production systems thinking: from event-driven architecture to enterprise AI agents",
   ],
 };
 
@@ -141,35 +144,35 @@ export const narrativeChapters: NarrativeChapter[] = [
     headline: "AI in production. Scope as a skill.",
     subheadline: "Airport Authority Hong Kong",
     paragraphs: [
-      "And now at Airport Authority, I'm doing what this role asks for — deploying LLM-based AI agents into production, running vendor technical due diligence, and most importantly, gatekeeping scope. We delivered a capacity planning AI agent PoC in ten weeks by saying 'no' to the right things at the right time.",
+      "And now at Airport Authority, I'm deploying LLM-based AI agents into production, running vendor technical due diligence, and gatekeeping scope. We delivered a capacity planning AI agent in ten weeks by saying 'no' to the right things at the right time.",
     ],
     metrics: [
       { value: "80%", label: "Less manual query time (LLM agents)" },
-      { value: "10 weeks", label: "Capacity planning AI PoC" },
-      { value: "PoC → prod", label: "Scope gatekeeping in practice" },
+      { value: "10 weeks", label: "Capacity planning AI delivery" },
+      { value: "Scope", label: "Gatekeeping in practice" },
     ],
     highlights: [
       "LLM-based agents for internal report automation — 80% reduction in manual query time",
       "Vendor technical due diligence on Microsoft ecosystem — API, security, scalability",
       "End-to-end delivery of new Insurance System — legacy mainframe to cloud migration",
-      "Hands-on repos: LungLens, localLLM, Interview_pack — see Work page for curated GitHub",
+      "Hands-on repos: LungLens, localLLM, security_alert — see Work page for curated GitHub",
     ],
     theme: "dark",
   },
   {
     id: "fit",
-    label: "Role fit",
-    period: "Education & next step",
-    headline: "Built for this intersection.",
-    subheadline: "CUHK MSc · AI Product Owner",
+    label: "Education",
+    period: "Education & momentum",
+    headline: "Always building credibility.",
+    subheadline: "CUHK MSc · Continuous learning",
     paragraphs: [
-      "I'm also finishing my MSc in IT Management at CUHK, where I've deliberately steered my coursework toward AI and data science — not because the programme requires it, but because I wanted the hands-on technical credibility to back up the product decisions I'm making.",
-      "AI Product Owner roles that move from PoC to production, with platform or digital-twin roadmaps on the horizon, are the exact intersection of everything I've been building toward.",
+      "I'm finishing my MSc in IT Management at CUHK, deliberately steering coursework toward AI and data science — not because the programme requires it, but because I wanted hands-on technical credibility to back up the product and architecture decisions I make every day.",
+      "That combination — enterprise delivery experience plus formal depth in data science and system design — is how I stay effective across product, architecture, and AI initiatives.",
     ],
     highlights: [
       "MSc IT Management, CUHK — focus: Data Science, AI, System Design (Expected Q1 2027)",
       "Certifications: PMP, PSPO I, PSM I, Solace Certified Event-Driven Architecture Practitioner",
-      "First 90 days: align AI product roadmap with production readiness criteria, stakeholder map, and PoC exit gates",
+      "Hands-on repos and production work keep skills current alongside formal study",
     ],
     theme: "light",
   },
@@ -308,7 +311,8 @@ export const certifications = [
 export const chapterIds = narrativeChapters.map((c) => c.id);
 
 export const navLinks = [
-  { href: "/", label: "Story" },
+  { href: "/", label: "Home" },
+  { href: "/story", label: "Story" },
   { href: "/experience", label: "Experience" },
   { href: "/skills", label: "Skills" },
   { href: "/work", label: "Work" },

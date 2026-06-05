@@ -1,21 +1,24 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useReducedMotion } from "motion/react";
 import {
   narrativeChapters,
   presenterChapterOrder,
-  roleFit,
+  coreStrengths,
 } from "@/content/resume";
 import { usePresenterMode } from "@/lib/presenter-mode";
 
 const chapterLabels: Record<string, string> = {
   ...Object.fromEntries(narrativeChapters.map((c) => [c.id, c.label])),
-  "why-fit": roleFit.title,
+  "why-fit": coreStrengths.title,
 };
 
 export function PresenterControls() {
+  const pathname = usePathname();
   const { isPresenterMode } = usePresenterMode();
+  const isStoryPage = pathname === "/story";
   const reduceMotion = useReducedMotion();
   const [activeId, setActiveId] = useState<string>(presenterChapterOrder[0]);
 
@@ -95,7 +98,7 @@ export function PresenterControls() {
     return () => observers.forEach((o) => o.disconnect());
   }, [isPresenterMode]);
 
-  if (!isPresenterMode) return null;
+  if (!isPresenterMode || !isStoryPage) return null;
 
   return (
     <div

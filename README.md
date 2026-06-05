@@ -1,13 +1,14 @@
 # Charles Tsoi — Motion Resume
 
-Apple-inspired scroll narrative resume for AI Product Owner and solutions architecture roles. Screen-share friendly: presenter mode, chapter navigation, curated GitHub showcase, and downloadable PDF.
+Role-agnostic career portfolio with an interactive homepage and Apple-inspired scroll narrative. Screen-share friendly: presenter mode on `/story`, chapter navigation, curated GitHub showcase, and downloadable PDF.
 
 **Repository:** [github.com/Charleschtsoi/resume](https://github.com/Charleschtsoi/resume)
 
 ## Features
 
-- **Homepage story** — Consistent thread narrative (Cathay → HKJC/Accenture → Apple → AAHK → education → role fit)
-- **Presenter mode** — `?present=1` or nav **Present**: shorter sections, full-opacity text, chapter toolbar, arrow-key navigation
+- **Homepage hub** (`/`) — Animated hero, value pillars, interactive timeline, strength tabs, work teaser
+- **Career story** (`/story`) — Scroll narrative (Cathay → HKJC/Accenture → Apple → AAHK → education → core strengths)
+- **Presenter mode** — `/story?present=1` or nav **Present** on Story: shorter sections, full-opacity text, chapter toolbar, arrow-key navigation
 - **Work page** — Six curated repos with role relevance lines and 30s talk tracks ([`/work`](http://localhost:3000/work))
 - **Showcase page** — Production deployments: live URLs, architecture, clone steps, APIs ([`/showcase`](http://localhost:3000/showcase))
 - **Supporting pages** — Experience timeline, skills/certs, contact + PDF
@@ -40,7 +41,7 @@ npm start
 
 Best for live walkthroughs with interviewers:
 
-1. Open **http://localhost:3000?present=1** (or click **Present** on the homepage).
+1. Open **http://localhost:3000/story?present=1** (or click **Present** on the Story page).
 2. Use bottom chapter pills or **← / →** to jump between sections.
 3. Rehearse on a second monitor at **100% zoom** (1080p).
 
@@ -51,7 +52,7 @@ Best for live walkthroughs with interviewers:
 - [ ] Test chapter jumps and arrow keys once
 - [ ] Second tabs: **`/work`**, **`/showcase`** (LungLens live URLs), and **`/experience`** (depth Q&A)
 - [ ] ~10–12 min story: Hero (30s) → chapters (~2m each) → role fit → close
-- [ ] Short on time after AAHK: **`/work`** — LungLens + Interview_pack only
+- [ ] Short on time after AAHK: **`/work`** — LungLens + localLLM only
 
 ## Pages
 
