@@ -4,7 +4,6 @@ export const profile = {
   tagline:
     "12+ years bridging business strategy and engineering execution for Tier-1 organizations.",
   location: "Hong Kong",
-  phone: "+852 9609 3549",
   email: "charleschtsoi@gmail.com",
   links: {
     linkedin: "https://linkedin.com/in/charleschtsoi/",

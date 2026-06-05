@@ -36,17 +36,6 @@ export default function ContactPage() {
           </div>
           <div>
             <p className="text-sm uppercase tracking-wide text-[var(--apple-gray-400)]">
-              Phone
-            </p>
-            <a
-              href={`tel:${profile.phone.replace(/\s/g, "")}`}
-              className="text-xl hover:text-[var(--apple-blue)]"
-            >
-              {profile.phone}
-            </a>
-          </div>
-          <div>
-            <p className="text-sm uppercase tracking-wide text-[var(--apple-gray-400)]">
               Location
             </p>
             <p className="text-xl">{profile.location}</p>
