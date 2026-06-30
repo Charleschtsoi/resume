@@ -4,7 +4,7 @@ export type WorkPillar = "ai" | "product" | "rigour";
 
 export type WorkProject = {
   name: string;
-  repoUrl: string;
+  repoUrl?: string;
   secondaryRepoUrl?: string;
   productionSlug?: string;
   language?: string;
@@ -14,19 +14,21 @@ export type WorkProject = {
   talkTrack: string;
   roleRelevance: string;
   tags: string[];
+  achievement?: string;
+  status?: "live" | "coming-soon";
 };
 
 export const githubProfileUrl = `${profile.links.github}?tab=repositories`;
 
 export const githubWorkIntro = {
   title: "Hands-on proof",
-  subtitle: "Curated from GitHub — not a second resume",
+  subtitle: "AI · Machine learning · App development",
   framingParagraph:
-    "Day job is enterprise AI at the airport. Separately, I keep a focused set of repositories to stay hands-on — AI delivery, shipping product, and security-aware design. I don't ask panels to browse all 33 repos; these four show what I bring to technical product and architecture conversations.",
+    "I specialise in AI, machine learning, and app development — from enterprise LLM agents to mobile products on the App Store. These curated repos show production-grade work, not tutorial code. I'm also open to any project where I can help.",
   openingScript:
-    "I don't ask the panel to browse all of GitHub — I curate a few repos that show how I stay current: AI delivery, shipping product, and security-aware design.",
+    "My strengths are AI, machine learning, and app development — here's a curated set that shows production work, not every repo on GitHub.",
   closingScript:
-    "This sits on top of twelve years in tier-one delivery — CUHK MSc adds formal depth. Happy to go deeper on any repo or stay on enterprise work at AAHK.",
+    "I'm open to collaborations and new projects in AI, ML, or mobile — happy to go deeper on any repo or discuss how I can help.",
 };
 
 export const workPillars: Record<
@@ -34,16 +36,16 @@ export const workPillars: Record<
   { title: string; description: string }
 > = {
   ai: {
-    title: "AI & agents",
-    description: "Scoped delivery, LLM integration, and GenAI in product context",
+    title: "AI & machine learning",
+    description: "LLM agents, model integration, ML pipelines, and evaluation",
   },
   product: {
-    title: "Product delivery",
-    description: "Presenter-first UX and shipped utilities end-to-end",
+    title: "App development",
+    description: "React Native, Expo, and full-stack products — PoC to App Store",
   },
   rigour: {
-    title: "Regulated rigour",
-    description: "Security-aware tooling aligned with diligence and compliance",
+    title: "Production rigour",
+    description: "Security-aware design, scoped delivery, and enterprise discipline",
   },
 };
 
@@ -56,57 +58,93 @@ export const featuredProjects: WorkProject[] = [
     language: "TypeScript + Python",
     stars: 2,
     pillar: "ai",
-    headline: "Full-stack AI product — web + backend",
-    roleRelevance: "Same shape as PoC→production: scoped MVP, API, model integration",
+    achievement: "LEGENDARY",
+    status: "live",
+    headline: "Full-stack AI / ML product — live in production",
+    roleRelevance:
+      "Vision models + LLM synthesis — PoC to production with BFF routes and Hugging Face inference",
     talkTrack:
-      "End-to-end AI app: scoped MVP, frontend + API, model integration — same shape as PoC to production, just at a smaller scale than enterprise.",
-    tags: ["LLM", "Full-stack", "MVP"],
+      "End-to-end AI/ML app with a live Vercel frontend and Hugging Face backend — ensemble models, async jobs, production deployment.",
+    tags: ["ML", "LLM", "Production"],
   },
   {
-    name: "localLLM",
-    repoUrl: "https://github.com/Charleschtsoi/localLLM",
-    language: "Python",
+    name: "AI Agent X-Ray",
+    repoUrl: "https://github.com/Charleschtsoi/ai-agent-xray",
+    language: "HTML + JS",
     pillar: "ai",
-    headline: "Local LLM experimentation",
-    roleRelevance: "How I evaluate latency, cost, and fit before vendor recommendations",
+    achievement: "EPIC",
+    headline: "Interactive agent tool-calling visualizer",
+    roleRelevance:
+      "AI agent architecture — tool routing, guardrails, token flow, and failure modes",
     talkTrack:
-      "Hands-on with local LLMs — how I evaluate latency, cost, and fit before recommending vendor solutions at work.",
-    tags: ["LLM", "Evaluation"],
+      "Side-by-side chat and x-ray view of LLM tool calling — how I explain agent architecture to stakeholders.",
+    tags: ["LLM Agents", "AI", "Architecture"],
   },
   {
-    name: "velora_GenAI_submission",
-    repoUrl: "https://github.com/Charleschtsoi/velora_GenAI_submission",
-    language: "TypeScript",
-    pillar: "ai",
-    headline: "GenAI feature in product context",
-    roleRelevance: "Prompts, UX, and defining what 'done' means for a PoC",
+    name: "Hermes",
+    repoUrl: "https://github.com/Charleschtsoi/Hermes",
+    language: "React Native + Expo",
+    stars: 3,
+    pillar: "product",
+    achievement: "RARE",
+    headline: "ExpiryScanner — barcode + AI mobile app",
+    roleRelevance:
+      "App development: camera scan → GPT-4o-mini → Supabase — full product loop",
     talkTrack:
-      "GenAI feature in a real product context — prompts, UX, and what done means for a proof of concept.",
-    tags: ["GenAI", "Product"],
+      "React Native app with barcode scanning, AI product ID, Supabase backend, and push notifications.",
+    tags: ["App Dev", "GenAI", "Mobile"],
   },
   {
-    name: "security_alert",
-    repoUrl: "https://github.com/Charleschtsoi/security_alert",
-    language: "TypeScript",
-    stars: 1,
-    pillar: "rigour",
-    headline: "Security-minded tooling",
-    roleRelevance: "Echoes vendor diligence and regulated-environment thinking",
+    name: "Product Tax Deduction Log",
+    language: "React Native + Expo",
+    pillar: "product",
+    achievement: "SOON",
+    status: "coming-soon",
+    productionSlug: "product-tax-deduction-log",
+    headline: "Mobile app for logging product purchases and tax deductions",
+    roleRelevance:
+      "App development — personal finance utility, App Store submission in progress",
     talkTrack:
-      "Security-minded tooling — aligns with regulated environments and the vendor diligence I run at AAHK.",
-    tags: ["Security", "TypeScript"],
+      "A mobile app I'm shipping to the App Store soon — helps track product purchases and tax-deductible expenses. Ask me for a TestFlight preview.",
+    tags: ["App Store Soon", "Mobile", "Finance"],
+  },
+  {
+    name: "Motion Resume",
+    repoUrl: "https://github.com/Charleschtsoi/resume",
+    productionSlug: "resume",
+    language: "Next.js + Motion",
+    pillar: "product",
+    achievement: "META",
+    headline: "This site — narrative resume with presenter mode",
+    roleRelevance:
+      "Full-stack web app — scroll narrative, presenter mode, curated showcase",
+    talkTrack:
+      "The site you're on — built to be screen-shared. Presenter mode, chapter jumps, and curated work proof.",
+    tags: ["Next.js", "Web App", "Portfolio"],
   },
 ];
 
 export const optionalProjects: WorkProject[] = [
+  {
+    name: "localLLM",
+    repoUrl: "https://github.com/Charleschtsoi/localLLM",
+    language: "Python",
+    stars: 2,
+    pillar: "ai",
+    headline: "Local LLM experimentation",
+    roleRelevance: "ML evaluation — latency, cost, and fit before vendor recommendations",
+    talkTrack:
+      "Hands-on with local LLMs — how I evaluate models before recommending solutions.",
+    tags: ["ML", "LLM", "Evaluation"],
+  },
   {
     name: "openimpact2",
     repoUrl: "https://github.com/Charleschtsoi/openimpact2",
     language: "Python",
     pillar: "ai",
     headline: "Social impact analytics",
-    roleRelevance: "Python analytics — use if asked about data science depth",
-    talkTrack: "Python impact work — good for data science or analytics depth questions.",
+    roleRelevance: "Python ML analytics — data science depth",
+    talkTrack: "Python analytics work — good for data science or ML depth questions.",
     tags: ["Python", "Analytics"],
   },
   {
@@ -120,9 +158,21 @@ export const optionalProjects: WorkProject[] = [
       "I care how technical stories are told — connects to panel communication and narrative clarity.",
     tags: ["Presentation"],
   },
+  {
+    name: "security_alert",
+    repoUrl: "https://github.com/Charleschtsoi/security_alert",
+    language: "TypeScript",
+    stars: 1,
+    pillar: "rigour",
+    headline: "Security-minded alerting tooling",
+    roleRelevance: "Security-aware app development and regulated environments",
+    talkTrack:
+      "Security-minded tooling — aligns with production discipline and vendor diligence.",
+    tags: ["Security", "TypeScript"],
+  },
 ];
 
 export const githubBridge = {
-  text: "Hands-on repos: LungLens, localLLM, security_alert — curated on the Work page",
+  text: "Hands-on repos: LungLens, AI Agent X-Ray, Hermes, Product Tax Deduction Log — curated on the Work page",
   href: "/work",
 };

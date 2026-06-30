@@ -30,9 +30,12 @@ export default function StoryPage() {
 
       <RoleFitSection />
 
-      <section className="scroll-mt-20 bg-[var(--apple-black)] px-6 py-24 text-center text-[var(--apple-gray-100)] md:px-12 md:py-32">
+      <section className="game-section-dark scroll-mt-20 px-6 py-24 text-center text-[var(--apple-gray-100)] md:px-12 md:py-32">
         <div className="mx-auto max-w-[720px]">
-          <h2 className="text-headline font-semibold tracking-tight">
+          <p className="font-game text-[10px] tracking-[0.2em] text-[var(--game-cyan)] uppercase">
+            Campaign Complete
+          </p>
+          <h2 className="mt-4 text-headline font-semibold tracking-tight">
             Let&apos;s connect.
           </h2>
           <p className="mt-6 text-lg text-[var(--apple-gray-300)] md:text-xl">
@@ -42,15 +45,15 @@ export default function StoryPage() {
             <Button
               asChild
               size="lg"
-              className="bg-[var(--apple-blue)] px-8 text-white hover:bg-[var(--apple-blue-hover)]"
+              className="game-pixel-border bg-[var(--game-cyan)] px-8 font-semibold text-[var(--game-bg)] hover:bg-[var(--game-green)]"
             >
-              <Link href="/contact">Get in touch</Link>
+              <Link href="/contact">Start Quest →</Link>
             </Button>
             <Button
               asChild
               variant="outline"
               size="lg"
-              className="border-[var(--apple-gray-400)] bg-transparent text-white hover:bg-white/10"
+              className="border-[var(--game-border)] bg-transparent text-white hover:border-[var(--game-cyan)] hover:bg-[var(--game-cyan)]/10"
             >
               <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                 Download resume

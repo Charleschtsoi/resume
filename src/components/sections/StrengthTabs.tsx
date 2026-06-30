@@ -21,9 +21,9 @@ export function StrengthTabs() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInView}
-          className="text-sm font-medium uppercase tracking-[0.15em] text-[var(--apple-blue)]"
+          className="font-game text-[10px] tracking-[0.2em] text-[var(--apple-blue)] uppercase"
         >
-          Core strengths
+          Inventory
         </motion.p>
         <motion.h2
           initial={reduceMotion ? false : "hidden"}
@@ -38,7 +38,7 @@ export function StrengthTabs() {
         <div
           role="tablist"
           aria-label="Core strengths"
-          className="relative mt-10 flex gap-1 border-b border-border"
+          className="relative mt-10 flex gap-1 border-b-2 border-[var(--game-border)]"
         >
           {strengthTabs.map((tab) => {
             const isActive = tab.id === activeId;
@@ -59,12 +59,12 @@ export function StrengthTabs() {
                 {isActive && !reduceMotion && (
                   <motion.span
                     layoutId="strength-indicator"
-                    className="absolute right-0 bottom-0 left-0 h-0.5 bg-[var(--apple-blue)]"
+                    className="absolute right-0 bottom-0 left-0 h-0.5 bg-[var(--game-cyan)]"
                     transition={{ type: "spring", stiffness: 400, damping: 35 }}
                   />
                 )}
                 {isActive && reduceMotion && (
-                  <span className="absolute right-0 bottom-0 left-0 h-0.5 bg-[var(--apple-blue)]" />
+                  <span className="absolute right-0 bottom-0 left-0 h-0.5 bg-[var(--game-cyan)]" />
                 )}
               </button>
             );
@@ -80,7 +80,7 @@ export function StrengthTabs() {
           className="mt-8"
         >
           {active.metric && (
-            <div className="mb-8 inline-block rounded-xl border border-border bg-white px-6 py-4 shadow-sm">
+            <div className="game-card-light mb-8 inline-block rounded-xl px-6 py-4">
               <p className="text-2xl font-semibold text-[var(--apple-black)]">
                 {active.metric.value}
               </p>
@@ -95,8 +95,9 @@ export function StrengthTabs() {
                 animate="visible"
                 custom={i}
                 variants={staggerChild}
-                className="rounded-xl border border-border bg-white px-5 py-4 text-base leading-relaxed text-muted-foreground shadow-sm"
+                className="game-card-light rounded-xl px-5 py-4 text-base leading-relaxed text-muted-foreground"
               >
+                <span className="mr-2 text-[var(--game-cyan)]">▸</span>
                 {bullet}
               </motion.li>
             ))}

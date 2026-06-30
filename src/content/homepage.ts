@@ -5,12 +5,13 @@ export type HeroStat = {
   value: number;
   suffix?: string;
   label: string;
+  gameLabel?: string;
 };
 
 export const heroStats: HeroStat[] = [
-  { value: 12, suffix: "+", label: "Years experience" },
-  { value: 6, label: "Tier-1 employers" },
-  { value: certifications.length, label: "Certifications" },
+  { value: 12, suffix: "+", label: "Years experience", gameLabel: "LVL" },
+  { value: 6, label: "Tier-1 employers", gameLabel: "QUESTS" },
+  { value: certifications.length, label: "Certifications", gameLabel: "BADGES" },
 ];
 
 export type ValuePillar = {
@@ -18,26 +19,30 @@ export type ValuePillar = {
   title: string;
   proof: string;
   icon: string;
+  skillPoints: number;
 };
 
 export const valuePillars: ValuePillar[] = [
   {
+    id: "ai",
+    title: "AI & machine learning",
+    proof: "LLM agents in production, model integration, ML pipelines, and hands-on evaluation",
+    icon: "✦",
+    skillPoints: 92,
+  },
+  {
     id: "product",
-    title: "Product delivery",
-    proof: "Stakeholder translation, backlog discipline, and full lifecycle ownership",
-    icon: "◆",
+    title: "App development",
+    proof: "React Native, Expo, and full-stack products — from PoC to App Store submission",
+    icon: "📱",
+    skillPoints: 90,
   },
   {
     id: "architecture",
-    title: "Systems architecture",
-    proof: "API contracts, event-driven design, and integration at enterprise scale",
-    icon: "◇",
-  },
-  {
-    id: "ai",
-    title: "AI & automation",
-    proof: "LLM agents in production, vendor diligence, and scope gatekeeping",
-    icon: "○",
+    title: "Enterprise delivery",
+    proof: "12+ years at Apple, AAHK, HKJC — scope discipline, vendor diligence, and shipping",
+    icon: "🛡",
+    skillPoints: 88,
   },
 ];
 
@@ -46,6 +51,8 @@ export type TimelineMilestone = {
   company: string;
   period: string;
   role: string;
+  level: number;
+  questTitle: string;
   teaser: string[];
   storyAnchor?: string;
 };
@@ -56,6 +63,8 @@ export const timelineMilestones: TimelineMilestone[] = [
     company: "Cathay Pacific Airways",
     period: "2012 – 2018",
     role: "Product Owner",
+    level: 1,
+    questTitle: "The Mobile Frontier",
     teaser: [
       "Six years building the mobile app and modernising legacy notification systems",
       "Learned lifecycle ownership and PSS integration at scale",
@@ -67,6 +76,8 @@ export const timelineMilestones: TimelineMilestone[] = [
     company: "HKJC & Accenture",
     period: "2019 – 2022",
     role: "Solutions Analyst · Integration Architect",
+    level: 7,
+    questTitle: "Regulated Real-Time",
     teaser: [
       "Real-time betting systems with Solace Event Mesh in a regulated environment",
       "API contracts and value-driven delivery at Accenture",
@@ -78,6 +89,8 @@ export const timelineMilestones: TimelineMilestone[] = [
     company: "Apple",
     period: "2022 – 2024",
     role: "Engineering Project Manager",
+    level: 10,
+    questTitle: "Architectural Standard",
     teaser: [
       "iWork serverless migration with architectural review at every step",
       "Cross-team API delivery for WWDC releases",
@@ -89,6 +102,8 @@ export const timelineMilestones: TimelineMilestone[] = [
     company: "Airport Authority Hong Kong",
     period: "2025 – Present",
     role: "Project Manager",
+    level: 12,
+    questTitle: "AI in Production",
     teaser: [
       "LLM agents in production — 80% less manual query time",
       "Vendor diligence and legacy-to-cloud migration",
@@ -106,36 +121,36 @@ export type StrengthTab = {
 
 export const strengthTabs: StrengthTab[] = [
   {
-    id: "product",
-    label: "Product",
-    metric: { value: "6 years", label: "Single-employer lifecycle ownership" },
+    id: "ai",
+    label: "AI & ML",
+    metric: { value: "80%", label: "Reduction in manual query time (LLM agents)" },
     bullets: [
-      "Translate business needs into engineering deliverables",
-      "Backlog discipline and stakeholder negotiation",
-      "Full product lifecycle — launch, maintain, evolve",
-      "Presenter-first communication for technical stories",
+      "LLM-based agents deployed to production at AAHK",
+      "Machine learning products: LungLens vision ensemble, localLLM evaluation",
+      "AI Agent X-Ray — tool-calling architecture and guardrails",
+      "MSc coursework in data science, AI, and system design",
+    ],
+  },
+  {
+    id: "product",
+    label: "App Dev",
+    metric: { value: "App Store", label: "Product Tax Deduction Log — submitting soon" },
+    bullets: [
+      "React Native + Expo: Hermes, Velora lineage, and mobile utilities",
+      "Full product loop: scan → AI analysis → backend → notifications",
+      "Web apps: LungLens, this portfolio site, presenter-first UX",
+      "Open to any app development project where I can help",
     ],
   },
   {
     id: "architecture",
-    label: "Architecture",
-    metric: { value: "20%", label: "Less integration rework via API contracts" },
+    label: "Delivery",
+    metric: { value: "12+", label: "Years enterprise experience" },
     bullets: [
-      "REST/JSON API design and Swagger contracts",
-      "Event-driven architecture with Solace Event Mesh",
-      "Microservices, serverless, and legacy system integration",
+      "Apple, AAHK, HKJC — regulated and high-stakes environments",
+      "Scope gatekeeping — deliver AI agents in weeks, not months",
       "Vendor technical evaluation — API, security, scalability",
-    ],
-  },
-  {
-    id: "ai",
-    label: "AI & Platforms",
-    metric: { value: "80%", label: "Reduction in manual query time" },
-    bullets: [
-      "LLM-based agents deployed to production",
-      "Scope gatekeeping — deliver in weeks, not months",
-      "Hands-on repos: LungLens, localLLM, and more",
-      "MSc coursework in data science and system design",
+      "Available for consulting, collaborations, and full-time roles",
     ],
   },
 ];
@@ -147,31 +162,34 @@ export type FeaturedLink = {
   href: string;
   external?: boolean;
   tag?: string;
+  achievement?: string;
 };
 
 export const featuredLinks: FeaturedLink[] = [
   {
     id: "lunglens",
     title: "LungLens",
-    headline: "Full-stack AI product — live production deployment",
+    headline: "AI / ML product — live production deployment",
     href: "/showcase#lunglens",
     tag: "Production",
+    achievement: "LEGENDARY",
   },
   {
-    id: "lunglens-repo",
-    title: featuredProjects[0].name,
-    headline: featuredProjects[0].headline,
-    href: featuredProjects[0].repoUrl,
-    external: true,
-    tag: "GitHub",
+    id: "tax-deduction-log",
+    title: "Product Tax Deduction Log",
+    headline: "Mobile app for product purchases & tax deductions — App Store soon",
+    href: "/showcase#product-tax-deduction-log",
+    tag: "App Store Soon",
+    achievement: "SOON",
   },
   {
-    id: "localllm",
-    title: featuredProjects[1].name,
-    headline: featuredProjects[1].headline,
-    href: featuredProjects[1].repoUrl,
+    id: "hermes",
+    title: "Hermes",
+    headline: featuredProjects.find((p) => p.name === "Hermes")?.headline ?? "Barcode + AI mobile app",
+    href: featuredProjects.find((p) => p.name === "Hermes")?.repoUrl ?? "/work",
     external: true,
-    tag: "GitHub",
+    tag: "Mobile",
+    achievement: "RARE",
   },
 ];
 

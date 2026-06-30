@@ -26,7 +26,7 @@ export type ProductionComponent = {
 export type ProductionProject = {
   slug: string;
   name: string;
-  status: "live" | "repo-only";
+  status: "live" | "repo-only" | "coming-soon";
   defaultOpen?: boolean;
   oneLiner: string;
   talkTrack?: string;
@@ -182,6 +182,98 @@ export const productionProjects: ProductionProject[] = [
     ],
   },
   {
+    slug: "hermes",
+    name: "Hermes (ExpiryScanner)",
+    status: "repo-only",
+    oneLiner:
+      "github.com/Charleschtsoi/Hermes — React Native + Expo mobile app with barcode scanning, GPT-4o-mini product analysis, and Supabase backend.",
+    talkTrack:
+      "Full mobile product loop: camera scan → AI identification → shelf-life estimation → push notifications. Same product discipline as enterprise, at app scale.",
+    components: [
+      {
+        role: "frontend",
+        title: "React Native / Expo app",
+        repo: {
+          url: "https://github.com/Charleschtsoi/Hermes",
+          branch: "main",
+        },
+        contains: [
+          "Barcode scanning (EAN13, UPC, QR)",
+          "AI product analysis via OpenAI GPT-4o-mini",
+          "Supabase auth, inventory, and push notifications",
+        ],
+        clone: {
+          label: "Clone",
+          steps: [
+            "git clone https://github.com/Charleschtsoi/Hermes.git",
+            "cd Hermes",
+            "npm install",
+            "npx expo start",
+          ],
+        },
+      },
+    ],
+  },
+  {
+    slug: "ai-agent-xray",
+    name: "AI Agent X-Ray",
+    status: "repo-only",
+    oneLiner:
+      "github.com/Charleschtsoi/ai-agent-xray — Interactive visualization of LLM tool-calling flow with guardrail toggles.",
+    talkTrack:
+      "Side-by-side chat and x-ray panel showing agent steps — tool routing, token usage, guardrails. Built to explain agent architecture to non-engineering stakeholders.",
+    components: [
+      {
+        role: "frontend",
+        title: "Single-file interactive demo",
+        repo: {
+          url: "https://github.com/Charleschtsoi/ai-agent-xray",
+          branch: "main",
+        },
+        contains: [
+          "Chat + tool-calling flow visualization",
+          "Guardrail toggle demo",
+          "Token and step-by-step x-ray panel",
+        ],
+        clone: {
+          label: "Open locally",
+          steps: [
+            "git clone https://github.com/Charleschtsoi/ai-agent-xray.git",
+            "cd ai-agent-xray",
+            "open ai-agent-xray.html   # or serve with any static server",
+          ],
+        },
+      },
+    ],
+  },
+  {
+    slug: "product-tax-deduction-log",
+    name: "Product Tax Deduction Log",
+    status: "coming-soon",
+    defaultOpen: false,
+    oneLiner:
+      "React Native + Expo mobile app for logging product purchases and tax-deductible expenses — App Store submission in progress.",
+    talkTrack:
+      "A personal finance utility I'm shipping to the App Store soon. Tracks product purchases and helps organise tax deductions — ask me for a TestFlight preview.",
+    components: [
+      {
+        role: "frontend",
+        title: "React Native / Expo app",
+        contains: [
+          "Product purchase logging",
+          "Tax deduction tracking and categorisation",
+          "App Store submission in progress",
+        ],
+      },
+    ],
+    notes: [
+      {
+        title: "App Store",
+        body: "Submitting to the App Store soon. Live URL and repo link will be added here after release.",
+      },
+    ],
+  },
+  {
     slug: "resume",
     name: "Motion Resume (this site)",
     status: "repo-only",
@@ -217,42 +309,6 @@ export const productionProjects: ProductionProject[] = [
       {
         title: "Deploy",
         body: "Import repo at vercel.com/new or run npx vercel --prod. Add live URL to liveLinks when ready.",
-      },
-    ],
-  },
-  {
-    slug: "velora-beauty-tracker",
-    name: "velora-beauty-tracker",
-    status: "repo-only",
-    oneLiner:
-      "github.com/Charleschtsoi/velora-beauty-tracker — Beauty product expiration tracker (React Native + Expo).",
-    components: [
-      {
-        role: "frontend",
-        title: "React Native / Expo app",
-        repo: {
-          url: "https://github.com/Charleschtsoi/velora-beauty-tracker",
-          branch: "main",
-        },
-        contains: ["Mobile product — expiration tracking for beauty products"],
-      },
-    ],
-  },
-  {
-    slug: "velora-genai",
-    name: "velora_GenAI_submission",
-    status: "repo-only",
-    oneLiner:
-      "github.com/Charleschtsoi/velora_GenAI_submission — GenAI product submission slice.",
-    components: [
-      {
-        role: "frontend",
-        title: "GenAI submission",
-        repo: {
-          url: "https://github.com/Charleschtsoi/velora_GenAI_submission",
-          branch: "main",
-        },
-        contains: ["GenAI feature work — prompts, UX, PoC boundaries"],
       },
     ],
   },

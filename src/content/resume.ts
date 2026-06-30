@@ -1,8 +1,8 @@
 export const profile = {
   name: "Charles Tsoi",
-  title: "Solutions Architecture & Technical Product Strategy",
+  title: "AI · Machine Learning · App Development",
   tagline:
-    "12+ years bridging business strategy and engineering execution for Tier-1 organizations.",
+    "12+ years in enterprise delivery — now building and shipping AI, machine learning, and mobile products end to end.",
   location: "Hong Kong",
   email: "charleschtsoi@gmail.com",
   links: {
@@ -10,14 +10,16 @@ export const profile = {
     github: "https://github.com/Charleschtsoi",
     medium: "https://medium.com/@charleschtsoi",
   },
-  proofLine: "12+ years · Apple · AAHK · regulated systems",
+  proofLine: "AI · ML · App development · Apple · AAHK",
   interviewerSubline:
-    "Bridging business stakeholders and engineering — product → architecture → AI",
+    "Strong in AI agents, machine learning, and app development — open to any project where I can help",
   ctaTagline:
-    "Regulated systems · enterprise delivery · hands-on technical leadership",
-  seoTitle: "Solutions Architecture & Technical Product Strategy",
+    "Open to collaborations, consulting, and full-time roles. If you have a problem in AI, ML, or app development — let's talk.",
+  availabilityLine:
+    "Available for AI, machine learning, and mobile app projects — from PoC to App Store.",
+  seoTitle: "AI, Machine Learning & App Development",
   seoDescription:
-    "12+ years bridging business strategy and engineering execution. Apple, Airport Authority HK, HKJC. Enterprise AI, regulated systems, and production delivery.",
+    "Charles Tsoi — AI, machine learning, and app development. Enterprise LLM agents, production ML products, and mobile apps. Open to projects where I can help.",
 };
 
 export type ChapterMetric = {
@@ -41,10 +43,10 @@ export type NarrativeChapter = {
 export const coreStrengths = {
   title: "What I bring",
   bullets: [
-    "Delivery discipline: scope gatekeeping and evidence-based shipping (AAHK capacity agent, 10 weeks)",
-    "Regulated environments: HKJC compliance APIs, Apple architectural review standard, Cathay legacy integration",
-    "Vendor & technical diligence: Microsoft ecosystem assessments — API, security, scalability",
-    "Production systems thinking: from event-driven architecture to enterprise AI agents",
+    "AI & machine learning: LLM agents in production, model integration, and hands-on ML products (LungLens, AI Agent X-Ray)",
+    "App development: React Native and Expo apps shipped end to end — Hermes, Product Tax Deduction Log (App Store soon)",
+    "Enterprise delivery: scope gatekeeping, vendor diligence, and evidence-based shipping at Apple and AAHK",
+    "Open to help: happy to take on any project where my skills in AI, ML, or app development can move the needle",
   ],
 };
 
@@ -154,7 +156,7 @@ export const narrativeChapters: NarrativeChapter[] = [
       "LLM-based agents for internal report automation — 80% reduction in manual query time",
       "Vendor technical due diligence on Microsoft ecosystem — API, security, scalability",
       "End-to-end delivery of new Insurance System — legacy mainframe to cloud migration",
-      "Hands-on repos: LungLens, localLLM, security_alert — see Work page for curated GitHub",
+      "Hands-on repos: LungLens, Hermes, Product Tax Deduction Log — see Work page for curated GitHub",
     ],
     theme: "dark",
   },
