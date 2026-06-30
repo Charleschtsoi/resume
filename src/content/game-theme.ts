@@ -3,18 +3,24 @@ export type QuestMeta = {
   questTitle: string;
 };
 
+/** Career year count — Cathay 2012 → 2026 */
+export const careerYears = 14;
+
+/** Current player level (2026 — two years at AAHK) */
+export const currentPlayerLevel = 14;
+
 export const storyQuestMeta: Record<string, QuestMeta> = {
   hero: { level: 0, questTitle: "Prologue" },
   cathay: { level: 1, questTitle: "The Mobile Frontier" },
   bridge: { level: 7, questTitle: "Regulated Real-Time" },
   apple: { level: 10, questTitle: "Architectural Standard" },
-  aahk: { level: 12, questTitle: "AI in Production" },
-  fit: { level: 13, questTitle: "Continuous Learning" },
-  "why-fit": { level: 14, questTitle: "Core Loadout" },
+  aahk: { level: 14, questTitle: "AI in Production" },
+  fit: { level: 15, questTitle: "Continuous Learning" },
+  "why-fit": { level: 16, questTitle: "Core Loadout" },
 };
 
 export const experienceQuestMeta: Record<string, QuestMeta> = {
-  "Airport Authority Hong Kong": { level: 12, questTitle: "AI in Production" },
+  "Airport Authority Hong Kong": { level: 14, questTitle: "AI in Production" },
   Apple: { level: 10, questTitle: "Architectural Standard" },
   Accenture: { level: 8, questTitle: "Integration Architect" },
   "The Hong Kong Jockey Club": { level: 7, questTitle: "Regulated Real-Time" },
