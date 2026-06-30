@@ -1,47 +1,73 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import { skillCategories } from "@/content/resume";
-import { staggerChild } from "@/lib/motion";
+import {
+  certificationBadges,
+  educationQuests,
+  overallMastery,
+  skillBranches,
+} from "@/content/skills-game";
+import { currentPlayerLevel } from "@/content/game-theme";
+import { CertBadge } from "@/components/game/CertBadge";
+import { EducationQuestCard } from "@/components/game/EducationQuestCard";
+import { SkillTreeBranch } from "@/components/game/SkillTreeBranch";
+import { XPBar } from "@/components/game/XPBar";
+import { fadeInView } from "@/lib/motion";
 
-type SkillCategory = (typeof skillCategories)[number];
-
-type SkillsGridProps = {
-  categories: SkillCategory[];
-  education: { school: string; degree: string; period: string; focus: string }[];
-  certifications: string[];
-};
-
-export function SkillsGrid({ categories, education, certifications }: SkillsGridProps) {
+export function SkillsGrid() {
   const reduceMotion = useReducedMotion();
 
   return (
     <>
-      <div className="mt-16 grid gap-8 md:grid-cols-2">
-        {categories.map((cat, i) => (
-          <motion.section
-            key={cat.title}
-            initial={reduceMotion ? false : "hidden"}
-            whileInView="visible"
-            viewport={{ once: true, margin: "-5%" }}
-            custom={i}
-            variants={staggerChild}
-            className="rounded-2xl border border-border bg-white p-8 shadow-sm"
-          >
-            <h2 className="text-lg font-semibold text-[var(--apple-black)]">
-              {cat.title}
-            </h2>
-            <ul className="mt-4 space-y-2">
-              {cat.items.map((item) => (
-                <li
-                  key={item}
-                  className="text-muted-foreground before:mr-2 before:text-[var(--apple-blue)] before:content-['•']"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </motion.section>
+      <motion.div
+        initial={reduceMotion ? false : "hidden"}
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInView}
+        className="game-hud mt-10 rounded-xl p-6"
+      >
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="font-game text-[10px] tracking-widest text-[var(--game-gold)] uppercase">
+              Character Sheet
+            </p>
+            <p className="mt-1 text-sm text-[var(--apple-gray-300)]">
+              Level {currentPlayerLevel} · AI · ML · App Development
+            </p>
+          </div>
+          <div className="font-game text-right text-2xl text-[var(--game-gold)]">
+            {overallMastery}%
+            <p className="text-[9px] tracking-wider text-[var(--game-cyan)] uppercase">
+              Total mastery
+            </p>
+          </div>
+        </div>
+        <div className="mt-4">
+          <XPBar value={overallMastery} label="Overall skill XP" color="gold" />
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={reduceMotion ? false : "hidden"}
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInView}
+        className="mt-12"
+      >
+        <p className="font-game text-[10px] tracking-[0.2em] text-[var(--game-cyan)] uppercase">
+          Skill Tree
+        </p>
+        <h2 className="mt-2 text-title font-semibold text-[var(--apple-black)]">
+          Four branches. One loadout.
+        </h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Hover abilities to see mastery tiers — built from 14+ years of enterprise delivery and hands-on repos.
+        </p>
+      </motion.div>
+
+      <div className="mt-8 grid gap-6 md:grid-cols-2">
+        {skillBranches.map((branch, i) => (
+          <SkillTreeBranch key={branch.id} branch={branch} index={i} />
         ))}
       </div>
 
@@ -49,28 +75,19 @@ export function SkillsGrid({ categories, education, certifications }: SkillsGrid
         initial={reduceMotion ? false : "hidden"}
         whileInView="visible"
         viewport={{ once: true }}
-        variants={staggerChild}
-        custom={0}
+        variants={fadeInView}
         className="mt-16"
+        aria-labelledby="education-quests"
       >
-        <h2 className="text-title font-semibold text-[var(--apple-black)]">
-          Education
+        <p className="font-game text-[10px] tracking-[0.2em] text-[var(--game-cyan)] uppercase">
+          Education Quests
+        </p>
+        <h2 id="education-quests" className="mt-2 text-title font-semibold text-[var(--apple-black)]">
+          Learning never stops.
         </h2>
-        <div className="mt-6 space-y-6">
-          {education.map((edu) => (
-            <div
-              key={edu.school}
-              className="rounded-2xl border border-border bg-white p-6"
-            >
-              <h3 className="font-semibold">{edu.school}</h3>
-              <p className="text-muted-foreground">{edu.degree}</p>
-              {edu.period && (
-                <p className="mt-1 text-sm text-muted-foreground">{edu.period}</p>
-              )}
-              {edu.focus && (
-                <p className="mt-2 text-sm">Focus: {edu.focus}</p>
-              )}
-            </div>
+        <div className="mt-6 space-y-4">
+          {educationQuests.map((quest) => (
+            <EducationQuestCard key={quest.school} quest={quest} />
           ))}
         </div>
       </motion.section>
@@ -79,21 +96,19 @@ export function SkillsGrid({ categories, education, certifications }: SkillsGrid
         initial={reduceMotion ? false : "hidden"}
         whileInView="visible"
         viewport={{ once: true }}
-        variants={staggerChild}
-        custom={1}
+        variants={fadeInView}
         className="mt-16"
+        aria-labelledby="cert-badges"
       >
-        <h2 className="text-title font-semibold text-[var(--apple-black)]">
-          Certifications
+        <p className="font-game text-[10px] tracking-[0.2em] text-[var(--game-cyan)] uppercase">
+          Badges Unlocked
+        </p>
+        <h2 id="cert-badges" className="mt-2 text-title font-semibold text-[var(--apple-black)]">
+          {certificationBadges.length} certifications earned.
         </h2>
-        <ul className="mt-6 flex flex-wrap gap-3">
-          {certifications.map((cert) => (
-            <li
-              key={cert}
-              className="rounded-full border border-border bg-white px-4 py-2 text-sm text-muted-foreground"
-            >
-              {cert}
-            </li>
+        <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {certificationBadges.map((badge) => (
+            <CertBadge key={badge.name} badge={badge} />
           ))}
         </ul>
       </motion.section>
