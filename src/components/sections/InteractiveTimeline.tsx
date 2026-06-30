@@ -136,7 +136,7 @@ export function InteractiveTimeline() {
               href="/experience"
               className="text-sm text-[var(--apple-gray-400)] hover:text-white hover:underline"
             >
-              Full timeline →
+              Full quest log →
             </Link>
           </div>
         </motion.div>

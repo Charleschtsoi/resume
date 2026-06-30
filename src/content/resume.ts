@@ -312,7 +312,7 @@ export const chapterIds = narrativeChapters.map((c) => c.id);
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/story", label: "Story" },
-  { href: "/experience", label: "Experience" },
+  { href: "/experience", label: "Quest Log" },
   { href: "/skills", label: "Skills" },
   { href: "/work", label: "Work" },
   { href: "/showcase", label: "Showcase" },

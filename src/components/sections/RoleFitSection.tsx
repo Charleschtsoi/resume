@@ -31,7 +31,7 @@ export function RoleFitSection() {
         </ul>
         <div className="mt-8">
           <Button asChild variant="outline">
-            <Link href="/experience">Full timeline → Experience</Link>
+            <Link href="/experience">Full quest log →</Link>
           </Button>
         </div>
       </div>

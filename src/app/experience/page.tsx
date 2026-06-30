@@ -3,8 +3,8 @@ import { experience, profile } from "@/content/resume";
 import { ExperienceList } from "@/components/sections/ExperienceList";
 
 export const metadata: Metadata = {
-  title: `Experience — ${profile.name}`,
-  description: "Professional experience across Apple, AAHK, HKJC, Accenture, Cathay Pacific, and more.",
+  title: `Quest Log — ${profile.name}`,
+  description: "Career quest log across Apple, AAHK, HKJC, Accenture, Cathay Pacific, and more.",
 };
 
 export default function ExperiencePage() {
@@ -12,10 +12,10 @@ export default function ExperiencePage() {
     <main id="main-content" className="min-h-screen bg-[var(--apple-gray-100)] pt-24 pb-16">
       <div className="mx-auto max-w-[980px] px-6 md:px-12">
         <p className="text-sm font-medium uppercase tracking-[0.15em] text-[var(--apple-blue)]">
-          Experience
+          Quest Log
         </p>
         <h1 className="mt-4 text-headline font-semibold tracking-tight text-[var(--apple-black)]">
-          12+ years. One thread.
+          Boss battles cleared.
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
           {profile.tagline}

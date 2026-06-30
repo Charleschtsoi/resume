@@ -11,7 +11,7 @@ Role-agnostic career portfolio with an interactive homepage and Apple-inspired s
 - **Presenter mode** — `/story?present=1` or nav **Present** on Story: shorter sections, full-opacity text, chapter toolbar, arrow-key navigation
 - **Work page** — Six curated repos with role relevance lines and 30s talk tracks ([`/work`](http://localhost:3000/work))
 - **Showcase page** — Production deployments: live URLs, architecture, clone steps, APIs ([`/showcase`](http://localhost:3000/showcase))
-- **Supporting pages** — Experience timeline, skills/certs, contact + PDF
+- **Supporting pages** — Quest Log (experience), skills/certs with wizard accent, contact + PDF
 
 ## Stack
 

@@ -111,7 +111,7 @@ export default function WorkPage() {
             <Link href="/">Back to story</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
-            <Link href="/experience">Full timeline</Link>
+            <Link href="/experience">Quest log</Link>
           </Button>
         </div>
       </div>
