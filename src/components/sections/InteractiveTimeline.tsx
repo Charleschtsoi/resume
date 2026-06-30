@@ -64,7 +64,7 @@ export function InteractiveTimeline() {
           variants={fadeInView}
           className="mt-4 text-headline font-semibold tracking-tight"
         >
-          12+ years. One campaign.
+          14 years. One campaign.
         </motion.h2>
 
         <div className="mt-12 flex gap-3 overflow-x-auto pb-4 md:justify-between">

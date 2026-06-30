@@ -2,7 +2,7 @@ export const profile = {
   name: "Charles Tsoi",
   title: "AI · Machine Learning · App Development",
   tagline:
-    "12+ years in enterprise delivery — now building and shipping AI, machine learning, and mobile products end to end.",
+    "14 years in enterprise delivery (since 2012) — now building and shipping AI, machine learning, and mobile products end to end.",
   location: "Hong Kong",
   email: "charleschtsoi@gmail.com",
   links: {
@@ -11,6 +11,9 @@ export const profile = {
     medium: "https://medium.com/@charleschtsoi",
   },
   proofLine: "AI · ML · App development · Apple · AAHK",
+  currentOccupation: "Project Manager",
+  yearsExperience: 14,
+  careerSpan: "2012 – 2026",
   interviewerSubline:
     "Strong in AI agents, machine learning, and app development — open to any project where I can help",
   ctaTagline:
@@ -69,7 +72,7 @@ export const narrativeChapters: NarrativeChapter[] = [
     openingLine:
       "Thanks for having me. Let me give you the short version of how I got here — because on paper it might look like a few moves, but there's actually a very consistent thread.",
     paragraphs: [
-      "The thread is this: I've spent 12 years progressively moving from digital product delivery, to systems architecture, to AI — and at every step, I was the person sitting between business stakeholders and engineering teams, translating what one side needs into what the other side builds.",
+      "The thread is this: I've spent 14 years progressively moving from digital product delivery, to systems architecture, to AI — and at every step, I was the person sitting between business stakeholders and engineering teams, translating what one side needs into what the other side builds.",
     ],
     theme: "dark",
   },
@@ -141,11 +144,11 @@ export const narrativeChapters: NarrativeChapter[] = [
   {
     id: "aahk",
     label: "AAHK",
-    period: "2025 – Present",
+    period: "2024 – Present",
     headline: "AI in production. Scope as a skill.",
-    subheadline: "Airport Authority Hong Kong",
+    subheadline: "Airport Authority Hong Kong · 2 years",
     paragraphs: [
-      "And now at Airport Authority, I'm deploying LLM-based AI agents into production, running vendor technical due diligence, and gatekeeping scope. We delivered a capacity planning AI agent in ten weeks by saying 'no' to the right things at the right time.",
+      "Two years in at Airport Authority — deploying LLM-based AI agents into production, running vendor technical due diligence, and gatekeeping scope. We delivered a capacity planning AI agent in ten weeks by saying 'no' to the right things at the right time.",
     ],
     metrics: [
       { value: "80%", label: "Less manual query time (LLM agents)" },
@@ -226,7 +229,7 @@ export const experience: ExperienceEntry[] = [
     company: "Airport Authority Hong Kong",
     role: "Project Manager",
     location: "Hong Kong",
-    period: "Mar 2025 – Present",
+    period: "Mar 2024 – Present",
     bullets: [
       "Architected and deployed LLM-based agents for internal report automation; defined integration patterns between LLM core and internal databases, reducing manual query time by 80%.",
       "Conducted deep-dive architectural assessments of Microsoft ecosystem vendors — API capabilities, security protocols, scalability limits.",

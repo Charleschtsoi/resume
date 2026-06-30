@@ -1,4 +1,5 @@
 import { certifications, experience } from "@/content/resume";
+import { careerYears } from "@/content/game-theme";
 import { featuredProjects } from "@/content/github-work";
 
 export type HeroStat = {
@@ -9,7 +10,7 @@ export type HeroStat = {
 };
 
 export const heroStats: HeroStat[] = [
-  { value: 12, suffix: "+", label: "Years experience", gameLabel: "LVL" },
+  { value: careerYears, label: "Years experience", gameLabel: "YRS" },
   { value: 6, label: "Tier-1 employers", gameLabel: "QUESTS" },
   { value: certifications.length, label: "Certifications", gameLabel: "BADGES" },
 ];
@@ -40,7 +41,7 @@ export const valuePillars: ValuePillar[] = [
   {
     id: "architecture",
     title: "Enterprise delivery",
-    proof: "12+ years at Apple, AAHK, HKJC — scope discipline, vendor diligence, and shipping",
+    proof: "14 years at Apple, AAHK, HKJC — scope discipline, vendor diligence, and shipping",
     icon: "🛡",
     skillPoints: 88,
   },
@@ -100,12 +101,12 @@ export const timelineMilestones: TimelineMilestone[] = [
   {
     id: "aahk",
     company: "Airport Authority Hong Kong",
-    period: "2025 – Present",
+    period: "2024 – Present",
     role: "Project Manager",
-    level: 12,
+    level: 14,
     questTitle: "AI in Production",
     teaser: [
-      "LLM agents in production — 80% less manual query time",
+      "Two years deploying LLM agents in production — 80% less manual query time",
       "Vendor diligence and legacy-to-cloud migration",
     ],
     storyAnchor: "aahk",
@@ -145,7 +146,7 @@ export const strengthTabs: StrengthTab[] = [
   {
     id: "architecture",
     label: "Delivery",
-    metric: { value: "12+", label: "Years enterprise experience" },
+    metric: { value: "14 years", label: "Enterprise experience since 2012" },
     bullets: [
       "Apple, AAHK, HKJC — regulated and high-stakes environments",
       "Scope gatekeeping — deliver AI agents in weeks, not months",

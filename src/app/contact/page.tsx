@@ -28,8 +28,10 @@ export default function ContactPage() {
 
         <div className="game-hud mt-10 rounded-lg p-6">
           <p className="font-game text-[10px] tracking-wider text-[var(--game-gold)] uppercase">
-            Specialities
+            Current class · Level {profile.yearsExperience}
           </p>
+          <p className="mt-2 text-lg font-semibold text-white">{profile.currentOccupation}</p>
+          <p className="mt-1 text-sm text-[var(--apple-gray-400)]">{profile.careerSpan}</p>
           <ul className="mt-3 space-y-2 text-sm text-[var(--apple-gray-300)]">
             <li><span className="text-[var(--game-cyan)]">▸</span> AI &amp; machine learning — LLM agents, model integration, ML products</li>
             <li><span className="text-[var(--game-cyan)]">▸</span> App development — React Native, Expo, full-stack web</li>

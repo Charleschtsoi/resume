@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import { heroStats } from "@/content/homepage";
+import { currentOccupation, currentPlayerLevel } from "@/content/game-theme";
 import { XPBar } from "@/components/game/XPBar";
 
 export function GameHUD() {
@@ -17,22 +18,22 @@ export function GameHUD() {
       <div className="flex items-center justify-between gap-4">
         <div>
           <p className="font-game text-[10px] tracking-widest text-[var(--game-gold)] uppercase">
-            Player Status
+            Current Class
           </p>
           <p className="mt-1 text-sm font-semibold text-white">
-            Solutions Architect
+            {currentOccupation}
           </p>
         </div>
         <div className="text-right">
           <p className="font-game text-[10px] tracking-widest text-[var(--game-cyan)] uppercase">
             Level
           </p>
-          <p className="font-game text-2xl text-[var(--game-gold)]">12</p>
+          <p className="font-game text-2xl text-[var(--game-gold)]">{currentPlayerLevel}</p>
         </div>
       </div>
 
       <div className="mt-4">
-        <XPBar value={92} label="Career XP" color="gold" />
+        <XPBar value={93} label="Career XP" color="gold" />
       </div>
 
       <div className="mt-4 grid grid-cols-3 gap-3">
