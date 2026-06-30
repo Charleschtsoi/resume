@@ -46,6 +46,7 @@ const companyIconMeta: Record<string, CompanyIconMeta> = {
     slug: "watson",
     label: "A.S. Watson Group",
     accent: "#00a0a8",
+    src: "/companies/watson.png",
   },
   "Cathay Pacific Airways": {
     slug: "cathay",
