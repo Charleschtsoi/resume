@@ -26,7 +26,7 @@ export type ProductionComponent = {
 export type ProductionProject = {
   slug: string;
   name: string;
-  status: "live" | "repo-only";
+  status: "live" | "repo-only" | "coming-soon";
   defaultOpen?: boolean;
   oneLiner: string;
   talkTrack?: string;
@@ -247,6 +247,33 @@ export const productionProjects: ProductionProject[] = [
     ],
   },
   {
+    slug: "product-tax-deduction-log",
+    name: "Product Tax Deduction Log",
+    status: "coming-soon",
+    defaultOpen: false,
+    oneLiner:
+      "React Native + Expo mobile app for logging product purchases and tax-deductible expenses — App Store submission in progress.",
+    talkTrack:
+      "A personal finance utility I'm shipping to the App Store soon. Tracks product purchases and helps organise tax deductions — ask me for a TestFlight preview.",
+    components: [
+      {
+        role: "frontend",
+        title: "React Native / Expo app",
+        contains: [
+          "Product purchase logging",
+          "Tax deduction tracking and categorisation",
+          "App Store submission in progress",
+        ],
+      },
+    ],
+    notes: [
+      {
+        title: "App Store",
+        body: "Submitting to the App Store soon. Live URL and repo link will be added here after release.",
+      },
+    ],
+  },
+  {
     slug: "resume",
     name: "Motion Resume (this site)",
     status: "repo-only",
@@ -282,42 +309,6 @@ export const productionProjects: ProductionProject[] = [
       {
         title: "Deploy",
         body: "Import repo at vercel.com/new or run npx vercel --prod. Add live URL to liveLinks when ready.",
-      },
-    ],
-  },
-  {
-    slug: "velora-beauty-tracker",
-    name: "velora-beauty-tracker",
-    status: "repo-only",
-    oneLiner:
-      "github.com/Charleschtsoi/velora-beauty-tracker — Beauty product expiration tracker (React Native + Expo).",
-    components: [
-      {
-        role: "frontend",
-        title: "React Native / Expo app",
-        repo: {
-          url: "https://github.com/Charleschtsoi/velora-beauty-tracker",
-          branch: "main",
-        },
-        contains: ["Mobile product — expiration tracking for beauty products"],
-      },
-    ],
-  },
-  {
-    slug: "velora-genai",
-    name: "velora_GenAI_submission",
-    status: "repo-only",
-    oneLiner:
-      "github.com/Charleschtsoi/velora_GenAI_submission — GenAI product submission slice.",
-    components: [
-      {
-        role: "frontend",
-        title: "GenAI submission",
-        repo: {
-          url: "https://github.com/Charleschtsoi/velora_GenAI_submission",
-          branch: "main",
-        },
-        contains: ["GenAI feature work — prompts, UX, PoC boundaries"],
       },
     ],
   },

@@ -9,6 +9,7 @@ const tierColors: Record<string, string> = {
   RARE: "game-badge-rare",
   META: "game-badge-meta",
   SECURE: "game-badge-secure",
+  SOON: "game-badge-soon",
 };
 
 export function AchievementBadge({ tier, className = "" }: AchievementBadgeProps) {

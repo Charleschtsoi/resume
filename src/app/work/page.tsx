@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: `Work — ${profile.name}`,
   description:
-    "Curated GitHub projects — AI agents, product delivery, regulated rigour.",
+    "Curated projects in AI, machine learning, and app development — open to collaborations.",
 };
 
 const pillarOrder: WorkPillar[] = ["ai", "product", "rigour"];
@@ -88,8 +88,8 @@ export default function WorkPage() {
             {githubWorkIntro.closingScript}
           </p>
           <p className="mt-6 text-sm text-muted-foreground">
-            Short on time? Show only <strong>LungLens</strong> +{" "}
-            <strong>AI Agent X-Ray</strong>, then link to full profile.
+            Short on time? Show <strong>LungLens</strong> +{" "}
+            <strong>Product Tax Deduction Log</strong>, then link to full profile.
           </p>
         </section>
 

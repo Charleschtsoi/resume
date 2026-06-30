@@ -7,7 +7,18 @@ type ProductionProjectPanelProps = {
 };
 
 export function ProductionProjectPanel({ project }: ProductionProjectPanelProps) {
-  const isLive = project.status === "live";
+  const statusLabel =
+    project.status === "live"
+      ? "Live"
+      : project.status === "coming-soon"
+        ? "App Store soon"
+        : "Repo only";
+  const statusClass =
+    project.status === "live"
+      ? "bg-green-100 text-green-800"
+      : project.status === "coming-soon"
+        ? "bg-emerald-100 text-emerald-800"
+        : "bg-[var(--apple-gray-100)] text-muted-foreground";
 
   return (
     <details
@@ -23,13 +34,9 @@ export function ProductionProjectPanel({ project }: ProductionProjectPanelProps)
                 {project.name}
               </h3>
               <span
-                className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                  isLive
-                    ? "bg-green-100 text-green-800"
-                    : "bg-[var(--apple-gray-100)] text-muted-foreground"
-                }`}
+                className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${statusClass}`}
               >
-                {isLive ? "Live" : "Repo only"}
+                {statusLabel}
               </span>
             </div>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">

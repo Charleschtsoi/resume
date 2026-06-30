@@ -18,11 +18,17 @@ export function HomeCTA() {
         variants={fadeInView}
         className="mx-auto max-w-[720px]"
       >
-        <h2 className="text-headline font-semibold tracking-tight text-[var(--apple-black)]">
-          Let&apos;s connect.
+        <p className="font-game text-[10px] tracking-[0.2em] text-[var(--apple-blue)] uppercase">
+          Open to projects
+        </p>
+        <h2 className="mt-4 text-headline font-semibold tracking-tight text-[var(--apple-black)]">
+          Let&apos;s build something.
         </h2>
         <p className="mt-6 text-lg text-muted-foreground md:text-xl">
           {profile.ctaTagline}
+        </p>
+        <p className="mt-4 text-base text-muted-foreground">
+          {profile.availabilityLine}
         </p>
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Button

@@ -21,7 +21,7 @@ export function ValuePillars() {
           variants={fadeInView}
           className="font-game text-[10px] tracking-[0.2em] text-[var(--apple-blue)] uppercase"
         >
-          Skill Tree
+          AI · ML · App Dev
         </motion.p>
         <motion.h2
           initial={reduceMotion ? false : "hidden"}
@@ -30,7 +30,7 @@ export function ValuePillars() {
           variants={fadeInView}
           className="mt-4 text-headline font-semibold tracking-tight text-[var(--apple-black)]"
         >
-          Three pillars. One thread.
+          Three pillars. Open to help.
         </motion.h2>
 
         <div className="mt-12 grid gap-6 md:grid-cols-3">
