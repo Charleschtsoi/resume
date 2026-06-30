@@ -1,22 +1,33 @@
 import Link from "next/link";
 import type { WorkProject } from "@/content/github-work";
+import { AchievementBadge } from "@/components/game/AchievementBadge";
 
 type ProjectCardProps = {
   project: WorkProject;
 };
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const isComingSoon = project.status === "coming-soon";
+
   return (
-    <article className="flex h-full flex-col rounded-2xl border border-border bg-white p-6 shadow-sm transition hover:border-[var(--apple-blue)]/40 hover:shadow-md">
+    <article className="game-card-light flex h-full flex-col rounded-2xl p-6">
       <div className="flex flex-wrap items-start justify-between gap-2">
         <h3 className="text-xl font-semibold tracking-tight text-[var(--apple-black)]">
           {project.name}
         </h3>
-        {project.stars !== undefined && project.stars > 0 && (
-          <span className="rounded-full bg-[var(--apple-gray-100)] px-2 py-0.5 text-xs text-muted-foreground">
-            ★ {project.stars}
-          </span>
-        )}
+        <div className="flex items-center gap-2">
+          {project.achievement && <AchievementBadge tier={project.achievement} />}
+          {isComingSoon && (
+            <span className="rounded-full bg-[var(--game-green)]/10 px-2 py-0.5 text-xs font-medium text-[var(--game-green)]">
+              App Store soon
+            </span>
+          )}
+          {project.stars !== undefined && project.stars > 0 && (
+            <span className="rounded-full bg-[var(--apple-gray-100)] px-2 py-0.5 text-xs text-muted-foreground">
+              ★ {project.stars}
+            </span>
+          )}
+        </div>
       </div>
 
       <p className="mt-2 text-lg font-medium text-[var(--apple-black)]/90">
@@ -52,17 +63,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
             href={`/showcase#${project.productionSlug}`}
             className="text-sm font-semibold text-[var(--apple-blue)] hover:underline"
           >
-            View production →
+            {isComingSoon ? "View details →" : "View production →"}
           </Link>
         )}
-        <Link
-          href={project.repoUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm font-medium text-[var(--apple-blue)] hover:underline"
-        >
-          View on GitHub →
-        </Link>
+        {project.repoUrl && (
+          <Link
+            href={project.repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-[var(--apple-blue)] hover:underline"
+          >
+            View on GitHub →
+          </Link>
+        )}
         {project.secondaryRepoUrl && (
           <Link
             href={project.secondaryRepoUrl}

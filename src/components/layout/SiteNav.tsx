@@ -18,6 +18,8 @@ export function SiteNav() {
   const reduceMotion = useReducedMotion();
   const { isPresenterMode, togglePresenterMode } = usePresenterMode();
   const isStory = pathname === "/story";
+  const isHome = pathname === "/";
+  const isLightPage = !isHome && !isStory;
   const minimalNav = isPresenterMode && isStory;
 
   useEffect(() => {
@@ -27,18 +29,20 @@ export function SiteNav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const navClassName = `fixed top-0 right-0 left-0 z-50 transition-colors duration-300 ${
-    scrolled
-      ? "border-b border-white/10 bg-[var(--apple-black)]/80 backdrop-blur-xl"
-      : "bg-transparent"
-  }`;
+  const navClassName = scrolled
+    ? "border-b border-white/10 bg-[var(--apple-black)]/80 backdrop-blur-xl"
+    : isLightPage
+      ? "border-b border-border/60 bg-[var(--apple-gray-100)]/90 backdrop-blur-xl"
+      : "bg-transparent";
 
   if (reduceMotion) {
     return (
-      <header className={navClassName}>
+      <header className={`fixed top-0 right-0 left-0 z-50 transition-colors duration-300 ${navClassName}`}>
         <NavInner
           pathname={pathname}
           isStory={isStory}
+          isLightPage={isLightPage}
+          scrolled={scrolled}
           minimalNav={minimalNav}
           isPresenterMode={isPresenterMode}
           onTogglePresent={togglePresenterMode}
@@ -52,11 +56,13 @@ export function SiteNav() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className={navClassName}
+      className={`fixed top-0 right-0 left-0 z-50 transition-colors duration-300 ${navClassName}`}
     >
       <NavInner
         pathname={pathname}
         isStory={isStory}
+        isLightPage={isLightPage}
+        scrolled={scrolled}
         minimalNav={minimalNav}
         isPresenterMode={isPresenterMode}
         onTogglePresent={togglePresenterMode}
@@ -68,16 +74,21 @@ export function SiteNav() {
 function NavInner({
   pathname,
   isStory,
+  isLightPage,
+  scrolled,
   minimalNav,
   isPresenterMode,
   onTogglePresent,
 }: {
   pathname: string;
   isStory: boolean;
+  isLightPage: boolean;
+  scrolled: boolean;
   minimalNav: boolean;
   isPresenterMode: boolean;
   onTogglePresent: () => void;
 }) {
+  const useDarkText = isLightPage && !scrolled;
   const visibleLinks = minimalNav
     ? navLinks.filter((l) => l.href === "/story" || l.href === "/contact")
     : navLinks;
@@ -87,7 +98,9 @@ function NavInner({
       <div className="mx-auto flex h-14 max-w-[1200px] items-center justify-between px-6 md:h-16 md:px-12">
         <Link
           href="/"
-          className="text-sm font-semibold tracking-tight text-[var(--apple-gray-100)] md:text-base"
+          className={`text-sm font-semibold tracking-tight md:text-base ${
+            useDarkText ? "text-[var(--apple-black)]" : "text-[var(--apple-gray-100)]"
+          }`}
         >
           {profile.name}
         </Link>
@@ -105,7 +118,9 @@ function NavInner({
                 className={`text-sm transition-colors ${
                   isActive
                     ? "text-[var(--apple-blue)]"
-                    : "text-[var(--apple-gray-300)] hover:text-white"
+                    : useDarkText
+                      ? "text-[var(--apple-gray-400)] hover:text-[var(--apple-black)]"
+                      : "text-[var(--apple-gray-300)] hover:text-white"
                 }`}
               >
                 {link.label}
@@ -141,13 +156,21 @@ function NavInner({
               className={`rounded-full border px-3 py-1 text-xs font-medium transition ${
                 isPresenterMode
                   ? "border-[var(--apple-blue)] bg-[var(--apple-blue)] text-white"
-                  : "border-white/20 text-[var(--apple-gray-300)] hover:border-white/40"
+                  : useDarkText
+                    ? "border-border text-[var(--apple-gray-400)] hover:border-[var(--apple-blue)] hover:text-[var(--apple-black)]"
+                    : "border-white/20 text-[var(--apple-gray-300)] hover:border-white/40"
               }`}
             >
               {isPresenterMode ? "Presenting" : "Present"}
             </button>
           )}
-          <span className="hidden rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-medium text-[var(--apple-gray-300)] lg:inline">
+          <span
+            className={`hidden rounded-full border px-3 py-1 text-xs font-medium lg:inline ${
+              useDarkText
+                ? "border-border bg-white/60 text-[var(--apple-gray-400)]"
+                : "border-white/20 bg-white/5 text-[var(--apple-gray-300)]"
+            }`}
+          >
             {profile.proofLine}
           </span>
           {!minimalNav && (
@@ -164,17 +187,31 @@ function NavInner({
 
       <nav
         aria-label="Mobile"
-        className="flex justify-center gap-4 border-t border-white/5 px-4 py-2 md:hidden"
+        className={`flex justify-center gap-4 border-t px-4 py-2 md:hidden ${
+          useDarkText ? "border-border/60" : "border-white/5"
+        }`}
       >
-        {visibleLinks.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className="text-xs text-[var(--apple-gray-300)]"
-          >
-            {link.label}
-          </Link>
-        ))}
+        {visibleLinks.map((link) => {
+          const isActive =
+            link.href === "/"
+              ? pathname === "/"
+              : pathname.startsWith(link.href);
+          return (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`text-xs ${
+                isActive
+                  ? "text-[var(--apple-blue)]"
+                  : useDarkText
+                    ? "text-[var(--apple-gray-400)]"
+                    : "text-[var(--apple-gray-300)]"
+              }`}
+            >
+              {link.label}
+            </Link>
+          );
+        })}
       </nav>
     </>
   );

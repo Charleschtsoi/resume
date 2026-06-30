@@ -26,7 +26,7 @@ export function SkillsGrid({ categories, education, certifications }: SkillsGrid
             viewport={{ once: true, margin: "-5%" }}
             custom={i}
             variants={staggerChild}
-            className="rounded-2xl border border-border bg-white p-8 shadow-sm"
+            className="game-card-light rounded-2xl p-8"
           >
             <h2 className="text-lg font-semibold text-[var(--apple-black)]">
               {cat.title}
@@ -35,7 +35,7 @@ export function SkillsGrid({ categories, education, certifications }: SkillsGrid
               {cat.items.map((item) => (
                 <li
                   key={item}
-                  className="text-muted-foreground before:mr-2 before:text-[var(--apple-blue)] before:content-['•']"
+                  className="text-muted-foreground before:mr-2 before:text-[var(--game-cyan)] before:content-['▸']"
                 >
                   {item}
                 </li>
@@ -53,14 +53,14 @@ export function SkillsGrid({ categories, education, certifications }: SkillsGrid
         custom={0}
         className="mt-16"
       >
-        <h2 className="text-title font-semibold text-[var(--apple-black)]">
+        <h2 className="font-game text-[10px] tracking-[0.2em] text-[var(--apple-blue)] uppercase">
           Education
         </h2>
         <div className="mt-6 space-y-6">
           {education.map((edu) => (
             <div
               key={edu.school}
-              className="rounded-2xl border border-border bg-white p-6"
+              className="game-card-light rounded-2xl p-6"
             >
               <h3 className="font-semibold">{edu.school}</h3>
               <p className="text-muted-foreground">{edu.degree}</p>
@@ -83,14 +83,14 @@ export function SkillsGrid({ categories, education, certifications }: SkillsGrid
         custom={1}
         className="mt-16"
       >
-        <h2 className="text-title font-semibold text-[var(--apple-black)]">
+        <h2 className="font-game text-[10px] tracking-[0.2em] text-[var(--apple-blue)] uppercase">
           Certifications
         </h2>
         <ul className="mt-6 flex flex-wrap gap-3">
           {certifications.map((cert) => (
             <li
               key={cert}
-              className="rounded-full border border-border bg-white px-4 py-2 text-sm text-muted-foreground"
+              className="rounded-full border border-[var(--game-border)]/40 bg-white px-4 py-2 text-sm text-muted-foreground"
             >
               {cert}
             </li>

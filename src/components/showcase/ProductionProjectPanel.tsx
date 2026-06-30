@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ProductionProject } from "@/content/production-showcase";
 import { ComponentBlock } from "@/components/showcase/ComponentBlock";
 import { ArchitectureBlock } from "@/components/showcase/ArchitectureBlock";
@@ -7,13 +8,24 @@ type ProductionProjectPanelProps = {
 };
 
 export function ProductionProjectPanel({ project }: ProductionProjectPanelProps) {
-  const isLive = project.status === "live";
+  const statusLabel =
+    project.status === "live"
+      ? "Live"
+      : project.status === "coming-soon"
+        ? "App Store soon"
+        : "Repo only";
+  const statusClass =
+    project.status === "live"
+      ? "game-badge-meta font-game text-[8px] uppercase"
+      : project.status === "coming-soon"
+        ? "game-badge-soon font-game text-[8px] uppercase"
+        : "rounded-full bg-[var(--apple-gray-100)] px-2.5 py-0.5 text-xs text-muted-foreground";
 
   return (
     <details
       id={project.slug}
       open={project.defaultOpen}
-      className="group scroll-mt-24 rounded-2xl border border-border bg-white shadow-sm"
+      className="group game-card-light scroll-mt-24 rounded-2xl"
     >
       <summary className="cursor-pointer list-none px-6 py-5 [&::-webkit-details-marker]:hidden">
         <div className="flex flex-wrap items-start justify-between gap-3">
@@ -22,19 +34,25 @@ export function ProductionProjectPanel({ project }: ProductionProjectPanelProps)
               <h3 className="text-xl font-semibold text-[var(--apple-black)]">
                 {project.name}
               </h3>
-              <span
-                className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${
-                  isLive
-                    ? "bg-green-100 text-green-800"
-                    : "bg-[var(--apple-gray-100)] text-muted-foreground"
-                }`}
-              >
-                {isLive ? "Live" : "Repo only"}
+              <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${statusClass}`}>
+                {statusLabel}
               </span>
             </div>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               {project.oneLiner}
             </p>
+            {project.showcaseImage && (
+              <div className="mt-4 overflow-hidden rounded-xl border border-border bg-[var(--apple-gray-100)]">
+                <Image
+                  src={project.showcaseImage}
+                  alt={project.showcaseImageAlt ?? `${project.name} showcase`}
+                  width={1200}
+                  height={750}
+                  className="h-auto w-full"
+                  sizes="(max-width: 980px) 100vw, 980px"
+                />
+              </div>
+            )}
           </div>
           <span
             className="text-muted-foreground transition group-open:rotate-180"

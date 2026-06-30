@@ -1,8 +1,8 @@
 export const profile = {
   name: "Charles Tsoi",
-  title: "Solutions Architecture & Technical Product Strategy",
+  title: "AI · Machine Learning · App Development",
   tagline:
-    "12+ years bridging business strategy and engineering execution for Tier-1 organizations.",
+    "14 years in enterprise delivery (since 2012) — now building and shipping AI, machine learning, and mobile products end to end.",
   location: "Hong Kong",
   email: "charleschtsoi@gmail.com",
   links: {
@@ -10,14 +10,19 @@ export const profile = {
     github: "https://github.com/Charleschtsoi",
     medium: "https://medium.com/@charleschtsoi",
   },
-  proofLine: "12+ years · Apple · AAHK · regulated systems",
+  proofLine: "AI · ML · App development · Apple · AAHK",
+  currentOccupation: "Project Manager",
+  yearsExperience: 14,
+  careerSpan: "2012 – 2026",
   interviewerSubline:
-    "Bridging business stakeholders and engineering — product → architecture → AI",
+    "Strong in AI agents, machine learning, and app development — open to any project where I can help",
   ctaTagline:
-    "Regulated systems · enterprise delivery · hands-on technical leadership",
-  seoTitle: "Solutions Architecture & Technical Product Strategy",
+    "Open to collaborations, consulting, and full-time roles. If you have a problem in AI, ML, or app development — let's talk.",
+  availabilityLine:
+    "Available for AI, machine learning, and mobile app projects — from PoC to App Store.",
+  seoTitle: "AI, Machine Learning & App Development",
   seoDescription:
-    "12+ years bridging business strategy and engineering execution. Apple, Airport Authority HK, HKJC. Enterprise AI, regulated systems, and production delivery.",
+    "Charles Tsoi — AI, machine learning, and app development. Enterprise LLM agents, production ML products, and mobile apps. Open to projects where I can help.",
 };
 
 export type ChapterMetric = {
@@ -41,10 +46,10 @@ export type NarrativeChapter = {
 export const coreStrengths = {
   title: "What I bring",
   bullets: [
-    "Delivery discipline: scope gatekeeping and evidence-based shipping (AAHK capacity agent, 10 weeks)",
-    "Regulated environments: HKJC compliance APIs, Apple architectural review standard, Cathay legacy integration",
-    "Vendor & technical diligence: Microsoft ecosystem assessments — API, security, scalability",
-    "Production systems thinking: from event-driven architecture to enterprise AI agents",
+    "AI & machine learning: LLM agents in production, model integration, and hands-on ML products (LungLens, AI Agent X-Ray)",
+    "App development: React Native and Expo apps shipped end to end — Hermes, Product Tax Deduction Log (App Store soon)",
+    "Enterprise delivery: scope gatekeeping, vendor diligence, and evidence-based shipping at Apple and AAHK",
+    "Open to help: happy to take on any project where my skills in AI, ML, or app development can move the needle",
   ],
 };
 
@@ -67,7 +72,7 @@ export const narrativeChapters: NarrativeChapter[] = [
     openingLine:
       "Thanks for having me. Let me give you the short version of how I got here — because on paper it might look like a few moves, but there's actually a very consistent thread.",
     paragraphs: [
-      "The thread is this: I've spent 12 years progressively moving from digital product delivery, to systems architecture, to AI — and at every step, I was the person sitting between business stakeholders and engineering teams, translating what one side needs into what the other side builds.",
+      "The thread is this: I've spent 14 years progressively moving from digital product delivery, to systems architecture, to AI — and at every step, I was the person sitting between business stakeholders and engineering teams, translating what one side needs into what the other side builds.",
     ],
     theme: "dark",
   },
@@ -139,11 +144,11 @@ export const narrativeChapters: NarrativeChapter[] = [
   {
     id: "aahk",
     label: "AAHK",
-    period: "2025 – Present",
+    period: "2024 – Present",
     headline: "AI in production. Scope as a skill.",
-    subheadline: "Airport Authority Hong Kong",
+    subheadline: "Airport Authority Hong Kong · 2 years",
     paragraphs: [
-      "And now at Airport Authority, I'm deploying LLM-based AI agents into production, running vendor technical due diligence, and gatekeeping scope. We delivered a capacity planning AI agent in ten weeks by saying 'no' to the right things at the right time.",
+      "Two years in at Airport Authority — deploying LLM-based AI agents into production, running vendor technical due diligence, and gatekeeping scope. We delivered a capacity planning AI agent in ten weeks by saying 'no' to the right things at the right time.",
     ],
     metrics: [
       { value: "80%", label: "Less manual query time (LLM agents)" },
@@ -154,7 +159,7 @@ export const narrativeChapters: NarrativeChapter[] = [
       "LLM-based agents for internal report automation — 80% reduction in manual query time",
       "Vendor technical due diligence on Microsoft ecosystem — API, security, scalability",
       "End-to-end delivery of new Insurance System — legacy mainframe to cloud migration",
-      "Hands-on repos: LungLens, localLLM, security_alert — see Work page for curated GitHub",
+      "Hands-on repos: LungLens, Hermes, Product Tax Deduction Log — see Work page for curated GitHub",
     ],
     theme: "dark",
   },
@@ -224,7 +229,7 @@ export const experience: ExperienceEntry[] = [
     company: "Airport Authority Hong Kong",
     role: "Project Manager",
     location: "Hong Kong",
-    period: "Mar 2025 – Present",
+    period: "Mar 2024 – Present",
     bullets: [
       "Architected and deployed LLM-based agents for internal report automation; defined integration patterns between LLM core and internal databases, reducing manual query time by 80%.",
       "Conducted deep-dive architectural assessments of Microsoft ecosystem vendors — API capabilities, security protocols, scalability limits.",
