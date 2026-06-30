@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { ProductionProject } from "@/content/production-showcase";
 import { ComponentBlock } from "@/components/showcase/ComponentBlock";
 import { ArchitectureBlock } from "@/components/showcase/ArchitectureBlock";
@@ -40,6 +41,18 @@ export function ProductionProjectPanel({ project }: ProductionProjectPanelProps)
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               {project.oneLiner}
             </p>
+            {project.showcaseImage && (
+              <div className="mt-4 overflow-hidden rounded-xl border border-border bg-[var(--apple-gray-100)]">
+                <Image
+                  src={project.showcaseImage}
+                  alt={project.showcaseImageAlt ?? `${project.name} showcase`}
+                  width={1200}
+                  height={750}
+                  className="h-auto w-full"
+                  sizes="(max-width: 980px) 100vw, 980px"
+                />
+              </div>
+            )}
           </div>
           <span
             className="text-muted-foreground transition group-open:rotate-180"
