@@ -4,7 +4,7 @@ import { profile } from "@/content/resume";
 export const metadata: Metadata = {
   title: `Career Story — ${profile.name}`,
   description:
-    "Scroll narrative: product delivery to systems architecture to AI — 14+ years at Cathay, HKJC, Apple, and AAHK.",
+    "Scroll narrative: product delivery to systems architecture to AI — 14 years at Cathay, HKJC, Apple, and AAHK (since 2012).",
 };
 
 export default function StoryLayout({ children }: { children: React.ReactNode }) {

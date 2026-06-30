@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import { heroStats } from "@/content/homepage";
-import { currentPlayerLevel } from "@/content/game-theme";
+import { currentOccupation, currentPlayerLevel } from "@/content/game-theme";
 import { XPBar } from "@/components/game/XPBar";
 
 export function GameHUD() {
@@ -18,10 +18,10 @@ export function GameHUD() {
       <div className="flex items-center justify-between gap-4">
         <div>
           <p className="font-game text-[10px] tracking-widest text-[var(--game-gold)] uppercase">
-            Player Status
+            Current Class
           </p>
           <p className="mt-1 text-sm font-semibold text-white">
-            Solutions Architect
+            {currentOccupation}
           </p>
         </div>
         <div className="text-right">

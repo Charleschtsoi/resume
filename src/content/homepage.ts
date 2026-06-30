@@ -10,7 +10,7 @@ export type HeroStat = {
 };
 
 export const heroStats: HeroStat[] = [
-  { value: careerYears, suffix: "+", label: "Years experience", gameLabel: "LVL" },
+  { value: careerYears, label: "Years experience", gameLabel: "YRS" },
   { value: 6, label: "Tier-1 employers", gameLabel: "QUESTS" },
   { value: certifications.length, label: "Certifications", gameLabel: "BADGES" },
 ];
@@ -41,7 +41,7 @@ export const valuePillars: ValuePillar[] = [
   {
     id: "architecture",
     title: "Enterprise delivery",
-    proof: "14+ years at Apple, AAHK, HKJC — scope discipline, vendor diligence, and shipping",
+    proof: "14 years at Apple, AAHK, HKJC — scope discipline, vendor diligence, and shipping",
     icon: "🛡",
     skillPoints: 88,
   },
@@ -146,7 +146,7 @@ export const strengthTabs: StrengthTab[] = [
   {
     id: "architecture",
     label: "Delivery",
-    metric: { value: "14+", label: "Years enterprise experience" },
+    metric: { value: "14 years", label: "Enterprise experience since 2012" },
     bullets: [
       "Apple, AAHK, HKJC — regulated and high-stakes environments",
       "Scope gatekeeping — deliver AI agents in weeks, not months",

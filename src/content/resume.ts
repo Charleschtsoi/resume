@@ -2,7 +2,7 @@ export const profile = {
   name: "Charles Tsoi",
   title: "AI · Machine Learning · App Development",
   tagline:
-    "14+ years in enterprise delivery — now building and shipping AI, machine learning, and mobile products end to end.",
+    "14 years in enterprise delivery (since 2012) — now building and shipping AI, machine learning, and mobile products end to end.",
   location: "Hong Kong",
   email: "charleschtsoi@gmail.com",
   links: {
@@ -11,6 +11,9 @@ export const profile = {
     medium: "https://medium.com/@charleschtsoi",
   },
   proofLine: "AI · ML · App development · Apple · AAHK",
+  currentOccupation: "Project Manager",
+  yearsExperience: 14,
+  careerSpan: "2012 – 2026",
   interviewerSubline:
     "Strong in AI agents, machine learning, and app development — open to any project where I can help",
   ctaTagline:
@@ -69,7 +72,7 @@ export const narrativeChapters: NarrativeChapter[] = [
     openingLine:
       "Thanks for having me. Let me give you the short version of how I got here — because on paper it might look like a few moves, but there's actually a very consistent thread.",
     paragraphs: [
-      "The thread is this: I've spent 12 years progressively moving from digital product delivery, to systems architecture, to AI — and at every step, I was the person sitting between business stakeholders and engineering teams, translating what one side needs into what the other side builds.",
+      "The thread is this: I've spent 14 years progressively moving from digital product delivery, to systems architecture, to AI — and at every step, I was the person sitting between business stakeholders and engineering teams, translating what one side needs into what the other side builds.",
     ],
     theme: "dark",
   },
