@@ -182,6 +182,71 @@ export const productionProjects: ProductionProject[] = [
     ],
   },
   {
+    slug: "hermes",
+    name: "Hermes (ExpiryScanner)",
+    status: "repo-only",
+    oneLiner:
+      "github.com/Charleschtsoi/Hermes — React Native + Expo mobile app with barcode scanning, GPT-4o-mini product analysis, and Supabase backend.",
+    talkTrack:
+      "Full mobile product loop: camera scan → AI identification → shelf-life estimation → push notifications. Same product discipline as enterprise, at app scale.",
+    components: [
+      {
+        role: "frontend",
+        title: "React Native / Expo app",
+        repo: {
+          url: "https://github.com/Charleschtsoi/Hermes",
+          branch: "main",
+        },
+        contains: [
+          "Barcode scanning (EAN13, UPC, QR)",
+          "AI product analysis via OpenAI GPT-4o-mini",
+          "Supabase auth, inventory, and push notifications",
+        ],
+        clone: {
+          label: "Clone",
+          steps: [
+            "git clone https://github.com/Charleschtsoi/Hermes.git",
+            "cd Hermes",
+            "npm install",
+            "npx expo start",
+          ],
+        },
+      },
+    ],
+  },
+  {
+    slug: "ai-agent-xray",
+    name: "AI Agent X-Ray",
+    status: "repo-only",
+    oneLiner:
+      "github.com/Charleschtsoi/ai-agent-xray — Interactive visualization of LLM tool-calling flow with guardrail toggles.",
+    talkTrack:
+      "Side-by-side chat and x-ray panel showing agent steps — tool routing, token usage, guardrails. Built to explain agent architecture to non-engineering stakeholders.",
+    components: [
+      {
+        role: "frontend",
+        title: "Single-file interactive demo",
+        repo: {
+          url: "https://github.com/Charleschtsoi/ai-agent-xray",
+          branch: "main",
+        },
+        contains: [
+          "Chat + tool-calling flow visualization",
+          "Guardrail toggle demo",
+          "Token and step-by-step x-ray panel",
+        ],
+        clone: {
+          label: "Open locally",
+          steps: [
+            "git clone https://github.com/Charleschtsoi/ai-agent-xray.git",
+            "cd ai-agent-xray",
+            "open ai-agent-xray.html   # or serve with any static server",
+          ],
+        },
+      },
+    ],
+  },
+  {
     slug: "resume",
     name: "Motion Resume (this site)",
     status: "repo-only",

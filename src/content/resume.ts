@@ -154,7 +154,7 @@ export const narrativeChapters: NarrativeChapter[] = [
       "LLM-based agents for internal report automation — 80% reduction in manual query time",
       "Vendor technical due diligence on Microsoft ecosystem — API, security, scalability",
       "End-to-end delivery of new Insurance System — legacy mainframe to cloud migration",
-      "Hands-on repos: LungLens, localLLM, security_alert — see Work page for curated GitHub",
+      "Hands-on repos: LungLens, AI Agent X-Ray, Hermes — see Work page for curated GitHub",
     ],
     theme: "dark",
   },

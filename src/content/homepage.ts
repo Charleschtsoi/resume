@@ -5,12 +5,13 @@ export type HeroStat = {
   value: number;
   suffix?: string;
   label: string;
+  gameLabel?: string;
 };
 
 export const heroStats: HeroStat[] = [
-  { value: 12, suffix: "+", label: "Years experience" },
-  { value: 6, label: "Tier-1 employers" },
-  { value: certifications.length, label: "Certifications" },
+  { value: 12, suffix: "+", label: "Years experience", gameLabel: "LVL" },
+  { value: 6, label: "Tier-1 employers", gameLabel: "QUESTS" },
+  { value: certifications.length, label: "Certifications", gameLabel: "BADGES" },
 ];
 
 export type ValuePillar = {
@@ -18,6 +19,7 @@ export type ValuePillar = {
   title: string;
   proof: string;
   icon: string;
+  skillPoints: number;
 };
 
 export const valuePillars: ValuePillar[] = [
@@ -25,19 +27,22 @@ export const valuePillars: ValuePillar[] = [
     id: "product",
     title: "Product delivery",
     proof: "Stakeholder translation, backlog discipline, and full lifecycle ownership",
-    icon: "◆",
+    icon: "⚔",
+    skillPoints: 95,
   },
   {
     id: "architecture",
     title: "Systems architecture",
     proof: "API contracts, event-driven design, and integration at enterprise scale",
-    icon: "◇",
+    icon: "🛡",
+    skillPoints: 90,
   },
   {
     id: "ai",
     title: "AI & automation",
     proof: "LLM agents in production, vendor diligence, and scope gatekeeping",
-    icon: "○",
+    icon: "✦",
+    skillPoints: 88,
   },
 ];
 
@@ -46,6 +51,8 @@ export type TimelineMilestone = {
   company: string;
   period: string;
   role: string;
+  level: number;
+  questTitle: string;
   teaser: string[];
   storyAnchor?: string;
 };
@@ -56,6 +63,8 @@ export const timelineMilestones: TimelineMilestone[] = [
     company: "Cathay Pacific Airways",
     period: "2012 – 2018",
     role: "Product Owner",
+    level: 1,
+    questTitle: "The Mobile Frontier",
     teaser: [
       "Six years building the mobile app and modernising legacy notification systems",
       "Learned lifecycle ownership and PSS integration at scale",
@@ -67,6 +76,8 @@ export const timelineMilestones: TimelineMilestone[] = [
     company: "HKJC & Accenture",
     period: "2019 – 2022",
     role: "Solutions Analyst · Integration Architect",
+    level: 7,
+    questTitle: "Regulated Real-Time",
     teaser: [
       "Real-time betting systems with Solace Event Mesh in a regulated environment",
       "API contracts and value-driven delivery at Accenture",
@@ -78,6 +89,8 @@ export const timelineMilestones: TimelineMilestone[] = [
     company: "Apple",
     period: "2022 – 2024",
     role: "Engineering Project Manager",
+    level: 10,
+    questTitle: "Architectural Standard",
     teaser: [
       "iWork serverless migration with architectural review at every step",
       "Cross-team API delivery for WWDC releases",
@@ -89,6 +102,8 @@ export const timelineMilestones: TimelineMilestone[] = [
     company: "Airport Authority Hong Kong",
     period: "2025 – Present",
     role: "Project Manager",
+    level: 12,
+    questTitle: "AI in Production",
     teaser: [
       "LLM agents in production — 80% less manual query time",
       "Vendor diligence and legacy-to-cloud migration",
@@ -134,7 +149,7 @@ export const strengthTabs: StrengthTab[] = [
     bullets: [
       "LLM-based agents deployed to production",
       "Scope gatekeeping — deliver in weeks, not months",
-      "Hands-on repos: LungLens, localLLM, and more",
+      "Hands-on repos: LungLens, AI Agent X-Ray, Hermes",
       "MSc coursework in data science and system design",
     ],
   },
@@ -147,6 +162,7 @@ export type FeaturedLink = {
   href: string;
   external?: boolean;
   tag?: string;
+  achievement?: string;
 };
 
 export const featuredLinks: FeaturedLink[] = [
@@ -156,22 +172,25 @@ export const featuredLinks: FeaturedLink[] = [
     headline: "Full-stack AI product — live production deployment",
     href: "/showcase#lunglens",
     tag: "Production",
+    achievement: "LEGENDARY",
   },
   {
-    id: "lunglens-repo",
-    title: featuredProjects[0].name,
-    headline: featuredProjects[0].headline,
-    href: featuredProjects[0].repoUrl,
-    external: true,
-    tag: "GitHub",
-  },
-  {
-    id: "localllm",
-    title: featuredProjects[1].name,
+    id: "ai-agent-xray",
+    title: "AI Agent X-Ray",
     headline: featuredProjects[1].headline,
     href: featuredProjects[1].repoUrl,
     external: true,
     tag: "GitHub",
+    achievement: "EPIC",
+  },
+  {
+    id: "hermes",
+    title: "Hermes",
+    headline: featuredProjects[2].headline,
+    href: featuredProjects[2].repoUrl,
+    external: true,
+    tag: "Mobile",
+    achievement: "RARE",
   },
 ];
 

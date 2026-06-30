@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 import { profile } from "@/content/resume";
-import { heroStats } from "@/content/homepage";
-import { CountUp } from "@/components/motion/CountUp";
+import { GameHUD } from "@/components/game/GameHUD";
 import { Button } from "@/components/ui/button";
 import { easeApple } from "@/lib/motion";
 
@@ -24,12 +23,13 @@ export function HomeHero() {
   return (
     <section
       id="hero"
-      className="relative scroll-mt-20 overflow-hidden bg-[var(--apple-black)] px-6 pt-28 pb-20 text-[var(--apple-gray-100)] md:px-12 md:pt-36 md:pb-28"
+      className="game-section-dark game-scanlines relative scroll-mt-20 overflow-hidden px-6 pt-28 pb-20 text-[var(--apple-gray-100)] md:px-12 md:pt-36 md:pb-28"
     >
       <div
         className={`pointer-events-none absolute inset-0 overflow-hidden ${reduceMotion ? "" : "hero-gradient-pulse"}`}
       >
-        <div className="absolute left-1/2 top-1/4 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(0,113,227,0.12)_0%,transparent_70%)]" />
+        <div className="absolute left-1/2 top-1/4 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(0,212,255,0.1)_0%,transparent_70%)]" />
+        <div className="absolute right-1/4 bottom-1/4 h-[300px] w-[300px] rounded-full bg-[radial-gradient(circle,rgba(180,140,255,0.06)_0%,transparent_70%)]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-[980px] text-center">
@@ -37,7 +37,7 @@ export function HomeHero() {
           initial={reduceMotion ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: easeApple }}
-          className="text-sm font-medium uppercase tracking-[0.15em] text-[var(--apple-blue)]"
+          className="font-game text-[10px] tracking-[0.2em] text-[var(--game-cyan)] uppercase md:text-xs"
         >
           {profile.title}
         </motion.p>
@@ -72,42 +72,26 @@ export function HomeHero() {
           {profile.tagline}
         </motion.p>
 
-        <motion.div
-          initial={reduceMotion ? false : { opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.6 }}
-          className="mt-12 grid grid-cols-3 gap-4 md:gap-8"
-        >
-          {heroStats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="text-3xl font-semibold tracking-tight text-white md:text-4xl">
-                <CountUp value={stat.value} suffix={stat.suffix} />
-              </p>
-              <p className="mt-1 text-xs text-[var(--apple-gray-400)] md:text-sm">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </motion.div>
+        <GameHUD />
 
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.6 }}
-          className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <Button
             asChild
             size="lg"
-            className="bg-[var(--apple-blue)] px-8 text-white hover:bg-[var(--apple-blue-hover)]"
+            className="game-pixel-border bg-[var(--game-cyan)] px-8 font-semibold text-[var(--game-bg)] hover:bg-[var(--game-green)]"
           >
-            <Link href="/contact">Get in touch</Link>
+            <Link href="/contact">Start Quest →</Link>
           </Button>
           <Button
             asChild
             variant="outline"
             size="lg"
-            className="border-[var(--apple-gray-400)] bg-transparent text-white hover:bg-white/10"
+            className="border-[var(--game-border)] bg-transparent text-white hover:border-[var(--game-cyan)] hover:bg-[var(--game-cyan)]/10"
           >
             <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
               Download resume
@@ -123,9 +107,9 @@ export function HomeHero() {
         >
           <Link
             href="/story?present=1"
-            className="text-sm text-[var(--apple-blue)] transition hover:underline"
+            className="font-game text-[10px] tracking-wider text-[var(--game-gold)] transition hover:text-[var(--game-green)]"
           >
-            Present full story →
+            ▶ Present full story
           </Link>
         </motion.p>
       </div>
