@@ -2,8 +2,7 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import type { ExperienceEntry } from "@/content/resume";
-import { BossCharacter } from "@/components/characters/BossCharacter";
-import { getBossVariant } from "@/components/characters/character-map";
+import { CompanyIcon } from "@/components/characters/CompanyIcon";
 import { getExperienceQuest } from "@/content/game-theme";
 import { QuestLevel } from "@/components/game/QuestLevel";
 import { staggerChild } from "@/lib/motion";
@@ -29,11 +28,7 @@ export function ExperienceList({ jobs }: ExperienceListProps) {
             variants={staggerChild}
             className="game-card-light flex flex-col gap-6 rounded-2xl p-6 sm:flex-row sm:items-start md:p-8"
           >
-            <BossCharacter
-              variant={getBossVariant(job.company)}
-              size="md"
-              className="mx-auto sm:mx-0"
-            />
+            <CompanyIcon company={job.company} size="md" className="mx-auto sm:mx-0" />
 
             <div className="min-w-0 flex-1">
               <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
