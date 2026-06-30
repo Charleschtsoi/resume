@@ -38,13 +38,16 @@ export function ScrollChapter({
 
   const isDark = theme === "dark";
   const skipEffects = reduceMotion || disableScrollEffects;
+  const bgClass = isDark
+    ? "game-section-dark text-[var(--apple-gray-100)]"
+    : "bg-[var(--apple-gray-100)] text-[var(--apple-black)]";
 
   return (
     <section
       id={id}
       ref={ref}
       aria-labelledby={`${id}-heading`}
-      className={`relative scroll-mt-20 ${chapterHeightClass} ${isDark ? "bg-[var(--apple-black)] text-[var(--apple-gray-100)]" : "bg-[var(--apple-gray-100)] text-[var(--apple-black)]"} ${isPresenterMode ? "snap-start snap-always" : ""} ${className}`}
+      className={`relative scroll-mt-20 ${chapterHeightClass} ${bgClass} ${isPresenterMode ? "snap-start snap-always" : ""} ${className}`}
     >
       <div className="sticky top-0 flex min-h-screen items-center overflow-hidden">
         {skipEffects ? (

@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { useReducedMotion } from "motion/react";
 import { narrativeChapters } from "@/content/resume";
+import { getStoryQuest } from "@/content/game-theme";
+import { QuestLevel } from "@/components/game/QuestLevel";
 import { usePresenterMode } from "@/lib/presenter-mode";
 
 const scrollChapters = narrativeChapters.filter((c) => c.id !== "hero");
@@ -50,6 +52,7 @@ export function ProgressRail() {
     >
       {scrollChapters.map((chapter) => {
         const isActive = activeId === chapter.id;
+        const quest = getStoryQuest(chapter.id);
         return (
           <a
             key={chapter.id}
@@ -57,22 +60,13 @@ export function ProgressRail() {
             className="group flex items-center gap-2"
             aria-current={isActive ? "true" : undefined}
           >
-            <motion.span
-              animate={{
-                scale: isActive ? 1.25 : 1,
-                backgroundColor: isActive
-                  ? "var(--apple-blue)"
-                  : "var(--apple-gray-400)",
-              }}
-              transition={{ duration: 0.25 }}
-              className="block h-2 w-2 shrink-0 rounded-full"
-            />
+            <QuestLevel level={quest.level} active={isActive} />
             <span
               className={`text-xs font-medium tracking-wide ${
                 showLabels
                   ? "max-w-[140px] opacity-100"
                   : "max-w-0 overflow-hidden opacity-0 transition-all duration-300 group-hover:max-w-[120px] group-hover:opacity-100 group-focus-visible:max-w-[120px] group-focus-visible:opacity-100"
-              } ${isActive ? "text-[var(--apple-blue)]" : "text-muted-foreground"}`}
+              } ${isActive ? "text-[var(--game-gold)]" : "text-muted-foreground"}`}
             >
               {chapter.label}
             </span>

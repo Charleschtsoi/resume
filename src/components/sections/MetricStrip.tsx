@@ -18,13 +18,11 @@ export function MetricStrip({ metrics, variant = "light" }: MetricStripProps) {
         <div
           key={metric.label}
           role="listitem"
-          className={`rounded-2xl border px-5 py-4 ${
-            isDark
-              ? "border-white/10 bg-white/5"
-              : "border-border bg-white shadow-sm"
+          className={`rounded-xl px-5 py-4 ${
+            isDark ? "game-card" : "game-card-light"
           }`}
         >
-          <p className="text-2xl font-semibold tracking-tight text-[var(--apple-blue)] md:text-3xl">
+          <p className="font-game text-xl tracking-tight text-[var(--game-gold)] md:text-2xl">
             {metric.value}
           </p>
           <p
