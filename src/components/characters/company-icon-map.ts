@@ -52,6 +52,7 @@ const companyIconMeta: Record<string, CompanyIconMeta> = {
     slug: "cathay",
     label: "Cathay Pacific Airways",
     accent: "#006564",
+    src: "/companies/cathay.png",
   },
 };
 

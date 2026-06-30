@@ -1,5 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <path fill="#006564" d="M12 40 C20 28 28 20 32 16 C36 20 44 28 52 40 C44 36 36 34 32 34 C28 34 20 36 12 40 Z"/>
-  <path fill="#006564" d="M20 44 C26 38 30 36 32 36 C34 36 38 38 44 44 C38 42 34 41 32 41 C30 41 26 42 20 44 Z" opacity="0.7"/>
-  <text x="32" y="58" text-anchor="middle" font-family="system-ui,sans-serif" font-size="8" font-weight="600" fill="#006564">CATHAY</text>
-</svg>
