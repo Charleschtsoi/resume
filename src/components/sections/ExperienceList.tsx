@@ -31,8 +31,9 @@ export function ExperienceList({ jobs }: ExperienceListProps) {
               <div className="flex items-start gap-4">
                 <QuestLevel level={quest.level} active={i === 0} />
                 <div>
-                  <p className="font-game text-[9px] tracking-widest text-[var(--game-gold)] uppercase">
-                    Quest {quest.level}: {quest.questTitle}
+                  <p className="font-game text-[9px] leading-relaxed tracking-widest text-[var(--game-gold)] uppercase">
+                    <span className="block">Quest {quest.level}</span>
+                    <span className="block text-[var(--game-cyan)]">{quest.questTitle}</span>
                   </p>
                   <h2 className="mt-2 text-title font-semibold text-[var(--apple-black)]">
                     {job.company}

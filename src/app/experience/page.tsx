@@ -3,6 +3,7 @@ import Link from "next/link";
 import { experience, profile } from "@/content/resume";
 import { currentOccupation, currentPlayerLevel } from "@/content/game-theme";
 import { ExperienceList } from "@/components/sections/ExperienceList";
+import { PageHeader } from "@/components/layout/PageHeader";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
@@ -14,25 +15,17 @@ export default function ExperiencePage() {
   return (
     <main id="main-content" className="min-h-screen bg-[var(--apple-gray-100)] pt-24 pb-16">
       <div className="mx-auto max-w-[980px] px-6 md:px-12">
-        <p className="font-game text-[10px] tracking-[0.2em] text-[var(--apple-blue)] uppercase">
-          Quest Log
-        </p>
-        <h1 className="mt-4 text-headline font-semibold tracking-tight text-[var(--apple-black)]">
-          14 years. One campaign.
-        </h1>
-        <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
-          {profile.tagline}
-        </p>
-
-        <div className="game-hud mt-8 inline-flex items-center gap-3 rounded-lg px-4 py-3">
-          <span className="font-game text-[10px] tracking-wider text-[var(--game-cyan)] uppercase">
-            {experience.length} quests completed
-          </span>
-          <span className="text-[var(--game-border)]">|</span>
-          <span className="font-game text-[10px] tracking-wider text-[var(--game-gold)] uppercase">
-            Level {currentPlayerLevel} · {currentOccupation}
-          </span>
-        </div>
+        <PageHeader label="Quest Log" title="14 years. One campaign." subtitle={profile.tagline}>
+          <div className="game-hud mt-8 inline-flex flex-wrap items-center gap-3 rounded-lg px-4 py-3">
+            <span className="font-game text-[10px] tracking-wider text-[var(--game-cyan)] uppercase">
+              {experience.length} quests completed
+            </span>
+            <span className="hidden text-[var(--game-border)] sm:inline">|</span>
+            <span className="font-game text-[10px] tracking-wider text-[var(--game-gold)] uppercase">
+              Level {currentPlayerLevel} · {currentOccupation}
+            </span>
+          </div>
+        </PageHeader>
 
         <ExperienceList jobs={experience} />
 

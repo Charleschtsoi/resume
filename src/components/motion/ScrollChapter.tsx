@@ -32,9 +32,9 @@ export function ScrollChapter({
     offset: ["start start", "end end"],
   });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.15, 0.85, 1], [0.4, 1, 1, 0.35]);
-  const scale = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0.92, 1, 1, 0.94]);
-  const y = useTransform(scrollYProgress, [0, 0.25, 0.75, 1], [48, 0, 0, -32]);
+  const opacity = useTransform(scrollYProgress, [0, 0.12, 0.88, 1], [0.92, 1, 1, 0.92]);
+  const scale = useTransform(scrollYProgress, [0, 0.15, 0.85, 1], [0.97, 1, 1, 0.98]);
+  const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [24, 0, 0, -16]);
 
   const isDark = theme === "dark";
   const skipEffects = reduceMotion || disableScrollEffects;
@@ -49,13 +49,19 @@ export function ScrollChapter({
       aria-labelledby={`${id}-heading`}
       className={`relative scroll-mt-20 ${chapterHeightClass} ${bgClass} ${isPresenterMode ? "snap-start snap-always" : ""} ${className}`}
     >
-      <div className="sticky top-0 flex min-h-screen items-center overflow-hidden">
+      <div
+        className={`sticky top-0 flex min-h-screen flex-col justify-center ${
+          isPresenterMode ? "max-h-screen overflow-y-auto" : ""
+        }`}
+      >
         {skipEffects ? (
-          <div className="mx-auto w-full max-w-[980px] px-6 py-24 md:px-12">{children}</div>
+          <div className="mx-auto w-full max-w-[980px] px-6 py-28 md:px-12 md:py-32">
+            {children}
+          </div>
         ) : (
           <motion.div
             style={{ opacity, scale, y }}
-            className="mx-auto w-full max-w-[980px] px-6 py-24 md:px-12"
+            className="mx-auto w-full max-w-[980px] px-6 py-28 md:px-12 md:py-32"
           >
             {children}
           </motion.div>

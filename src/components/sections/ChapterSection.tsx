@@ -45,7 +45,7 @@ export function HeroSection({ chapter }: { chapter: NarrativeChapter }) {
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_60%,var(--apple-black)_100%)]" />
       </div>
 
-      <div className="sticky top-0 flex min-h-screen flex-col items-center justify-center px-6 md:px-12">
+      <div className="sticky top-0 flex min-h-screen flex-col justify-center overflow-y-auto px-6 py-28 md:px-12 md:py-32">
         <div className="relative z-10 mx-auto w-full max-w-[980px]">
           <p className="text-center font-game text-[10px] tracking-[0.2em] text-[var(--game-cyan)] uppercase md:text-xs">
             {profile.title}
@@ -146,8 +146,9 @@ export function ChapterSection({ chapter }: ChapterSectionProps) {
       <div className="flex items-start gap-4">
         <QuestLevel level={quest.level} active />
         <div className="min-w-0 flex-1 space-y-4">
-          <p className="font-game text-[9px] tracking-widest text-[var(--game-gold)] uppercase">
-            Quest {quest.level}: {quest.questTitle}
+          <p className="font-game text-[9px] leading-relaxed tracking-widest text-[var(--game-gold)] uppercase">
+            <span className="block">Quest {quest.level}</span>
+            <span className="block text-[var(--game-cyan)]">{quest.questTitle}</span>
           </p>
           {chapter.period && (
             <p className="font-game text-[10px] tracking-[0.15em] text-[var(--game-cyan)] uppercase">
