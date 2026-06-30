@@ -29,6 +29,8 @@ export type ProductionProject = {
   status: "live" | "repo-only" | "coming-soon";
   defaultOpen?: boolean;
   oneLiner: string;
+  showcaseImage?: string;
+  showcaseImageAlt?: string;
   talkTrack?: string;
   components: ProductionComponent[];
   architectureSummary?: string;
@@ -51,6 +53,9 @@ export const productionProjects: ProductionProject[] = [
     name: "LungLens",
     status: "live",
     defaultOpen: true,
+    showcaseImage: "/showcase/lunglens.jpeg",
+    showcaseImageAlt:
+      "LungLens results view — chest X-ray with AI attention maps and pipeline model summary showing pneumonia analysis",
     oneLiner:
       "Frontend: github.com/Charleschtsoi/LungLens → live at lung-lens-five.vercel.app · Backend: lunglens-backend → charleschtsoi-lunglens-backend.hf.space",
     talkTrack:
