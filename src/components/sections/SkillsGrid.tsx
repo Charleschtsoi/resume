@@ -7,7 +7,7 @@ import {
   overallMastery,
   skillBranches,
 } from "@/content/skills-game";
-import { currentPlayerLevel } from "@/content/game-theme";
+import { currentOccupation, currentPlayerLevel } from "@/content/game-theme";
 import { CertBadge } from "@/components/game/CertBadge";
 import { EducationQuestCard } from "@/components/game/EducationQuestCard";
 import { SkillTreeBranch } from "@/components/game/SkillTreeBranch";
@@ -32,7 +32,7 @@ export function SkillsGrid() {
               Character Sheet
             </p>
             <p className="mt-1 text-sm text-[var(--apple-gray-300)]">
-              Level {currentPlayerLevel} · AI · ML · App Development
+              Level {currentPlayerLevel} · {currentOccupation}
             </p>
           </div>
           <div className="font-game text-right text-2xl text-[var(--game-gold)]">
@@ -61,7 +61,7 @@ export function SkillsGrid() {
           Four branches. One loadout.
         </h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          Hover abilities to see mastery tiers — built from 14+ years of enterprise delivery and hands-on repos.
+          Hover abilities to see mastery tiers — built from 14 years of enterprise delivery since 2012.
         </p>
       </motion.div>
 

@@ -2,7 +2,7 @@ export const profile = {
   name: "Charles Tsoi",
   title: "AI · Machine Learning · App Development",
   tagline:
-    "14+ years in enterprise delivery — now building and shipping AI, machine learning, and mobile products end to end.",
+    "14 years in enterprise delivery (since 2012) — now building and shipping AI, machine learning, and mobile products end to end.",
   location: "Hong Kong",
   email: "charleschtsoi@gmail.com",
   links: {
@@ -11,6 +11,9 @@ export const profile = {
     medium: "https://medium.com/@charleschtsoi",
   },
   proofLine: "AI · ML · App development · Apple · AAHK",
+  currentOccupation: "Project Manager",
+  yearsExperience: 14,
+  careerSpan: "2012 – 2026",
   interviewerSubline:
     "Strong in AI agents, machine learning, and app development — open to any project where I can help",
   ctaTagline:

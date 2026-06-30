@@ -1,10 +1,15 @@
+import { profile } from "@/content/resume";
+
 export type QuestMeta = {
   level: number;
   questTitle: string;
 };
 
 /** Career year count — Cathay 2012 → 2026 */
-export const careerYears = 14;
+export const careerYears = profile.yearsExperience;
+
+/** In-game occupation / current role */
+export const currentOccupation = profile.currentOccupation;
 
 /** Current player level (2026 — two years at AAHK) */
 export const currentPlayerLevel = 14;

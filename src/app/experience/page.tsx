@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { experience, profile } from "@/content/resume";
-import { currentPlayerLevel } from "@/content/game-theme";
+import { currentOccupation, currentPlayerLevel } from "@/content/game-theme";
 import { ExperienceList } from "@/components/sections/ExperienceList";
 import { Button } from "@/components/ui/button";
 
@@ -18,7 +18,7 @@ export default function ExperiencePage() {
           Quest Log
         </p>
         <h1 className="mt-4 text-headline font-semibold tracking-tight text-[var(--apple-black)]">
-          14+ years. One campaign.
+          14 years. One campaign.
         </h1>
         <p className="mt-4 max-w-2xl text-lg text-muted-foreground">
           {profile.tagline}
@@ -30,7 +30,7 @@ export default function ExperiencePage() {
           </span>
           <span className="text-[var(--game-border)]">|</span>
           <span className="font-game text-[10px] tracking-wider text-[var(--game-gold)] uppercase">
-            Level {currentPlayerLevel} active
+            Level {currentPlayerLevel} · {currentOccupation}
           </span>
         </div>
 
