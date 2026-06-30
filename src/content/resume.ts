@@ -2,7 +2,7 @@ export const profile = {
   name: "Charles Tsoi",
   title: "AI · Machine Learning · App Development",
   tagline:
-    "12+ years in enterprise delivery — now building and shipping AI, machine learning, and mobile products end to end.",
+    "14+ years in enterprise delivery — now building and shipping AI, machine learning, and mobile products end to end.",
   location: "Hong Kong",
   email: "charleschtsoi@gmail.com",
   links: {
@@ -141,11 +141,11 @@ export const narrativeChapters: NarrativeChapter[] = [
   {
     id: "aahk",
     label: "AAHK",
-    period: "2025 – Present",
+    period: "2024 – Present",
     headline: "AI in production. Scope as a skill.",
-    subheadline: "Airport Authority Hong Kong",
+    subheadline: "Airport Authority Hong Kong · 2 years",
     paragraphs: [
-      "And now at Airport Authority, I'm deploying LLM-based AI agents into production, running vendor technical due diligence, and gatekeeping scope. We delivered a capacity planning AI agent in ten weeks by saying 'no' to the right things at the right time.",
+      "Two years in at Airport Authority — deploying LLM-based AI agents into production, running vendor technical due diligence, and gatekeeping scope. We delivered a capacity planning AI agent in ten weeks by saying 'no' to the right things at the right time.",
     ],
     metrics: [
       { value: "80%", label: "Less manual query time (LLM agents)" },
@@ -226,7 +226,7 @@ export const experience: ExperienceEntry[] = [
     company: "Airport Authority Hong Kong",
     role: "Project Manager",
     location: "Hong Kong",
-    period: "Mar 2025 – Present",
+    period: "Mar 2024 – Present",
     bullets: [
       "Architected and deployed LLM-based agents for internal report automation; defined integration patterns between LLM core and internal databases, reducing manual query time by 80%.",
       "Conducted deep-dive architectural assessments of Microsoft ecosystem vendors — API capabilities, security protocols, scalability limits.",
