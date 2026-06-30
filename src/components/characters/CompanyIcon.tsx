@@ -19,18 +19,23 @@ const sizeMap = {
 export function CompanyIcon({ company, className, size = "md" }: CompanyIconProps) {
   const reduceMotion = useReducedMotion();
   const dim = sizeMap[size];
-  const { slug, label, accent } = getCompanyIcon(company);
+  const { slug, label, accent, src, wide } = getCompanyIcon(company);
+  const imageSrc = src ?? `/companies/${slug}.svg`;
+  const cardWidth = wide ? dim + 64 : dim + 16;
+  const cardHeight = dim + 16;
+  const imageWidth = wide ? dim + 48 : dim;
+  const imageHeight = dim;
 
   const icon = (
     <div
       className="flex shrink-0 items-center justify-center rounded-2xl border border-border bg-white p-2 shadow-sm"
-      style={{ width: dim + 16, height: dim + 16 }}
+      style={{ width: cardWidth, height: cardHeight }}
     >
       <Image
-        src={`/companies/${slug}.svg`}
+        src={imageSrc}
         alt={`${label} logo`}
-        width={dim}
-        height={dim}
+        width={imageWidth}
+        height={imageHeight}
         className="object-contain"
       />
     </div>

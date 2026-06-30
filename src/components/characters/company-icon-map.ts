@@ -10,13 +10,19 @@ export type CompanyIconMeta = {
   slug: CompanyIconSlug;
   label: string;
   accent: string;
+  /** Asset path under /public — defaults to /companies/{slug}.svg */
+  src?: string;
+  /** Use wider card for logos with wordmark */
+  wide?: boolean;
 };
 
 const companyIconMeta: Record<string, CompanyIconMeta> = {
   "Airport Authority Hong Kong": {
     slug: "aahk",
     label: "Airport Authority Hong Kong",
-    accent: "#0071e3",
+    accent: "#99b9bf",
+    src: "/companies/aahk.png",
+    wide: true,
   },
   Apple: {
     slug: "apple",
