@@ -28,6 +28,7 @@ const companyIconMeta: Record<string, CompanyIconMeta> = {
     slug: "apple",
     label: "Apple",
     accent: "#1d1d1f",
+    src: "/companies/apple.png",
   },
   Accenture: {
     slug: "accenture",
