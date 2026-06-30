@@ -34,6 +34,7 @@ const companyIconMeta: Record<string, CompanyIconMeta> = {
     slug: "accenture",
     label: "Accenture",
     accent: "#a100ff",
+    src: "/companies/accenture.png",
   },
   "The Hong Kong Jockey Club": {
     slug: "hkjc",
