@@ -168,8 +168,60 @@ html[data-presenter="true"] body {
   }
 }
 
+.game-launcher-btn {
+  animation: launcher-pulse 3s ease-in-out infinite;
+}
+
+@keyframes launcher-pulse {
+  0%, 100% { box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4); }
+  50% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.25); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-gradient-pulse {
+    animation: none;
+  }
+  .game-launcher-btn {
+    animation: none;
+  }
+  .game-badge-soon {
+    animation: none;
+  }
+  .game-orb {
+    animation: none;
+  }
+}
+
+.game-arena {
+  background: var(--game-bg);
+}
+
+.game-arena-grid {
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.game-player {
+  background: var(--game-cyan);
+  border: 2px solid white;
+  box-shadow: 0 0 16px rgba(0, 212, 255, 0.6);
+  z-index: 10;
+}
+
+.game-orb {
+  z-index: 5;
+  animation: orb-float 2s ease-in-out infinite;
+}
+
+@keyframes orb-float {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .game-orb {
     animation: none;
   }
 }

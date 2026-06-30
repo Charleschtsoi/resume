@@ -103,7 +103,7 @@ export function HomeHero() {
           initial={reduceMotion ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.5 }}
-          className="mt-6"
+          className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center"
         >
           <Link
             href="/story?present=1"
@@ -111,6 +111,14 @@ export function HomeHero() {
           >
             ▶ Present full story
           </Link>
+          <span className="hidden text-[var(--apple-gray-600)] sm:inline">·</span>
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new CustomEvent("open-mini-game"))}
+            className="font-game text-[10px] tracking-wider text-[var(--game-cyan)] transition hover:text-[var(--game-green)]"
+          >
+            ▶ Play mini-game
+          </button>
         </motion.p>
       </div>
     </section>
