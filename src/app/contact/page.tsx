@@ -94,6 +94,15 @@ export default function ContactPage() {
             variant="outline"
             className="border-[var(--game-border)] bg-transparent text-white hover:border-[var(--game-cyan)] hover:bg-[var(--game-cyan)]/10 hover:text-white"
           >
+            <Link href={profile.links.medium} target="_blank" rel="noopener noreferrer">
+              Medium (writing)
+            </Link>
+          </Button>
+          <Button
+            asChild
+            variant="outline"
+            className="border-[var(--game-border)] bg-transparent text-white hover:border-[var(--game-cyan)] hover:bg-[var(--game-cyan)]/10 hover:text-white"
+          >
             <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
               Download resume (PDF)
             </Link>
