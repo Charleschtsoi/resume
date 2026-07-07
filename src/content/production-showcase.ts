@@ -190,6 +190,9 @@ export const productionProjects: ProductionProject[] = [
     slug: "art-globe",
     name: "Art Globe",
     status: "live",
+    showcaseImage: "/showcase/art-globe-social-preview-v2.jpg",
+    showcaseImageAlt:
+      "Art Globe preview showing an interactive Earth visualization with museum artwork markers across regions",
     oneLiner:
       "Interactive global art discovery experience with map-based exploration — live on Vercel with source available on GitHub.",
     talkTrack:
