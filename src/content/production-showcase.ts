@@ -187,6 +187,42 @@ export const productionProjects: ProductionProject[] = [
     ],
   },
   {
+    slug: "art-globe",
+    name: "Art Globe",
+    status: "live",
+    oneLiner:
+      "Interactive global art discovery experience with map-based exploration — live on Vercel with source available on GitHub.",
+    talkTrack:
+      "A visual web experience that maps artworks and artists geographically for exploratory storytelling — useful proof of product thinking plus frontend execution.",
+    components: [
+      {
+        role: "frontend",
+        title: "Frontend (interactive web app)",
+        repo: {
+          url: "https://github.com/Charleschtsoi/Art_Globe",
+          branch: "main",
+        },
+        liveLinks: [
+          {
+            label: "Live app (Vercel)",
+            url: "https://art-globe.vercel.app/",
+          },
+          {
+            label: "GitHub repository",
+            url: "https://github.com/Charleschtsoi/Art_Globe",
+          },
+        ],
+        contains: [
+          "Interactive globe-based exploration UI",
+          "Artwork and artist discovery by geography",
+          "Production deployment for live demo access",
+        ],
+      },
+    ],
+    architectureSummary: "Browser-only interactive frontend deployed on Vercel.",
+    architectureSteps: ["Browser → https://art-globe.vercel.app/ (Vercel deployment)"],
+  },
+  {
     slug: "hermes",
     name: "Hermes (ExpiryScanner)",
     status: "repo-only",
