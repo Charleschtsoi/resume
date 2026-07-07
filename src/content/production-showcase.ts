@@ -293,29 +293,33 @@ export const productionProjects: ProductionProject[] = [
   {
     slug: "product-tax-deduction-log",
     name: "Product Tax Deduction Log",
-    status: "coming-soon",
+    status: "live",
     defaultOpen: false,
+    showcaseImage: "/showcase/hk-tax-deduction-log-icon.jpg",
+    showcaseImageAlt:
+      "HK Tax Deduction Log app listing preview with icon and title in the Hong Kong App Store",
     oneLiner:
-      "React Native + Expo mobile app for logging product purchases and tax-deductible expenses — App Store submission in progress.",
+      "React Native + Expo mobile app for tracking tax-deductible expenses — now live on the Hong Kong Apple App Store.",
     talkTrack:
-      "A personal finance utility I'm shipping to the App Store soon. Tracks product purchases and helps organise tax deductions — ask me for a TestFlight preview.",
+      "A production mobile app now live in the Hong Kong App Store. It helps users capture and organize deductible expenses throughout the tax year.",
     components: [
       {
         role: "frontend",
         title: "React Native / Expo app",
+        liveLinks: [
+          {
+            label: "Hong Kong App Store listing",
+            url: "https://apps.apple.com/hk/app/%E6%89%A3%E7%A8%85%E7%B0%BF/id6784724157?uo=4",
+          },
+        ],
         contains: [
           "Product purchase logging",
           "Tax deduction tracking and categorisation",
-          "App Store submission in progress",
+          "Live in Hong Kong Apple App Store",
         ],
       },
     ],
-    notes: [
-      {
-        title: "App Store",
-        body: "Submitting to the App Store soon. Live URL and repo link will be added here after release.",
-      },
-    ],
+    notes: [{ title: "Region", body: "Published on the Hong Kong Apple App Store." }],
   },
   {
     slug: "resume",
