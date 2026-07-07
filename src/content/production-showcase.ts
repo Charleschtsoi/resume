@@ -295,7 +295,7 @@ export const productionProjects: ProductionProject[] = [
     name: "Product Tax Deduction Log",
     status: "live",
     defaultOpen: false,
-    showcaseImage: "/showcase/hk-tax-deduction-log-icon.jpg",
+    showcaseImage: "/showcase/hk-tax-deduction-log-screenshot.png",
     showcaseImageAlt:
       "HK Tax Deduction Log app listing preview with icon and title in the Hong Kong App Store",
     oneLiner:
