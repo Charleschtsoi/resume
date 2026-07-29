@@ -47,7 +47,7 @@ export default function StoryPage() {
               size="lg"
               className="game-pixel-border bg-[var(--game-cyan)] px-8 font-semibold text-[var(--game-bg)] hover:bg-[var(--game-green)]"
             >
-              <Link href="/contact">Start Quest →</Link>
+              <Link href="/contact">Get in touch →</Link>
             </Button>
             <Button
               asChild

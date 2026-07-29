@@ -18,7 +18,7 @@ export function GameHUD() {
       <div className="flex items-center justify-between gap-4">
         <div>
           <p className="font-game text-[10px] tracking-widest text-[var(--game-gold)] uppercase">
-            Current Class
+            Current Role
           </p>
           <p className="mt-1 text-sm font-semibold text-white">
             {currentOccupation}

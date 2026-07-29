@@ -1,34 +1,47 @@
 import { profile } from "@/content/resume";
 
-export type WorkPillar = "ai" | "product" | "rigour";
+export type WorkPillar = "ai" | "product" | "architecture";
 
 export type WorkProject = {
+  id: string;
   name: string;
   repoUrl?: string;
   secondaryRepoUrl?: string;
   productionSlug?: string;
+  liveUrl?: string;
   language?: string;
   stars?: number;
   pillar: WorkPillar;
+  /** One-line headline */
   headline: string;
-  talkTrack: string;
-  roleRelevance: string;
+  /** Problem context */
+  problem?: string;
+  /** What was built / what it does */
+  built: string;
+  /** Measurable or factual outcome */
+  outcome?: string;
+  /** Role on the project */
+  role: string;
+  /** Tech stack summary */
+  stack?: string;
+  /** Optional speaker note for presenter mode */
+  talkTrack?: string;
   tags: string[];
-  achievement?: string;
-  status?: "live" | "coming-soon";
+  achievement?: "Shipped" | "In Progress" | "Side Project";
+  status?: "live" | "coming-soon" | "enterprise";
 };
 
 export const githubProfileUrl = `${profile.links.github}?tab=repositories`;
 
 export const githubWorkIntro = {
-  title: "Hands-on proof",
-  subtitle: "AI · Machine learning · App development",
+  title: "Selected work",
+  subtitle: "Problem → what I built → outcome",
   framingParagraph:
-    "I specialise in AI, machine learning, and app development — from enterprise LLM agents to mobile products on the App Store. These curated repos show production-grade work, not tutorial code. I'm also open to any project where I can help.",
+    "Career and product work across AI, mobile, and enterprise systems. Each card is grounded in a real role, stack, and result — not self-rated scores.",
   openingScript:
-    "My strengths are AI, machine learning, and app development — here's a curated set that shows production work, not every repo on GitHub.",
+    "Here's a curated set of shipped and in-progress work — enterprise delivery and products I've built myself.",
   closingScript:
-    "I'm open to collaborations and new projects in AI, ML, or mobile — happy to go deeper on any repo or discuss how I can help.",
+    "Happy to go deeper on any of these — architecture decisions, stakeholder trade-offs, or how I'd approach your problem.",
 };
 
 export const workPillars: Record<
@@ -37,52 +50,137 @@ export const workPillars: Record<
 > = {
   ai: {
     title: "AI & machine learning",
-    description: "LLM agents, model integration, ML pipelines, and evaluation",
+    description: "Production agents and full-stack ML products",
   },
   product: {
-    title: "App development",
-    description: "React Native, Expo, and full-stack products — PoC to App Store",
+    title: "Product & apps",
+    description: "Mobile and consumer products — PoC to live",
   },
-  rigour: {
-    title: "Production rigour",
-    description: "Security-aware design, scoped delivery, and enterprise discipline",
+  architecture: {
+    title: "Systems & architecture",
+    description: "Event-driven, edge, and enterprise delivery",
   },
 };
 
 export const featuredProjects: WorkProject[] = [
   {
+    id: "lunglens",
     name: "LungLens",
     repoUrl: "https://github.com/Charleschtsoi/LungLens",
     secondaryRepoUrl: "https://github.com/Charleschtsoi/lunglens-backend",
     productionSlug: "lunglens",
-    language: "TypeScript + Python",
-    stars: 2,
+    liveUrl: "https://lunglenshk.vercel.app",
+    language: "React + Python",
     pillar: "ai",
     achievement: "Shipped",
     status: "live",
-    headline: "Full-stack AI / ML product — live in production",
-
-    roleRelevance:
-      "Vision models + LLM synthesis — PoC to production with BFF routes and Hugging Face inference",
+    headline: "Full-stack AI health literacy tool — live in production",
+    role: "Solo — design, frontend, backend, deployment",
+    stack: "React + Python + Hugging Face Inference API, deployed on Vercel",
+    problem:
+      "Patients struggle to understand chest X-ray results in plain language.",
+    built:
+      "Bilingual (EN/繁中/簡中) educational tool that helps patients understand their chest X-ray results. Users upload X-ray images for anatomy-focused, plain-language educational analysis — explicitly not a diagnostic tool.",
+    outcome: "Live at lunglenshk.vercel.app",
     talkTrack:
-      "End-to-end AI/ML app with a live Vercel frontend and Hugging Face backend — ensemble models, async jobs, production deployment.",
+      "End-to-end AI/ML app I designed and shipped alone — Hugging Face inference, Vercel frontend, bilingual UX.",
     tags: ["ML", "LLM", "Production"],
   },
   {
-    name: "AI Agent X-Ray",
-    repoUrl: "https://github.com/Charleschtsoi/ai-agent-xray",
-    language: "HTML + JS",
+    id: "aahk-llm-monitoring-agent",
+    name: "AAHK LLM Monitoring Agent",
     pillar: "ai",
-    achievement: "Side Project",
-    headline: "Interactive agent tool-calling visualizer",
-
-    roleRelevance:
-      "AI agent architecture — tool routing, guardrails, token flow, and failure modes",
+    achievement: "Shipped",
+    status: "enterprise",
+    headline: "Automated infrastructure health reporting for senior management",
+    role: "Product lead — gathered requirements, designed approach, managed vendor delivery",
+    stack: "Power Automate + Dynatrace API + ServiceNow integration",
+    problem:
+      "Senior management relied on manual infrastructure health reports (CPU, RAM, downtime).",
+    built:
+      "LLM-based monitoring agent that automates infrastructure health reporting via Power Automate, Dynatrace API, and ServiceNow. Led product design and vendor delivery — not coded solo.",
+    outcome: "Estimated 80% reduction in manual reporting time",
     talkTrack:
-      "Side-by-side chat and x-ray view of LLM tool calling — how I explain agent architecture to stakeholders.",
-    tags: ["LLM Agents", "AI", "Architecture"],
+      "Enterprise AI delivery at AAHK — requirements, design, and vendor management, not a solo coding story.",
+    tags: ["LLM Agents", "Enterprise", "AAHK"],
   },
   {
+    id: "cathay-mobile",
+    name: "Cathay Pacific Mobile App",
+    pillar: "product",
+    achievement: "Shipped",
+    status: "enterprise",
+    headline: "Airline mobile app — lifecycle ownership over six years",
+    role: "Product Manager / Product Owner",
+    stack: "Mobile app integrated with legacy Passenger Service Systems (PSS)",
+    problem:
+      "Cathay needed a modern mobile experience wired into legacy PSS backends.",
+    built:
+      "Led product ownership for the Cathay Pacific mobile app — backlog, stakeholder negotiation, and XML/JSON integration with legacy PSS.",
+    outcome: "Grew monthly active users from ~10,000 to ~120,000 (12x growth)",
+    talkTrack:
+      "Six years of lifecycle ownership — not a launch-and-leave story. MAU grew roughly 12x.",
+    tags: ["Product", "Mobile", "Cathay"],
+  },
+  {
+    id: "hkjc-solace",
+    name: "HKJC Solace Migration",
+    pillar: "architecture",
+    achievement: "Shipped",
+    status: "enterprise",
+    headline: "Event-driven messaging for regulated real-time systems",
+    role: "Product Manager / IT Solutions Analyst",
+    stack: "Solace Event Mesh (Pub/Sub)",
+    problem:
+      "Core infrastructure depended on traditional REST API patterns under high concurrency.",
+    built:
+      "Led Solace migration — moved core infrastructure from traditional API architecture to Solace event-based messaging for real-time odds and betting flows.",
+    outcome: "Event-based messaging in a regulated, high-concurrency environment",
+    talkTrack:
+      "HKJC Solace work — REST to event mesh in a compliance-heavy setting.",
+    tags: ["Event-Driven", "Solace", "HKJC"],
+  },
+  {
+    id: "apple-docserverless",
+    name: "Apple docserverless",
+    pillar: "architecture",
+    achievement: "Shipped",
+    status: "enterprise",
+    headline: "Edge computing for numerical workloads",
+    role: "Product Manager (Engineering Project Manager)",
+    stack: "Edge / serverless — computation on user devices",
+    problem:
+      "Numerical computation ran server-side, adding latency and infrastructure cost.",
+    built:
+      "Led the docserverless project — moved numerical computation from server-side to edge user devices.",
+    outcome: "Computation shifted to the edge on user devices",
+    talkTrack:
+      "Apple edge project — architectural review discipline applied to moving compute off the server.",
+    tags: ["Edge Computing", "Apple", "Serverless"],
+  },
+  {
+    id: "north-star",
+    name: "北辰 (North Star)",
+    pillar: "product",
+    achievement: "In Progress",
+    status: "coming-soon",
+    headline: "Bazi/ZiWei astrology app inspired by Co-Star — targeting iOS",
+    role: "Solo founder — design, architecture, development",
+    stack: "React Native (planned)",
+    problem:
+      "Chinese astrology (Bazi/ZiWei) lacks a modern, Co-Star-quality mobile experience.",
+    built:
+      "Designing North Star — user stories mapped in Notion, preparing the React Native codebase for iOS.",
+    outcome: "Design phase — in progress",
+    talkTrack:
+      "Current build focus — astrology product design for iOS, not vaporware: stories mapped, codebase next.",
+    tags: ["In Progress", "Mobile", "iOS"],
+  },
+];
+
+export const optionalProjects: WorkProject[] = [
+  {
+    id: "hermes",
     name: "Hermes",
     repoUrl: "https://github.com/Charleschtsoi/Hermes",
     language: "React Native + Expo",
@@ -90,92 +188,57 @@ export const featuredProjects: WorkProject[] = [
     pillar: "product",
     achievement: "Side Project",
     headline: "ExpiryScanner — barcode + AI mobile app",
-
-    roleRelevance:
-      "App development: camera scan → GPT-4o-mini → Supabase — full product loop",
-    talkTrack:
-      "React Native app with barcode scanning, AI product ID, Supabase backend, and push notifications.",
+    role: "Solo builder",
+    stack: "React Native + Expo + GPT-4o-mini + Supabase",
+    built:
+      "Barcode scanning, AI product ID, Supabase backend, and push notifications — full product loop.",
     tags: ["App Dev", "GenAI", "Mobile"],
   },
   {
+    id: "ai-agent-xray",
+    name: "AI Agent X-Ray",
+    repoUrl: "https://github.com/Charleschtsoi/ai-agent-xray",
+    language: "HTML + JS",
+    pillar: "ai",
+    achievement: "Side Project",
+    headline: "Interactive agent tool-calling visualizer",
+    role: "Solo builder",
+    built:
+      "Side-by-side chat and x-ray view of LLM tool calling — how I explain agent architecture to stakeholders.",
+    tags: ["LLM Agents", "AI", "Architecture"],
+  },
+  {
+    id: "tax-deduction-log",
     name: "Product Tax Deduction Log",
     language: "React Native + Expo",
     pillar: "product",
     achievement: "In Progress",
     status: "coming-soon",
     productionSlug: "product-tax-deduction-log",
-    headline: "Mobile app for logging product purchases and tax deductions",
-    roleRelevance:
-      "App development — personal finance utility, App Store submission in progress",
-    talkTrack:
-      "A mobile app in progress for the App Store — helps track product purchases and tax-deductible expenses. Ask me for a TestFlight preview.",
+    headline: "Mobile app for product purchases and tax deductions",
+    role: "Solo builder",
+    stack: "React Native + Expo",
+    built:
+      "Personal finance utility for tracking product purchases and tax-deductible expenses. App Store submission in progress.",
     tags: ["In Progress", "Mobile", "Finance"],
   },
   {
-    name: "Motion Resume",
-    repoUrl: "https://github.com/Charleschtsoi/resume",
-    productionSlug: "resume",
-    language: "Next.js + Motion",
-    pillar: "product",
-    achievement: "Live",
-    headline: "This site — narrative resume with presenter mode",
-    roleRelevance:
-      "Full-stack web app — scroll narrative, presenter mode, curated showcase",
-    talkTrack:
-      "The site you're on — built to be screen-shared. Presenter mode, chapter jumps, and curated work proof.",
-    tags: ["Next.js", "Web App", "Portfolio"],
-  },
-];
-
-export const optionalProjects: WorkProject[] = [
-  {
+    id: "localLLM",
     name: "localLLM",
     repoUrl: "https://github.com/Charleschtsoi/localLLM",
     language: "Python",
     stars: 2,
     pillar: "ai",
+    achievement: "Side Project",
     headline: "Local LLM experimentation",
-    roleRelevance: "ML evaluation — latency, cost, and fit before vendor recommendations",
-    talkTrack:
-      "Hands-on with local LLMs — how I evaluate models before recommending solutions.",
+    role: "Solo builder",
+    built:
+      "Hands-on local LLM evaluation — latency, cost, and fit before vendor recommendations.",
     tags: ["ML", "LLM", "Evaluation"],
-  },
-  {
-    name: "openimpact2",
-    repoUrl: "https://github.com/Charleschtsoi/openimpact2",
-    language: "Python",
-    pillar: "ai",
-    headline: "Social impact analytics",
-    roleRelevance: "Python ML analytics — data science depth",
-    talkTrack: "Python analytics work — good for data science or ML depth questions.",
-    tags: ["Python", "Analytics"],
-  },
-  {
-    name: "frontend-slides",
-    repoUrl: "https://github.com/Charleschtsoi/frontend-slides",
-    language: "TypeScript",
-    pillar: "product",
-    headline: "Beautiful web slides",
-    roleRelevance: "How technical stories are told to stakeholders",
-    talkTrack:
-      "I care how technical stories are told — connects to panel communication and narrative clarity.",
-    tags: ["Presentation"],
-  },
-  {
-    name: "security_alert",
-    repoUrl: "https://github.com/Charleschtsoi/security_alert",
-    language: "TypeScript",
-    stars: 1,
-    pillar: "rigour",
-    headline: "Security-minded alerting tooling",
-    roleRelevance: "Security-aware app development and regulated environments",
-    talkTrack:
-      "Security-minded tooling — aligns with production discipline and vendor diligence.",
-    tags: ["Security", "TypeScript"],
   },
 ];
 
 export const githubBridge = {
-  text: "Hands-on repos: LungLens, AI Agent X-Ray, Hermes, Product Tax Deduction Log — curated on the Work page",
+  text: "Selected work: LungLens, AAHK LLM agent, Cathay mobile, HKJC Solace, Apple docserverless, 北辰 — see the Work page",
   href: "/work",
 };
