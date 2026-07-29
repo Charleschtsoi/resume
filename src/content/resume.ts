@@ -47,7 +47,7 @@ export const coreStrengths = {
   title: "What I bring",
   bullets: [
     "AI & machine learning: LLM agents in production, model integration, and hands-on ML products (LungLens, AI Agent X-Ray)",
-    "App development: React Native and Expo apps shipped end to end — Hermes, Product Tax Deduction Log (App Store soon)",
+    "App development: React Native and Expo apps shipped end to end — Hermes, Product Tax Deduction Log (App Store in progress)",
     "Enterprise delivery: scope gatekeeping, vendor diligence, and evidence-based shipping at Apple and AAHK",
     "Open to help: happy to take on any project where my skills in AI, ML, or app development can move the needle",
   ],

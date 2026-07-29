@@ -19,7 +19,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           {project.achievement && <AchievementBadge tier={project.achievement} />}
           {isComingSoon && (
             <span className="rounded-full bg-[var(--game-green)]/10 px-2 py-0.5 text-xs font-medium text-[var(--game-green)]">
-              App Store soon
+              In Progress
             </span>
           )}
           {project.stars !== undefined && project.stars > 0 && (

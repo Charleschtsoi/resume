@@ -3,13 +3,16 @@ type AchievementBadgeProps = {
   className?: string;
 };
 
+/** Maps grounded status labels to existing game badge styles */
 const tierColors: Record<string, string> = {
-  LEGENDARY: "game-badge-legendary",
-  EPIC: "game-badge-epic",
-  RARE: "game-badge-rare",
-  META: "game-badge-meta",
-  SECURE: "game-badge-secure",
-  SOON: "game-badge-soon",
+  Shipped: "game-badge-legendary",
+  Production: "game-badge-legendary",
+  Live: "game-badge-meta",
+  "Side Project": "game-badge-rare",
+  "Personal Project": "game-badge-rare",
+  "In Progress": "game-badge-soon",
+  Demo: "game-badge-epic",
+  Secure: "game-badge-secure",
 };
 
 export function AchievementBadge({ tier, className = "" }: AchievementBadgeProps) {

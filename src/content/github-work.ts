@@ -58,9 +58,10 @@ export const featuredProjects: WorkProject[] = [
     language: "TypeScript + Python",
     stars: 2,
     pillar: "ai",
-    achievement: "LEGENDARY",
+    achievement: "Shipped",
     status: "live",
     headline: "Full-stack AI / ML product — live in production",
+
     roleRelevance:
       "Vision models + LLM synthesis — PoC to production with BFF routes and Hugging Face inference",
     talkTrack:
@@ -72,8 +73,9 @@ export const featuredProjects: WorkProject[] = [
     repoUrl: "https://github.com/Charleschtsoi/ai-agent-xray",
     language: "HTML + JS",
     pillar: "ai",
-    achievement: "EPIC",
+    achievement: "Side Project",
     headline: "Interactive agent tool-calling visualizer",
+
     roleRelevance:
       "AI agent architecture — tool routing, guardrails, token flow, and failure modes",
     talkTrack:
@@ -86,8 +88,9 @@ export const featuredProjects: WorkProject[] = [
     language: "React Native + Expo",
     stars: 3,
     pillar: "product",
-    achievement: "RARE",
+    achievement: "Side Project",
     headline: "ExpiryScanner — barcode + AI mobile app",
+
     roleRelevance:
       "App development: camera scan → GPT-4o-mini → Supabase — full product loop",
     talkTrack:
@@ -98,15 +101,15 @@ export const featuredProjects: WorkProject[] = [
     name: "Product Tax Deduction Log",
     language: "React Native + Expo",
     pillar: "product",
-    achievement: "SOON",
+    achievement: "In Progress",
     status: "coming-soon",
     productionSlug: "product-tax-deduction-log",
     headline: "Mobile app for logging product purchases and tax deductions",
     roleRelevance:
       "App development — personal finance utility, App Store submission in progress",
     talkTrack:
-      "A mobile app I'm shipping to the App Store soon — helps track product purchases and tax-deductible expenses. Ask me for a TestFlight preview.",
-    tags: ["App Store Soon", "Mobile", "Finance"],
+      "A mobile app in progress for the App Store — helps track product purchases and tax-deductible expenses. Ask me for a TestFlight preview.",
+    tags: ["In Progress", "Mobile", "Finance"],
   },
   {
     name: "Motion Resume",
@@ -114,7 +117,7 @@ export const featuredProjects: WorkProject[] = [
     productionSlug: "resume",
     language: "Next.js + Motion",
     pillar: "product",
-    achievement: "META",
+    achievement: "Live",
     headline: "This site — narrative resume with presenter mode",
     roleRelevance:
       "Full-stack web app — scroll narrative, presenter mode, curated showcase",

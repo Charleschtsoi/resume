@@ -20,30 +20,34 @@ export type ValuePillar = {
   title: string;
   proof: string;
   icon: string;
-  skillPoints: number;
+  /** Factual standing — outcomes or tenure, never a self-rated score */
+  standing: string;
 };
 
 export const valuePillars: ValuePillar[] = [
   {
     id: "ai",
     title: "AI & machine learning",
-    proof: "LLM agents in production, model integration, ML pipelines, and hands-on evaluation",
+    proof:
+      "Deployed LLM agents to production at AAHK — 80% reduction in manual query time. Hands-on ML products: LungLens, AI Agent X-Ray.",
     icon: "✦",
-    skillPoints: 92,
+    standing: "Production experience",
   },
   {
     id: "product",
     title: "App development",
-    proof: "React Native, Expo, and full-stack products — from PoC to App Store submission",
+    proof:
+      "React Native, Expo, and full-stack products — from PoC to App Store submission (Hermes, Product Tax Deduction Log).",
     icon: "📱",
-    skillPoints: 90,
+    standing: "Actively building",
   },
   {
     id: "architecture",
     title: "Enterprise delivery",
-    proof: "14 years at Apple, AAHK, HKJC — scope discipline, vendor diligence, and shipping",
+    proof:
+      "14 years at Apple, AAHK, HKJC — scope discipline, vendor diligence, and shipping in regulated environments.",
     icon: "🛡",
-    skillPoints: 88,
+    standing: "14 years delivering",
   },
 ];
 
@@ -135,7 +139,7 @@ export const strengthTabs: StrengthTab[] = [
   {
     id: "product",
     label: "App Dev",
-    metric: { value: "App Store", label: "Product Tax Deduction Log — submitting soon" },
+    metric: { value: "App Store", label: "Product Tax Deduction Log — submission in progress" },
     bullets: [
       "React Native + Expo: Hermes, Velora lineage, and mobile utilities",
       "Full product loop: scan → AI analysis → backend → notifications",
@@ -173,15 +177,15 @@ export const featuredLinks: FeaturedLink[] = [
     headline: "AI / ML product — live production deployment",
     href: "/showcase#lunglens",
     tag: "Production",
-    achievement: "LEGENDARY",
+    achievement: "Shipped",
   },
   {
     id: "tax-deduction-log",
     title: "Product Tax Deduction Log",
-    headline: "Mobile app for product purchases & tax deductions — App Store soon",
+    headline: "Mobile app for product purchases & tax deductions — App Store submission in progress",
     href: "/showcase#product-tax-deduction-log",
-    tag: "App Store Soon",
-    achievement: "SOON",
+    tag: "App Store",
+    achievement: "In Progress",
   },
   {
     id: "hermes",
@@ -190,7 +194,7 @@ export const featuredLinks: FeaturedLink[] = [
     href: featuredProjects.find((p) => p.name === "Hermes")?.repoUrl ?? "/work",
     external: true,
     tag: "Mobile",
-    achievement: "RARE",
+    achievement: "Side Project",
   },
 ];
 

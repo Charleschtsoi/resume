@@ -3,7 +3,7 @@
 import { motion, useReducedMotion } from "motion/react";
 import { heroStats } from "@/content/homepage";
 import { currentOccupation, currentPlayerLevel } from "@/content/game-theme";
-import { XPBar } from "@/components/game/XPBar";
+import { profile } from "@/content/resume";
 
 export function GameHUD() {
   const reduceMotion = useReducedMotion();
@@ -32,9 +32,9 @@ export function GameHUD() {
         </div>
       </div>
 
-      <div className="mt-4">
-        <XPBar value={93} label="Career XP" color="gold" />
-      </div>
+      <p className="mt-4 font-game text-[10px] tracking-wider text-[var(--apple-gray-400)] uppercase">
+        Career span · {profile.careerSpan}
+      </p>
 
       <div className="mt-4 grid grid-cols-3 gap-3">
         {heroStats.map((stat) => (
