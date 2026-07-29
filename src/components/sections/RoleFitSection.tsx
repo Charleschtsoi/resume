@@ -18,7 +18,7 @@ export function RoleFitSection() {
           <QuestLevel level={quest.level} active />
           <div>
             <p className="font-game text-[10px] tracking-[0.2em] text-[var(--apple-blue)] uppercase">
-              Final Loadout
+              Summary
             </p>
             <h2
               id="why-fit-heading"
@@ -27,7 +27,7 @@ export function RoleFitSection() {
               {coreStrengths.title}
             </h2>
             <p className="mt-1 font-game text-[9px] tracking-widest text-[var(--game-gold)] uppercase">
-              Quest {quest.level}: {quest.questTitle}
+              Level {quest.level} · {quest.questTitle}
             </p>
           </div>
         </div>
@@ -45,7 +45,7 @@ export function RoleFitSection() {
         <div className="mt-8">
           <Button asChild variant="outline" className="border-[var(--game-border)]">
             <Link href="/experience" className="font-game text-[10px] tracking-wider uppercase">
-              ▶ Full quest log
+              ▶ Full experience
             </Link>
           </Button>
         </div>

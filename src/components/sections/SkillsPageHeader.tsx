@@ -8,7 +8,7 @@ export function SkillsPageHeader() {
   return (
     <div className="relative">
       <PageHeader
-        label="Inventory"
+        label="Skills"
         title="Technical credibility."
         subtitle={`Skill tree — tools forged over ${profile.yearsExperience}+ years.`}
       />

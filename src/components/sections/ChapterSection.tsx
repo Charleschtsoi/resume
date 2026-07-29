@@ -67,7 +67,7 @@ export function HeroSection({ chapter }: { chapter: NarrativeChapter }) {
                 <p className="font-game text-[9px] tracking-widest text-[var(--game-gold)] uppercase">
                   {quest.questTitle}
                 </p>
-                <p className="text-xs text-[var(--apple-gray-400)]">Campaign start</p>
+                <p className="text-xs text-[var(--apple-gray-400)]">Career story</p>
               </div>
             </div>
           </div>
@@ -147,7 +147,7 @@ export function ChapterSection({ chapter }: ChapterSectionProps) {
         <QuestLevel level={quest.level} active />
         <div className="min-w-0 flex-1 space-y-4">
           <p className="font-game text-[9px] leading-relaxed tracking-widest text-[var(--game-gold)] uppercase">
-            <span className="block">Quest {quest.level}</span>
+            <span className="block">Level {quest.level}</span>
             <span className="block text-[var(--game-cyan)]">{quest.questTitle}</span>
           </p>
           {chapter.period && (

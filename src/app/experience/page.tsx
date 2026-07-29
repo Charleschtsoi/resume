@@ -7,18 +7,23 @@ import { PageHeader } from "@/components/layout/PageHeader";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: `Quest Log — ${profile.name}`,
-  description: "Career quest log across Apple, AAHK, HKJC, Accenture, Cathay Pacific, and more.",
+  title: `Experience — ${profile.name}`,
+  description:
+    "Career timeline across Apple, AAHK, HKJC, Accenture, Cathay Pacific, and more.",
 };
 
 export default function ExperiencePage() {
   return (
     <main id="main-content" className="min-h-screen bg-[var(--apple-gray-100)] pt-24 pb-16">
       <div className="mx-auto max-w-[980px] px-6 md:px-12">
-        <PageHeader label="Quest Log" title="Boss battles cleared." subtitle={profile.tagline}>
+        <PageHeader
+          label="Experience"
+          title="Career timeline."
+          subtitle={profile.tagline}
+        >
           <div className="game-hud mt-8 inline-flex flex-wrap items-center gap-3 rounded-lg px-4 py-3">
             <span className="font-game text-[10px] tracking-wider text-[var(--game-cyan)] uppercase">
-              {experience.length} quests completed
+              {experience.length} roles
             </span>
             <span className="hidden text-[var(--game-border)] sm:inline">|</span>
             <span className="font-game text-[10px] tracking-wider text-[var(--game-gold)] uppercase">
@@ -37,7 +42,7 @@ export default function ExperiencePage() {
           </Button>
           <Button asChild variant="outline" className="border-[var(--game-border)]">
             <Link href="/work" className="font-game text-[10px] tracking-wider uppercase">
-              ▶ View achievements
+              ▶ View selected work
             </Link>
           </Button>
         </div>

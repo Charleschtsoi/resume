@@ -57,7 +57,7 @@ export const productionProjects: ProductionProject[] = [
     showcaseImageAlt:
       "LungLens results view — chest X-ray with AI attention maps and pipeline model summary showing pneumonia analysis",
     oneLiner:
-      "Frontend: github.com/Charleschtsoi/LungLens → live at lung-lens-five.vercel.app · Backend: lunglens-backend → charleschtsoi-lunglens-backend.hf.space",
+      "Frontend: github.com/Charleschtsoi/LungLens → live at lunglenshk.vercel.app · Backend: lunglens-backend → charleschtsoi-lunglens-backend.hf.space",
     talkTrack:
       "Full-stack AI product in production: Next.js on Vercel, BFF routes for async jobs, inference on Hugging Face — same PoC-to-production shape as enterprise work.",
     components: [
@@ -71,15 +71,15 @@ export const productionProjects: ProductionProject[] = [
         liveLinks: [
           {
             label: "Live app (Vercel)",
-            url: "https://lung-lens-five.vercel.app",
+            url: "https://lunglenshk.vercel.app",
           },
           {
             label: "Upload flow",
-            url: "https://lung-lens-five.vercel.app/upload",
+            url: "https://lunglenshk.vercel.app/upload",
           },
           {
             label: "Pitch / demo page",
-            url: "https://lung-lens-five.vercel.app/pitch",
+            url: "https://lunglenshk.vercel.app/pitch",
           },
         ],
         contains: [
@@ -137,7 +137,7 @@ export const productionProjects: ProductionProject[] = [
     ],
     architectureSummary: "Browser talks to Vercel; BFF proxies and polls the Hugging Face inference API.",
     architectureSteps: [
-      "Browser → https://lung-lens-five.vercel.app",
+      "Browser → https://lunglenshk.vercel.app",
       "Vercel BFF (/api/analyze/jobs + polling)",
       "→ https://charleschtsoi-lunglens-backend.hf.space",
     ],

@@ -22,7 +22,7 @@ export function FeaturedWorkTeaser() {
           variants={fadeInView}
           className="font-game text-[10px] tracking-[0.2em] text-[var(--game-cyan)] uppercase"
         >
-          Achievements Unlocked
+          Selected Work
         </motion.p>
         <motion.h2
           initial={reduceMotion ? false : "hidden"}
@@ -65,7 +65,7 @@ export function FeaturedWorkTeaser() {
                 rel={link.external ? "noopener noreferrer" : undefined}
                 className="mt-6 font-game text-[10px] tracking-wider text-[var(--game-gold)] hover:text-[var(--game-green)]"
               >
-                {link.external ? "▶ View on GitHub" : "▶ View production"}
+                {link.external ? "▶ Open live" : "▶ View details"}
               </Link>
             </motion.article>
           ))}

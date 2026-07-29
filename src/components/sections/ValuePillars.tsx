@@ -7,7 +7,8 @@ import { fadeInView } from "@/lib/motion";
 const standingColor: Record<string, string> = {
   ai: "text-[var(--game-cyan)] border-[var(--game-cyan)]/40 bg-[var(--game-cyan)]/10",
   product: "text-[var(--game-gold)] border-[var(--game-gold)]/40 bg-[var(--game-gold)]/10",
-  architecture: "text-[var(--game-green)] border-[var(--game-green)]/40 bg-[var(--game-green)]/10",
+  eda: "text-[var(--game-green)] border-[var(--game-green)]/40 bg-[var(--game-green)]/10",
+  edge: "text-[var(--game-orange)] border-[var(--game-orange)]/40 bg-[var(--game-orange)]/10",
 };
 
 export function ValuePillars() {
@@ -26,7 +27,7 @@ export function ValuePillars() {
           variants={fadeInView}
           className="font-game text-[10px] tracking-[0.2em] text-[var(--apple-blue)] uppercase"
         >
-          AI · ML · App Dev
+          Outcomes, not scores
         </motion.p>
         <motion.h2
           initial={reduceMotion ? false : "hidden"}
@@ -35,10 +36,10 @@ export function ValuePillars() {
           variants={fadeInView}
           className="mt-4 text-headline font-semibold tracking-tight text-[var(--apple-black)]"
         >
-          Three pillars. Open to help.
+          What I&apos;ve actually shipped.
         </motion.h2>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2">
           {valuePillars.map((pillar, i) => (
             <motion.article
               key={pillar.id}
@@ -49,7 +50,9 @@ export function ValuePillars() {
               whileHover={reduceMotion ? undefined : { y: -6, transition: { duration: 0.2 } }}
               className="game-card-light group rounded-2xl p-8"
             >
-              <span className="text-2xl">{pillar.icon}</span>
+              <span className="text-2xl" aria-hidden>
+                {pillar.icon}
+              </span>
               <h3 className="mt-4 text-xl font-semibold text-[var(--apple-black)]">
                 {pillar.title}
               </h3>
