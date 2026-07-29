@@ -12,7 +12,7 @@ export function ProductionProjectPanel({ project }: ProductionProjectPanelProps)
     project.status === "live"
       ? "Live"
       : project.status === "coming-soon"
-        ? "App Store soon"
+        ? "In Progress"
         : "Repo only";
   const statusClass =
     project.status === "live"

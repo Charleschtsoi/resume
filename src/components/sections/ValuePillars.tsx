@@ -2,8 +2,13 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import { valuePillars } from "@/content/homepage";
-import { XPBar } from "@/components/game/XPBar";
 import { fadeInView } from "@/lib/motion";
+
+const standingColor: Record<string, string> = {
+  ai: "text-[var(--game-cyan)] border-[var(--game-cyan)]/40 bg-[var(--game-cyan)]/10",
+  product: "text-[var(--game-gold)] border-[var(--game-gold)]/40 bg-[var(--game-gold)]/10",
+  architecture: "text-[var(--game-green)] border-[var(--game-green)]/40 bg-[var(--game-green)]/10",
+};
 
 export function ValuePillars() {
   const reduceMotion = useReducedMotion();
@@ -52,11 +57,11 @@ export function ValuePillars() {
                 {pillar.proof}
               </p>
               <div className="mt-5">
-                <XPBar
-                  value={pillar.skillPoints}
-                  label="Mastery"
-                  color={pillar.id === "ai" ? "cyan" : pillar.id === "product" ? "gold" : "green"}
-                />
+                <span
+                  className={`inline-block rounded border px-2.5 py-1 font-game text-[9px] tracking-wider uppercase ${standingColor[pillar.id] ?? standingColor.ai}`}
+                >
+                  {pillar.standing}
+                </span>
               </div>
             </motion.article>
           ))}
