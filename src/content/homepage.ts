@@ -1,6 +1,5 @@
 import { certifications, experience } from "@/content/resume";
 import { careerYears } from "@/content/game-theme";
-import { featuredProjects } from "@/content/github-work";
 
 export type HeroStat = {
   value: number;
@@ -11,8 +10,8 @@ export type HeroStat = {
 
 export const heroStats: HeroStat[] = [
   { value: careerYears, label: "Years experience", gameLabel: "YRS" },
-  { value: 6, label: "Tier-1 employers", gameLabel: "QUESTS" },
-  { value: certifications.length, label: "Certifications", gameLabel: "BADGES" },
+  { value: 6, label: "Tier-1 employers", gameLabel: "FIRMS" },
+  { value: certifications.length, label: "Certifications", gameLabel: "CERTS" },
 ];
 
 export type ValuePillar = {
@@ -27,27 +26,72 @@ export type ValuePillar = {
 export const valuePillars: ValuePillar[] = [
   {
     id: "ai",
-    title: "AI & machine learning",
+    title: "AI & ML",
     proof:
-      "Deployed LLM agents to production at AAHK — 80% reduction in manual query time. Hands-on ML products: LungLens, AI Agent X-Ray.",
+      "Built and deployed LungLens — a full-stack AI health literacy tool using Hugging Face inference API. Live at lunglenshk.vercel.app. Led the design of an LLM-based monitoring agent at AAHK using Power Automate + Dynatrace API + ServiceNow.",
     icon: "✦",
-    standing: "Production experience",
+    standing: "Shipped in production",
   },
   {
     id: "product",
-    title: "App development",
+    title: "Product Management",
     proof:
-      "React Native, Expo, and full-stack products — from PoC to App Store submission (Hermes, Product Tax Deduction Log).",
+      "14 years across Apple, HKJC, Cathay Pacific, and AAHK. Led Cathay Pacific's mobile app growth from ~10,000 to ~120,000 monthly active users (12x).",
     icon: "📱",
-    standing: "Actively building",
+    standing: "14 years delivering",
   },
   {
-    id: "architecture",
-    title: "Enterprise delivery",
+    id: "eda",
+    title: "Event-Driven Architecture",
     proof:
-      "14 years at Apple, AAHK, HKJC — scope discipline, vendor diligence, and shipping in regulated environments.",
+      "Led Solace migration at HKJC — moved infrastructure from traditional REST APIs to event-based messaging architecture.",
+    icon: "⚡",
+    standing: "Deployed at HKJC",
+  },
+  {
+    id: "edge",
+    title: "Edge Computing",
+    proof:
+      "Led docserverless project at Apple — moved numerical computation from server-side to edge user devices.",
     icon: "🛡",
-    standing: "14 years delivering",
+    standing: "Shipped at Apple",
+  },
+];
+
+export const nowBuilding = {
+  title: "Now",
+  body: "Currently designing 北辰 (North Star) — a Bazi/ZiWei astrology app inspired by Co-Star, targeting iOS. Writing about GenAI systems architecture on Medium.",
+  links: [
+    { label: "Medium", href: "https://medium.com/@charleschtsoi" },
+    { label: "North Star on Work", href: "/work#north-star" },
+  ],
+};
+
+export type WritingArticle = {
+  id: string;
+  title: string;
+  summary: string;
+  href: string;
+};
+
+export const writingArticles: WritingArticle[] = [
+  {
+    id: "genai-rest",
+    title: "GenAI Broke the Contract That REST APIs Were Built On",
+    summary: "Why event-driven architecture is the real answer for AI workloads",
+    href: "https://medium.com/@charleschtsoi/genai-broke-rest-1693c76298c5",
+  },
+  {
+    id: "transformer",
+    title: "Transformer — 一篇論文如何重新定義人工智慧的未來",
+    summary: "Deep dive into the architecture that changed everything",
+    href: "https://medium.com/@charleschtsoi/transformer-%E4%B8%80%E7%AF%87%E8%AB%96%E6%96%87%E5%A6%82%E4%BD%95%E9%87%8D%E6%96%B0%E5%AE%9A%E7%BE%A9%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7%E7%9A%84%E6%9C%AA%E4%BE%86-7adb450a5f14",
+  },
+  {
+    id: "vision-multimodal",
+    title: "當電腦學會『看』與『說』— 從 Vision Transformer 到多模態 AI 的技術全景",
+    summary: "From Vision Transformers to multimodal AI — the full technical landscape",
+    href: "https://medium.com/@charleschtsoi/%E7%95%B6%E9%9B%BB%E8%85%A6%E5%AD%B8%E6%9C%83-%E7%9C%8B-%E8%88%87-%E8%AA%AA-%E5%BE%9E-vision-transformer-%E5%88%B0%E5%A4%9A%E6%A8%A1%E6%85%8B-ai-%E7%9A%84%E6%8A%80%E8%A1%93%E5%85%A8%E6%99%AF-a9ebb281a2b9",
   },
 ];
 
@@ -69,10 +113,10 @@ export const timelineMilestones: TimelineMilestone[] = [
     period: "2012 – 2018",
     role: "Product Owner",
     level: 1,
-    questTitle: "The Mobile Frontier",
+    questTitle: "Mobile product ownership",
     teaser: [
-      "Six years building the mobile app and modernising legacy notification systems",
-      "Learned lifecycle ownership and PSS integration at scale",
+      "Led Cathay Pacific mobile app growth from ~10,000 to ~120,000 monthly active users (12x)",
+      "Owned product lifecycle and PSS integration across six years",
     ],
     storyAnchor: "cathay",
   },
@@ -82,9 +126,9 @@ export const timelineMilestones: TimelineMilestone[] = [
     period: "2019 – 2022",
     role: "Solutions Analyst · Integration Architect",
     level: 7,
-    questTitle: "Regulated Real-Time",
+    questTitle: "Regulated real-time systems",
     teaser: [
-      "Real-time betting systems with Solace Event Mesh in a regulated environment",
+      "Led Solace migration at HKJC — REST APIs to event-based messaging",
       "API contracts and value-driven delivery at Accenture",
     ],
     storyAnchor: "bridge",
@@ -95,9 +139,9 @@ export const timelineMilestones: TimelineMilestone[] = [
     period: "2022 – 2024",
     role: "Engineering Project Manager",
     level: 10,
-    questTitle: "Architectural Standard",
+    questTitle: "Edge & serverless delivery",
     teaser: [
-      "iWork serverless migration with architectural review at every step",
+      "Led docserverless — moved numerical computation from server-side to edge devices",
       "Cross-team API delivery for WWDC releases",
     ],
     storyAnchor: "apple",
@@ -108,9 +152,9 @@ export const timelineMilestones: TimelineMilestone[] = [
     period: "2024 – Present",
     role: "Project Manager",
     level: 14,
-    questTitle: "AI in Production",
+    questTitle: "AI in production",
     teaser: [
-      "Two years deploying LLM agents in production — 80% less manual query time",
+      "Led product design and vendor delivery for an LLM monitoring agent — estimated 80% less manual reporting time",
       "Vendor diligence and legacy-to-cloud migration",
     ],
     storyAnchor: "aahk",
@@ -128,34 +172,37 @@ export const strengthTabs: StrengthTab[] = [
   {
     id: "ai",
     label: "AI & ML",
-    metric: { value: "80%", label: "Reduction in manual query time (LLM agents)" },
+    metric: {
+      value: "~80%",
+      label: "Estimated reduction in manual reporting time (AAHK LLM agent)",
+    },
     bullets: [
-      "LLM-based agents deployed to production at AAHK",
-      "Machine learning products: LungLens vision ensemble, localLLM evaluation",
-      "AI Agent X-Ray — tool-calling architecture and guardrails",
+      "LungLens — full-stack AI health literacy tool, live at lunglenshk.vercel.app",
+      "AAHK LLM monitoring agent — Power Automate + Dynatrace + ServiceNow; led product design and vendor delivery",
+      "Writing on GenAI systems architecture and multimodal AI on Medium",
       "MSc coursework in data science, AI, and system design",
     ],
   },
   {
     id: "product",
-    label: "App Dev",
-    metric: { value: "App Store", label: "Product Tax Deduction Log — submission in progress" },
+    label: "Product",
+    metric: { value: "12x", label: "Cathay mobile MAU growth (~10k → ~120k)" },
     bullets: [
-      "React Native + Expo: Hermes, Velora lineage, and mobile utilities",
-      "Full product loop: scan → AI analysis → backend → notifications",
-      "Web apps: LungLens, this portfolio site, presenter-first UX",
-      "Open to any app development project where I can help",
+      "14 years across Apple, HKJC, Cathay Pacific, and AAHK",
+      "Currently designing 北辰 (North Star) — Bazi/ZiWei astrology app for iOS",
+      "Hands-on builds: LungLens, Hermes, Product Tax Deduction Log",
+      "Open to collaborations, consulting, and full-time roles",
     ],
   },
   {
     id: "architecture",
-    label: "Delivery",
-    metric: { value: "14 years", label: "Enterprise experience since 2012" },
+    label: "Architecture",
+    metric: { value: "14 years", label: "Enterprise delivery since 2012" },
     bullets: [
-      "Apple, AAHK, HKJC — regulated and high-stakes environments",
-      "Scope gatekeeping — deliver AI agents in weeks, not months",
+      "HKJC Solace migration — traditional APIs to event-based messaging",
+      "Apple docserverless — edge computing for numerical workloads",
       "Vendor technical evaluation — API, security, scalability",
-      "Available for consulting, collaborations, and full-time roles",
+      "Available for AI, ML, and app development projects",
     ],
   },
 ];
@@ -174,27 +221,30 @@ export const featuredLinks: FeaturedLink[] = [
   {
     id: "lunglens",
     title: "LungLens",
-    headline: "AI / ML product — live production deployment",
-    href: "/showcase#lunglens",
-    tag: "Production",
+    headline:
+      "Solo-built AI health literacy tool — bilingual X-ray education, live on Vercel",
+    href: "https://lunglenshk.vercel.app",
+    external: true,
+    tag: "AI / ML",
     achievement: "Shipped",
   },
   {
-    id: "tax-deduction-log",
-    title: "Product Tax Deduction Log",
-    headline: "Mobile app for product purchases & tax deductions — App Store submission in progress",
-    href: "/showcase#product-tax-deduction-log",
-    tag: "App Store",
-    achievement: "In Progress",
+    id: "aahk-agent",
+    title: "AAHK LLM Monitoring Agent",
+    headline:
+      "Led product design and vendor delivery — estimated 80% less manual reporting time",
+    href: "/work#aahk-llm-monitoring-agent",
+    tag: "Enterprise AI",
+    achievement: "Shipped",
   },
   {
-    id: "hermes",
-    title: "Hermes",
-    headline: featuredProjects.find((p) => p.name === "Hermes")?.headline ?? "Barcode + AI mobile app",
-    href: featuredProjects.find((p) => p.name === "Hermes")?.repoUrl ?? "/work",
-    external: true,
+    id: "north-star",
+    title: "北辰 (North Star)",
+    headline:
+      "Bazi/ZiWei astrology app for iOS — design phase, user stories mapped",
+    href: "/work#north-star",
     tag: "Mobile",
-    achievement: "Side Project",
+    achievement: "In Progress",
   },
 ];
 

@@ -16,10 +16,10 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: `Work — ${profile.name}`,
   description:
-    "Curated projects in AI, machine learning, and app development — open to collaborations.",
+    "Selected work in AI, machine learning, product, and systems architecture — outcomes, not scores.",
 };
 
-const pillarOrder: WorkPillar[] = ["ai", "product", "rigour"];
+const pillarOrder: WorkPillar[] = ["ai", "product", "architecture"];
 
 export default function WorkPage() {
   const byPillar = (pillar: WorkPillar) =>
@@ -32,7 +32,7 @@ export default function WorkPage() {
     >
       <div className="mx-auto max-w-[1200px] px-6 md:px-12">
         <PageHeader
-          label="Achievements Unlocked"
+          label="Selected Work"
           title={githubWorkIntro.title}
           subtitle={githubWorkIntro.subtitle}
         />
@@ -73,14 +73,14 @@ export default function WorkPage() {
             id="optional-projects"
             className="font-game text-[10px] tracking-[0.2em] text-[var(--apple-blue)] uppercase"
           >
-            Side quests
+            Also worth a look
           </h2>
           <p className="mt-2 text-lg font-semibold text-[var(--apple-black)]">
-            If time or questions allow
+            Side projects and experiments
           </p>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             {optionalProjects.map((project) => (
-              <ProjectCard key={project.name} project={project} />
+              <ProjectCard key={project.id} project={project} />
             ))}
           </div>
         </section>
@@ -93,8 +93,8 @@ export default function WorkPage() {
             {githubWorkIntro.closingScript}
           </p>
           <p className="mt-6 text-sm text-muted-foreground">
-            Short on time? Show <strong>LungLens</strong> +{" "}
-            <strong>Product Tax Deduction Log</strong>, then link to full profile.
+            Short on time? Show <strong>LungLens</strong> + the{" "}
+            <strong>AAHK LLM agent</strong>, then link to full experience.
           </p>
         </section>
 
@@ -119,7 +119,7 @@ export default function WorkPage() {
           </Button>
           <Button asChild variant="outline" size="lg" className="border-[var(--game-border)]">
             <Link href="/experience" className="font-game text-[10px] tracking-wider uppercase">
-              ▶ Quest log
+              ▶ Experience
             </Link>
           </Button>
         </div>

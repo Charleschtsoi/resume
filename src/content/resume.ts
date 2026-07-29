@@ -46,10 +46,10 @@ export type NarrativeChapter = {
 export const coreStrengths = {
   title: "What I bring",
   bullets: [
-    "AI & machine learning: LLM agents in production, model integration, and hands-on ML products (LungLens, AI Agent X-Ray)",
-    "App development: React Native and Expo apps shipped end to end — Hermes, Product Tax Deduction Log (App Store in progress)",
-    "Enterprise delivery: scope gatekeeping, vendor diligence, and evidence-based shipping at Apple and AAHK",
-    "Open to help: happy to take on any project where my skills in AI, ML, or app development can move the needle",
+    "AI & ML: LungLens live in production; led AAHK LLM monitoring agent design and vendor delivery (estimated 80% less manual reporting time)",
+    "Product: 14 years across Apple, HKJC, Cathay, AAHK — Cathay mobile MAU ~10k → ~120k (12x)",
+    "Architecture: Solace event-driven migration at HKJC; docserverless edge compute at Apple",
+    "Building now: 北辰 (North Star) astrology app for iOS; writing on GenAI systems on Medium",
   ],
 };
 
@@ -83,16 +83,17 @@ export const narrativeChapters: NarrativeChapter[] = [
     headline: "Six years at Cathay Pacific.",
     subheadline: "Where product ownership fundamentals took root",
     paragraphs: [
-      "I started at Cathay Pacific — six years as a Product Owner building their mobile app and modernising legacy notification systems. That's where I learned product ownership fundamentals: backlog discipline, stakeholder negotiation, and how to integrate new frontends with old backend systems like PSS.",
+      "I started at Cathay Pacific — six years as a Product Owner building their mobile app and modernising legacy notification systems. Under that ownership the app grew from roughly 10,000 to 120,000 monthly active users. That's where I learned product ownership fundamentals: backlog discipline, stakeholder negotiation, and how to integrate new frontends with old backend systems like PSS.",
       "Six years at one company also taught me what it means to own a product across its full lifecycle — not just launch it, but maintain it, evolve it, and fight for it.",
     ],
     metrics: [
-      { value: "6 years", label: "One employer — lifecycle ownership" },
-      { value: "Mobile + PSS", label: "Legacy integration at scale" },
+      { value: "12x", label: "Mobile MAU growth (~10k → ~120k)" },
+      { value: "6 years", label: "Lifecycle ownership" },
       { value: "NotiFLY", label: "Modernised notifications" },
     ],
     highlights: [
-      "Led Cathay Pacific Mobile App — XML/JSON integration with legacy Passenger Service Systems (PSS)",
+      "Led Cathay Pacific Mobile App — grew monthly active users from ~10,000 to ~120,000 (12x)",
+      "Defined XML/JSON structures integrating mobile frontend with legacy Passenger Service Systems (PSS)",
       "Spearheaded NotiFLY revamp — migrated legacy notification system to modern messaging architecture",
     ],
     theme: "light",
@@ -104,16 +105,16 @@ export const narrativeChapters: NarrativeChapter[] = [
     headline: "Regulated systems. Architectural rigour.",
     subheadline: "HKJC + Accenture",
     paragraphs: [
-      "From there I moved through HKJC and Accenture. At Jockey Club, I worked on high-frequency betting systems with Solace Event Mesh — real-time, zero-downtime, heavily regulated. That was my first deep exposure to what it means to build technology inside a compliance-driven environment.",
+      "From there I moved through HKJC and Accenture. At Jockey Club, I led a Solace migration — moving core infrastructure from traditional REST APIs to event-based messaging for real-time, high-concurrency betting in a regulated environment.",
       "At Accenture, I sharpened the architecture side — defining API contracts, shifting teams from feature factories to value-driven delivery.",
     ],
     metrics: [
-      { value: "Zero downtime", label: "Regulated real-time systems" },
+      { value: "Solace", label: "REST → event-based messaging (HKJC)" },
       { value: "20%", label: "Less integration rework (API contracts)" },
-      { value: "Solace", label: "Event Mesh at HKJC" },
+      { value: "Zero downtime", label: "Regulated real-time systems" },
     ],
     highlights: [
-      "Solace Event Mesh for real-time odds — Pub/Sub at high concurrency (HKJC)",
+      "Led Solace migration at HKJC — traditional APIs to event-based messaging for real-time odds",
       "API contracts (Swagger) reducing integration rework by 20% (Accenture)",
       "Shifted mobile squads from feature factory to value-driven architecture",
     ],
@@ -126,18 +127,18 @@ export const narrativeChapters: NarrativeChapter[] = [
     headline: "A standard, not a technology.",
     subheadline: "iWork serverless · Genmoji delivery",
     paragraphs: [
-      "Then Apple. Two years managing the iWork backend migration to serverless and supporting Genmoji delivery. What I took from Apple wasn't a specific technology — it was a standard. Every decision went through architectural review, every dependency was mapped, every release was evidence-based.",
+      "Then Apple. Two years as Engineering Project Manager — including the docserverless edge project, which moved numerical computation from server-side to user devices. What I took from Apple wasn't only a technology — it was a standard. Every decision went through architectural review, every dependency was mapped, every release was evidence-based.",
       "That level of rigour is exactly what I'd bring to any regulated, high-stakes environment.",
     ],
     metrics: [
-      { value: "Evidence-based", label: "Every release decision" },
+      { value: "Edge", label: "docserverless — compute on devices" },
       { value: "Serverless", label: "iWork backend migration" },
       { value: "Genmoji", label: "Cross-team API delivery" },
     ],
     highlights: [
-      "Serverless migration for iWork backend — architectural reviews & dependency mapping",
+      "Led docserverless — moved numerical computation from server-side to edge user devices",
+      "Partnered on iWork backend serverless migration — architectural reviews & dependency mapping",
       "Primary technical unblocker for API dependencies across CoreML, UI Engineering, and QA",
-      "Data-driven release optimization for Numbers (Server/Web) via log & defect analysis",
     ],
     theme: "light",
   },
@@ -148,18 +149,18 @@ export const narrativeChapters: NarrativeChapter[] = [
     headline: "AI in production. Scope as a skill.",
     subheadline: "Airport Authority Hong Kong · 2 years",
     paragraphs: [
-      "Two years in at Airport Authority — deploying LLM-based AI agents into production, running vendor technical due diligence, and gatekeeping scope. We delivered a capacity planning AI agent in ten weeks by saying 'no' to the right things at the right time.",
+      "Two years in at Airport Authority — leading product design and vendor delivery for LLM-based agents in production, running vendor technical due diligence, and gatekeeping scope. One example: an infrastructure monitoring agent (Power Automate + Dynatrace + ServiceNow) that replaced manual health reporting for senior management.",
     ],
     metrics: [
-      { value: "80%", label: "Less manual query time (LLM agents)" },
+      { value: "~80%", label: "Estimated less manual reporting time" },
       { value: "10 weeks", label: "Capacity planning AI delivery" },
       { value: "Scope", label: "Gatekeeping in practice" },
     ],
     highlights: [
-      "LLM-based agents for internal report automation — 80% reduction in manual query time",
+      "Led product design and vendor delivery for an LLM monitoring agent — estimated 80% reduction in manual reporting time",
       "Vendor technical due diligence on Microsoft ecosystem — API, security, scalability",
       "End-to-end delivery of new Insurance System — legacy mainframe to cloud migration",
-      "Hands-on repos: LungLens, Hermes, Product Tax Deduction Log — see Work page for curated GitHub",
+      "Hands-on: LungLens live at lunglenshk.vercel.app — see Work page",
     ],
     theme: "dark",
   },
@@ -231,7 +232,7 @@ export const experience: ExperienceEntry[] = [
     location: "Hong Kong",
     period: "Mar 2024 – Present",
     bullets: [
-      "Architected and deployed LLM-based agents for internal report automation; defined integration patterns between LLM core and internal databases, reducing manual query time by 80%.",
+      "Led product design and vendor delivery for an LLM-based monitoring agent (Power Automate + Dynatrace API + ServiceNow) that automated infrastructure health reporting for senior management — estimated 80% reduction in manual reporting time.",
       "Conducted deep-dive architectural assessments of Microsoft ecosystem vendors — API capabilities, security protocols, scalability limits.",
       "Leading end-to-end technical delivery of new Insurance System; managing data migration from legacy mainframes to cloud workflows.",
     ],
@@ -242,9 +243,9 @@ export const experience: ExperienceEntry[] = [
     location: "Hong Kong",
     period: "Oct 2022 – Sept 2024",
     bullets: [
-      "Partnered with Engineering Leads to transition iWork backend to serverless architecture; facilitated architectural reviews and dependency mapping.",
+      "Led the docserverless project — moved numerical computation from server-side to edge user devices.",
+      "Partnered with Engineering Leads on iWork backend serverless migration; facilitated architectural reviews and dependency mapping.",
       "Primary technical unblocker for API dependency risks between CoreML, UI Engineering, and QA for WWDC releases.",
-      "Utilized statistical analysis of server logs and defect rates to optimize release schedules for Numbers (Server/Web).",
     ],
   },
   {
@@ -263,7 +264,7 @@ export const experience: ExperienceEntry[] = [
     location: "Hong Kong",
     period: "May 2019 – July 2021",
     bullets: [
-      "Designed data flows using Solace Event Mesh for real-time odds updates and high-concurrency betting (Pub/Sub).",
+      "Led Solace migration — moved core infrastructure from traditional REST APIs to event-based messaging for real-time odds and high-concurrency betting.",
       "Conducted feasibility studies for high-volume solutions; analyzed latency vs throughput trade-offs.",
       "Defined technical specs for Critical Information Dissemination APIs with strict security key protocols.",
     ],
@@ -284,7 +285,7 @@ export const experience: ExperienceEntry[] = [
     location: "Hong Kong",
     period: "Nov 2012 – Sept 2018",
     bullets: [
-      "Led Cathay Pacific Mobile App development; defined XML/JSON structures integrating mobile frontend with legacy PSS.",
+      "Led Cathay Pacific Mobile App — grew monthly active users from ~10,000 to ~120,000 (12x); defined XML/JSON structures integrating mobile frontend with legacy PSS.",
       "Spearheaded NotiFLY revamp — migrated legacy notification system to modern messaging architecture.",
     ],
   },
@@ -317,7 +318,7 @@ export const chapterIds = narrativeChapters.map((c) => c.id);
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/story", label: "Story" },
-  { href: "/experience", label: "Quest Log" },
+  { href: "/experience", label: "Experience" },
   { href: "/skills", label: "Skills" },
   { href: "/work", label: "Work" },
   { href: "/showcase", label: "Showcase" },

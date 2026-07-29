@@ -14,10 +14,13 @@ export function InteractiveTimeline() {
   const active = timelineMilestones.find((m) => m.id === activeId) ?? timelineMilestones[0];
   const activeIndex = timelineMilestones.findIndex((m) => m.id === activeId);
 
-  const moveSelection = useCallback((delta: number) => {
-    const next = Math.max(0, Math.min(timelineMilestones.length - 1, activeIndex + delta));
-    setActiveId(timelineMilestones[next].id);
-  }, [activeIndex]);
+  const moveSelection = useCallback(
+    (delta: number) => {
+      const next = Math.max(0, Math.min(timelineMilestones.length - 1, activeIndex + delta));
+      setActiveId(timelineMilestones[next].id);
+    },
+    [activeIndex]
+  );
 
   useEffect(() => {
     const el = containerRef.current;
@@ -44,7 +47,7 @@ export function InteractiveTimeline() {
       id="timeline"
       ref={containerRef}
       tabIndex={0}
-      aria-label="Career quest log — use arrow keys to navigate"
+      aria-label="Career timeline — use arrow keys to navigate"
       className="game-section-dark scroll-mt-20 px-6 py-20 text-[var(--apple-gray-100)] outline-none md:px-12 md:py-28"
     >
       <div className="mx-auto max-w-[980px]">
@@ -55,7 +58,7 @@ export function InteractiveTimeline() {
           variants={fadeInView}
           className="font-game text-[10px] tracking-[0.2em] text-[var(--game-cyan)] uppercase"
         >
-          Quest Log
+          Career Timeline
         </motion.p>
         <motion.h2
           initial={reduceMotion ? false : "hidden"}
@@ -64,7 +67,7 @@ export function InteractiveTimeline() {
           variants={fadeInView}
           className="mt-4 text-headline font-semibold tracking-tight"
         >
-          14 years. One campaign.
+          14 years of delivery.
         </motion.h2>
 
         <div className="mt-12 flex gap-3 overflow-x-auto pb-4 md:justify-between">
@@ -108,7 +111,7 @@ export function InteractiveTimeline() {
               <QuestLevel level={active.level} active />
               <div>
                 <p className="font-game text-[9px] tracking-widest text-[var(--game-gold)] uppercase">
-                  Quest {active.level}: {active.questTitle}
+                  Level {active.level} · {active.questTitle}
                 </p>
                 <h3 className="mt-2 text-title font-semibold">{active.company}</h3>
                 <p className="text-[var(--apple-gray-300)]">{active.role}</p>
@@ -139,7 +142,7 @@ export function InteractiveTimeline() {
               href="/experience"
               className="text-sm text-[var(--apple-gray-400)] hover:text-white hover:underline"
             >
-              Full quest log →
+              Full experience →
             </Link>
           </div>
         </motion.div>

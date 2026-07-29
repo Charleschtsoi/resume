@@ -23,7 +23,7 @@ export function StrengthTabs() {
           variants={fadeInView}
           className="font-game text-[10px] tracking-[0.2em] text-[var(--apple-blue)] uppercase"
         >
-          Inventory
+          Strengths
         </motion.p>
         <motion.h2
           initial={reduceMotion ? false : "hidden"}

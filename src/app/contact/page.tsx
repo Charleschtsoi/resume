@@ -28,15 +28,15 @@ export default function ContactPage() {
 
         <div className="game-hud mt-10 rounded-lg p-6">
           <p className="font-game text-[10px] tracking-wider text-[var(--game-gold)] uppercase">
-            Current class · Level {profile.yearsExperience}
+            Current role · Level {profile.yearsExperience}
           </p>
           <p className="mt-2 text-lg font-semibold text-white">{profile.currentOccupation}</p>
           <p className="mt-1 text-sm text-[var(--apple-gray-400)]">{profile.careerSpan}</p>
           <ul className="mt-3 space-y-2 text-sm text-[var(--apple-gray-300)]">
-            <li><span className="text-[var(--game-cyan)]">▸</span> AI &amp; machine learning — LLM agents, model integration, ML products</li>
-            <li><span className="text-[var(--game-cyan)]">▸</span> App development — React Native, Expo, full-stack web</li>
-            <li><span className="text-[var(--game-cyan)]">▸</span> Product Tax Deduction Log — App Store submission in progress</li>
-            <li><span className="text-[var(--game-cyan)]">▸</span> Open to any project where I can help</li>
+            <li><span className="text-[var(--game-cyan)]">▸</span> AI &amp; ML — LungLens live; AAHK LLM monitoring agent (product lead)</li>
+            <li><span className="text-[var(--game-cyan)]">▸</span> Product — 14 years; Cathay mobile MAU ~10k → ~120k</li>
+            <li><span className="text-[var(--game-cyan)]">▸</span> Building now — 北辰 (North Star) for iOS; GenAI writing on Medium</li>
+            <li><span className="text-[var(--game-cyan)]">▸</span> Open to collaborations, consulting, and full-time roles</li>
           </ul>
         </div>
 

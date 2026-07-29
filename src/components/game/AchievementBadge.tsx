@@ -3,16 +3,11 @@ type AchievementBadgeProps = {
   className?: string;
 };
 
-/** Maps grounded status labels to existing game badge styles */
+/** Grounded status labels only — no RPG rarity tiers */
 const tierColors: Record<string, string> = {
   Shipped: "game-badge-legendary",
-  Production: "game-badge-legendary",
-  Live: "game-badge-meta",
-  "Side Project": "game-badge-rare",
-  "Personal Project": "game-badge-rare",
   "In Progress": "game-badge-soon",
-  Demo: "game-badge-epic",
-  Secure: "game-badge-secure",
+  "Side Project": "game-badge-rare",
 };
 
 export function AchievementBadge({ tier, className = "" }: AchievementBadgeProps) {
