@@ -19,6 +19,15 @@ export function PageFooter() {
           <Link href="/showcase" className="hover:text-[var(--apple-blue)]">
             Showcase
           </Link>
+          <Link href="/skills" className="hover:text-[var(--apple-blue)]">
+            Skills
+          </Link>
+          <Link href="/blog" className="hover:text-[var(--apple-blue)]">
+            Blog
+          </Link>
+          <Link href="/contact" className="hover:text-[var(--apple-blue)]">
+            Contact
+          </Link>
           <Link href={profile.links.github} className="hover:text-[var(--apple-blue)]">
             GitHub
           </Link>
