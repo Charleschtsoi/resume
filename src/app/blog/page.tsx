@@ -23,7 +23,9 @@ export default function BlogPage() {
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
           Notes on GenAI systems, transformers, and multimodal AI — published on
-          Medium. Posts sync automatically from RSS.
+          Medium. Latest posts sync from Medium; older stories are kept in the
+          site archive because Medium&apos;s RSS feed only returns the newest
+          ~10.
         </p>
 
         <div className="mt-12">

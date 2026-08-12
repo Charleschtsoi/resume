@@ -28,18 +28,27 @@ function formatDate(dateString: string) {
   });
 }
 
-async function loadMediumPosts(): Promise<MediumPost[]> {
+type MediumFeed = {
+  posts: MediumPost[];
+  note?: string;
+};
+
+async function loadMediumPosts(): Promise<MediumFeed> {
   const response = await fetch("/api/medium");
   const data = (await response.json()) as {
     posts?: MediumPost[];
     error?: string;
+    meta?: { note?: string; totalCount?: number };
   };
 
   if (!response.ok) {
     throw new Error(data.error || "Failed to fetch Medium posts");
   }
 
-  return data.posts ?? [];
+  return {
+    posts: data.posts ?? [],
+    note: data.meta?.note,
+  };
 }
 
 function SkeletonCard() {
@@ -62,6 +71,7 @@ function SkeletonCard() {
 
 export default function MediumBlog() {
   const [posts, setPosts] = useState<MediumPost[]>([]);
+  const [note, setNote] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [retryCount, setRetryCount] = useState(0);
@@ -71,9 +81,10 @@ export default function MediumBlog() {
 
     void (async () => {
       try {
-        const nextPosts = await loadMediumPosts();
+        const feed = await loadMediumPosts();
         if (cancelled) return;
-        setPosts(nextPosts);
+        setPosts(feed.posts);
+        setNote(feed.note ?? "");
         setError("");
       } catch (err) {
         if (cancelled) return;
@@ -81,6 +92,7 @@ export default function MediumBlog() {
           err instanceof Error ? err.message : "Failed to fetch Medium posts"
         );
         setPosts([]);
+        setNote("");
       } finally {
         if (!cancelled) setLoading(false);
       }
@@ -127,13 +139,20 @@ export default function MediumBlog() {
 
   return (
     <div className="space-y-8">
-      <div className="game-card-light flex flex-col gap-4 rounded-2xl p-5 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm text-muted-foreground">
-          Published Articles:{" "}
-          <span className="font-semibold text-[var(--apple-black)]">
-            {posts.length}
-          </span>
-        </p>
+      <div className="game-card-light flex flex-col gap-3 rounded-2xl p-5 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="text-sm text-muted-foreground">
+            Published Articles:{" "}
+            <span className="font-semibold text-[var(--apple-black)]">
+              {posts.length}
+            </span>
+          </p>
+          {note ? (
+            <p className="mt-1 max-w-xl text-xs text-muted-foreground/80">
+              {note}
+            </p>
+          ) : null}
+        </div>
         <a
           href="https://medium.com/@charleschtsoi"
           target="_blank"
