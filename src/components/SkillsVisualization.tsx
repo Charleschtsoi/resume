@@ -6,7 +6,6 @@ type SkillCategory = "ai" | "product" | "technical" | "tools";
 
 type Skill = {
   name: string;
-  level: number;
   category: SkillCategory;
   color: string;
 };
@@ -23,24 +22,24 @@ const CATEGORY_META: Record<
 };
 
 const skills: Skill[] = [
-  { name: "Machine Learning", level: 85, category: "ai", color: "#00d4ff" },
-  { name: "LLM Integration", level: 90, category: "ai", color: "#00d4ff" },
-  { name: "GenAI Systems", level: 88, category: "ai", color: "#00d4ff" },
-  { name: "Data Science", level: 82, category: "ai", color: "#00d4ff" },
-  { name: "Product Management", level: 92, category: "product", color: "#ffd700" },
-  { name: "Agile / Scrum", level: 90, category: "product", color: "#ffd700" },
-  { name: "Stakeholder Alignment", level: 88, category: "product", color: "#ffd700" },
-  { name: "Product Strategy", level: 86, category: "product", color: "#ffd700" },
-  { name: "Event-Driven Architecture", level: 88, category: "technical", color: "#b48cff" },
-  { name: "API Design (REST/JSON)", level: 90, category: "technical", color: "#b48cff" },
-  { name: "Next.js / React", level: 84, category: "technical", color: "#b48cff" },
-  { name: "Python", level: 80, category: "technical", color: "#b48cff" },
-  { name: "System Integration", level: 87, category: "technical", color: "#b48cff" },
-  { name: "Power Automate", level: 82, category: "tools", color: "#00ff88" },
-  { name: "ServiceNow", level: 78, category: "tools", color: "#00ff88" },
-  { name: "Dynatrace / Monitoring", level: 80, category: "tools", color: "#00ff88" },
-  { name: "JIRA / Confluence", level: 90, category: "tools", color: "#00ff88" },
-  { name: "Tableau / Visualization", level: 75, category: "tools", color: "#00ff88" },
+  { name: "Machine Learning", category: "ai", color: "#00d4ff" },
+  { name: "LLM Integration", category: "ai", color: "#00d4ff" },
+  { name: "GenAI Systems", category: "ai", color: "#00d4ff" },
+  { name: "Data Science", category: "ai", color: "#00d4ff" },
+  { name: "Product Management", category: "product", color: "#ffd700" },
+  { name: "Agile / Scrum", category: "product", color: "#ffd700" },
+  { name: "Stakeholder Alignment", category: "product", color: "#ffd700" },
+  { name: "Product Strategy", category: "product", color: "#ffd700" },
+  { name: "Event-Driven Architecture", category: "technical", color: "#b48cff" },
+  { name: "API Design (REST/JSON)", category: "technical", color: "#b48cff" },
+  { name: "Next.js / React", category: "technical", color: "#b48cff" },
+  { name: "Python", category: "technical", color: "#b48cff" },
+  { name: "System Integration", category: "technical", color: "#b48cff" },
+  { name: "Power Automate", category: "tools", color: "#00ff88" },
+  { name: "ServiceNow", category: "tools", color: "#00ff88" },
+  { name: "Dynatrace / Monitoring", category: "tools", color: "#00ff88" },
+  { name: "JIRA / Confluence", category: "tools", color: "#00ff88" },
+  { name: "Tableau / Visualization", category: "tools", color: "#00ff88" },
 ];
 
 const FILTERS: Array<SkillCategory | "all"> = [
@@ -50,53 +49,6 @@ const FILTERS: Array<SkillCategory | "all"> = [
   "technical",
   "tools",
 ];
-
-function CircularChart({
-  label,
-  value,
-  color,
-}: {
-  label: string;
-  value: number;
-  color: string;
-}) {
-  const radius = 36;
-  const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (value / 100) * circumference;
-
-  return (
-    <div className="flex flex-col items-center gap-2">
-      <div className="relative h-24 w-24">
-        <svg className="h-24 w-24 -rotate-90" viewBox="0 0 96 96" aria-hidden>
-          <circle
-            cx="48"
-            cy="48"
-            r={radius}
-            fill="none"
-            stroke="rgba(42, 58, 90, 0.5)"
-            strokeWidth="8"
-          />
-          <circle
-            cx="48"
-            cy="48"
-            r={radius}
-            fill="none"
-            stroke={color}
-            strokeWidth="8"
-            strokeLinecap="round"
-            strokeDasharray={circumference}
-            strokeDashoffset={offset}
-            className="transition-all duration-700 ease-out"
-          />
-        </svg>
-        <span className="absolute inset-0 flex items-center justify-center text-sm font-semibold text-[var(--apple-black)]">
-          {value}%
-        </span>
-      </div>
-      <p className="text-xs font-medium text-muted-foreground">{label}</p>
-    </div>
-  );
-}
 
 export default function SkillsVisualization() {
   const [selectedCategory, setSelectedCategory] = useState<SkillCategory | "all">(
@@ -117,27 +69,16 @@ export default function SkillsVisualization() {
     [selectedCategory]
   );
 
-  const averageLevel = Math.round(
-    filteredSkills.reduce((sum, skill) => sum + skill.level, 0) /
-      Math.max(filteredSkills.length, 1)
-  );
-
-  const categoryAverages = (Object.keys(CATEGORY_META) as Array<
+  const categoryCounts = (Object.keys(CATEGORY_META) as Array<
     SkillCategory | "all"
   >)
     .filter((key) => key !== "all")
-    .map((category) => {
-      const items = skills.filter((skill) => skill.category === category);
-      const avg = Math.round(
-        items.reduce((sum, skill) => sum + skill.level, 0) / Math.max(items.length, 1)
-      );
-      return {
-        category: category as SkillCategory,
-        label: CATEGORY_META[category].label,
-        color: CATEGORY_META[category].color,
-        value: avg,
-      };
-    });
+    .map((category) => ({
+      category: category as SkillCategory,
+      label: CATEGORY_META[category].label,
+      color: CATEGORY_META[category].color,
+      count: skills.filter((skill) => skill.category === category).length,
+    }));
 
   return (
     <div className="space-y-8">
@@ -167,21 +108,13 @@ export default function SkillsVisualization() {
         })}
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2">
         <div className="game-card-light rounded-2xl p-5">
           <p className="font-game text-[10px] tracking-wider text-[var(--apple-blue)] uppercase">
             Skills
           </p>
           <p className="mt-2 text-3xl font-semibold text-[var(--apple-black)]">
             {filteredSkills.length}
-          </p>
-        </div>
-        <div className="game-card-light rounded-2xl p-5">
-          <p className="font-game text-[10px] tracking-wider text-[var(--apple-blue)] uppercase">
-            Avg Level
-          </p>
-          <p className="mt-2 text-3xl font-semibold text-[var(--apple-black)]">
-            {averageLevel}%
           </p>
         </div>
         <div className="game-card-light rounded-2xl p-5">
@@ -194,52 +127,46 @@ export default function SkillsVisualization() {
         </div>
       </div>
 
-      <div className="space-y-4">
+      <div className="grid gap-3 sm:grid-cols-2">
         {filteredSkills.map((skill, index) => (
           <div
             key={skill.name}
-            className="game-card-light rounded-2xl p-4 transition hover:shadow-[0_0_20px_rgba(0,212,255,0.12)]"
+            className="game-card-light flex items-center gap-3 rounded-2xl p-4 transition hover:shadow-[0_0_20px_rgba(0,212,255,0.12)]"
             style={{
               opacity: animated ? 1 : 0,
               transform: animated ? "translateY(0)" : "translateY(12px)",
               transition: `opacity 0.45s ease ${index * 40}ms, transform 0.45s ease ${index * 40}ms`,
             }}
           >
-            <div className="mb-2 flex items-center justify-between gap-4">
-              <p className="text-sm font-medium text-[var(--apple-black)]">
-                {skill.name}
-              </p>
-              <p className="text-sm font-semibold" style={{ color: skill.color }}>
-                {skill.level}%
-              </p>
-            </div>
-            <div className="h-2.5 overflow-hidden rounded-full bg-[var(--apple-gray-100)] ring-1 ring-black/5">
-              <div
-                className="h-full rounded-full transition-all duration-700 ease-out"
-                style={{
-                  width: animated ? `${skill.level}%` : "0%",
-                  background: `linear-gradient(90deg, ${skill.color}, ${skill.color}cc)`,
-                  boxShadow: `0 0 12px ${skill.color}55`,
-                  transitionDelay: `${index * 40}ms`,
-                }}
-              />
-            </div>
+            <span
+              className="h-2.5 w-2.5 shrink-0 rounded-full"
+              style={{ backgroundColor: skill.color }}
+              aria-hidden
+            />
+            <p className="text-sm font-medium text-[var(--apple-black)]">
+              {skill.name}
+            </p>
           </div>
         ))}
       </div>
 
       <div className="game-card-light rounded-2xl p-6">
         <p className="font-game text-[10px] tracking-[0.2em] text-[var(--apple-blue)] uppercase">
-          Skills Distribution
+          By category
         </p>
-        <div className="mt-6 flex flex-wrap items-center justify-around gap-6">
-          {categoryAverages.map((item) => (
-            <CircularChart
-              key={item.category}
-              label={item.label}
-              value={item.value}
-              color={item.color}
-            />
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {categoryCounts.map((item) => (
+            <div key={item.category} className="text-center">
+              <p
+                className="text-2xl font-semibold"
+                style={{ color: item.color }}
+              >
+                {item.count}
+              </p>
+              <p className="mt-1 text-xs font-medium text-muted-foreground">
+                {item.label}
+              </p>
+            </div>
           ))}
         </div>
       </div>
