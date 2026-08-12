@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 type MediumPost = {
   id: string;
@@ -28,6 +28,20 @@ function formatDate(dateString: string) {
   });
 }
 
+async function loadMediumPosts(): Promise<MediumPost[]> {
+  const response = await fetch("/api/medium");
+  const data = (await response.json()) as {
+    posts?: MediumPost[];
+    error?: string;
+  };
+
+  if (!response.ok) {
+    throw new Error(data.error || "Failed to fetch Medium posts");
+  }
+
+  return data.posts ?? [];
+}
+
 function SkeletonCard() {
   return (
     <div className="game-card-light animate-pulse rounded-2xl p-6">
@@ -50,34 +64,38 @@ export default function MediumBlog() {
   const [posts, setPosts] = useState<MediumPost[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
-
-  const fetchPosts = useCallback(async () => {
-    setLoading(true);
-    setError("");
-
-    try {
-      const response = await fetch("/api/medium");
-      const data = (await response.json()) as {
-        posts?: MediumPost[];
-        error?: string;
-      };
-
-      if (!response.ok) {
-        throw new Error(data.error || "Failed to fetch Medium posts");
-      }
-
-      setPosts(data.posts ?? []);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to fetch Medium posts");
-      setPosts([]);
-    } finally {
-      setLoading(false);
-    }
-  }, []);
+  const [retryCount, setRetryCount] = useState(0);
 
   useEffect(() => {
-    void fetchPosts();
-  }, [fetchPosts]);
+    let cancelled = false;
+
+    void (async () => {
+      try {
+        const nextPosts = await loadMediumPosts();
+        if (cancelled) return;
+        setPosts(nextPosts);
+        setError("");
+      } catch (err) {
+        if (cancelled) return;
+        setError(
+          err instanceof Error ? err.message : "Failed to fetch Medium posts"
+        );
+        setPosts([]);
+      } finally {
+        if (!cancelled) setLoading(false);
+      }
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [retryCount]);
+
+  function handleRetry() {
+    setLoading(true);
+    setError("");
+    setRetryCount((count) => count + 1);
+  }
 
   if (loading) {
     return (
@@ -98,7 +116,7 @@ export default function MediumBlog() {
         <p className="text-[var(--apple-black)]">✗ {error}</p>
         <button
           type="button"
-          onClick={() => void fetchPosts()}
+          onClick={handleRetry}
           className="mt-4 rounded-lg bg-[var(--apple-blue)] px-5 py-2 text-sm font-medium text-white hover:bg-[var(--apple-blue-hover)]"
         >
           Try Again
