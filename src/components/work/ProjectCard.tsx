@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { WorkProject } from "@/content/github-work";
-import { AchievementBadge } from "@/components/game/AchievementBadge";
+import { StatusLabel } from "@/components/ui/StatusLabel";
 
 type ProjectCardProps = {
   project: WorkProject;
@@ -12,18 +12,22 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article
       id={project.id}
-      className="game-card-light flex h-full scroll-mt-24 flex-col rounded-2xl p-6"
+      className="flex h-full scroll-mt-24 flex-col border-t border-border pt-6"
     >
       <div className="flex flex-wrap items-start justify-between gap-2">
         <h3 className="text-xl font-semibold tracking-tight text-[var(--apple-black)]">
           {project.name}
         </h3>
         <div className="flex items-center gap-2">
-          {project.achievement && <AchievementBadge tier={project.achievement} />}
+          {project.achievement && (
+            <StatusLabel>
+              {project.achievement === "Shipped"
+                ? "In production"
+                : project.achievement}
+            </StatusLabel>
+          )}
           {project.stars !== undefined && project.stars > 0 && (
-            <span className="rounded-full bg-[var(--apple-gray-100)] px-2 py-0.5 text-xs text-muted-foreground">
-              ★ {project.stars}
-            </span>
+            <span className="text-xs text-muted-foreground">★ {project.stars}</span>
           )}
         </div>
       </div>
@@ -34,14 +38,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
       <dl className="mt-4 space-y-3 text-sm leading-relaxed">
         <div>
-          <dt className="font-game text-[9px] tracking-wider text-[var(--apple-blue)] uppercase">
+          <dt className="text-xs font-medium tracking-wide text-[var(--apple-blue)] uppercase">
             Role
           </dt>
           <dd className="mt-1 text-muted-foreground">{project.role}</dd>
         </div>
         {project.stack && (
           <div>
-            <dt className="font-game text-[9px] tracking-wider text-[var(--apple-blue)] uppercase">
+            <dt className="text-xs font-medium tracking-wide text-[var(--apple-blue)] uppercase">
               Stack
             </dt>
             <dd className="mt-1 text-muted-foreground">{project.stack}</dd>
@@ -49,21 +53,21 @@ export function ProjectCard({ project }: ProjectCardProps) {
         )}
         {project.problem && (
           <div>
-            <dt className="font-game text-[9px] tracking-wider text-[var(--apple-blue)] uppercase">
+            <dt className="text-xs font-medium tracking-wide text-[var(--apple-blue)] uppercase">
               Problem
             </dt>
             <dd className="mt-1 text-muted-foreground">{project.problem}</dd>
           </div>
         )}
         <div>
-          <dt className="font-game text-[9px] tracking-wider text-[var(--apple-blue)] uppercase">
+          <dt className="text-xs font-medium tracking-wide text-[var(--apple-blue)] uppercase">
             What I built
           </dt>
           <dd className="mt-1 text-muted-foreground">{project.built}</dd>
         </div>
         {project.outcome && (
           <div>
-            <dt className="font-game text-[9px] tracking-wider text-[var(--apple-blue)] uppercase">
+            <dt className="text-xs font-medium tracking-wide text-[var(--apple-blue)] uppercase">
               Outcome
             </dt>
             <dd className="mt-1 font-medium text-[var(--apple-black)]">
@@ -83,7 +87,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </span>
         ))}
         {project.language && (
-          <span className="rounded-full bg-[var(--apple-gray-100)] px-2.5 py-0.5 text-xs text-muted-foreground">
+          <span className="rounded-full bg-white px-2.5 py-0.5 text-xs text-muted-foreground">
             {project.language}
           </span>
         )}
@@ -101,7 +105,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             href={project.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-semibold text-[var(--apple-blue)] hover:underline"
+            className="text-sm font-medium text-[var(--apple-blue)] hover:underline"
           >
             View live →
           </Link>
@@ -109,7 +113,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         {project.productionSlug && (
           <Link
             href={`/showcase#${project.productionSlug}`}
-            className="text-sm font-semibold text-[var(--apple-blue)] hover:underline"
+            className="text-sm font-medium text-[var(--apple-blue)] hover:underline"
           >
             {isComingSoon ? "View details →" : "View production notes →"}
           </Link>

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { experience, profile } from "@/content/resume";
-import { currentOccupation, currentPlayerLevel } from "@/content/game-theme";
+import { currentOccupation } from "@/content/game-theme";
 import { ExperienceList } from "@/components/sections/ExperienceList";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { Button } from "@/components/ui/button";
@@ -21,29 +21,19 @@ export default function ExperiencePage() {
           title="Career timeline."
           subtitle={profile.tagline}
         >
-          <div className="game-hud mt-8 inline-flex flex-wrap items-center gap-3 rounded-lg px-4 py-3">
-            <span className="font-game text-[10px] tracking-wider text-[var(--game-cyan)] uppercase">
-              {experience.length} roles
-            </span>
-            <span className="hidden text-[var(--game-border)] sm:inline">|</span>
-            <span className="font-game text-[10px] tracking-wider text-[var(--game-gold)] uppercase">
-              Level {currentPlayerLevel} · {currentOccupation}
-            </span>
-          </div>
+          <p className="mt-6 text-sm text-muted-foreground">
+            {experience.length} roles · Currently {currentOccupation}
+          </p>
         </PageHeader>
 
         <ExperienceList jobs={experience} />
 
         <div className="mt-16 flex flex-wrap gap-4">
-          <Button asChild variant="outline" className="border-[var(--game-border)]">
-            <Link href="/story" className="font-game text-[10px] tracking-wider uppercase">
-              ▶ Read full story
-            </Link>
+          <Button asChild variant="outline">
+            <Link href="/story">Read full story →</Link>
           </Button>
-          <Button asChild variant="outline" className="border-[var(--game-border)]">
-            <Link href="/work" className="font-game text-[10px] tracking-wider uppercase">
-              ▶ View selected work
-            </Link>
+          <Button asChild variant="outline">
+            <Link href="/work">View selected work →</Link>
           </Button>
         </div>
       </div>

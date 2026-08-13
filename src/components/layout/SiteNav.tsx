@@ -18,8 +18,7 @@ export function SiteNav() {
   const reduceMotion = useReducedMotion();
   const { isPresenterMode, togglePresenterMode } = usePresenterMode();
   const isStory = pathname === "/story";
-  const isHome = pathname === "/";
-  const isLightPage = !isHome && !isStory;
+  const isLightPage = !isStory;
   const minimalNav = isPresenterMode && isStory;
 
   useEffect(() => {
@@ -30,9 +29,11 @@ export function SiteNav() {
   }, []);
 
   const navClassName = scrolled
-    ? "border-b border-white/10 bg-[var(--apple-black)]/80 backdrop-blur-xl"
-    : isLightPage
+    ? isLightPage
       ? "border-b border-border/60 bg-[var(--apple-gray-100)]/90 backdrop-blur-xl"
+      : "border-b border-white/10 bg-[var(--apple-black)]/80 backdrop-blur-xl"
+    : isLightPage
+      ? "border-b border-border/40 bg-[var(--apple-gray-100)]/80 backdrop-blur-xl"
       : "bg-transparent";
 
   if (reduceMotion) {
@@ -42,7 +43,6 @@ export function SiteNav() {
           pathname={pathname}
           isStory={isStory}
           isLightPage={isLightPage}
-          scrolled={scrolled}
           minimalNav={minimalNav}
           isPresenterMode={isPresenterMode}
           onTogglePresent={togglePresenterMode}
@@ -62,7 +62,6 @@ export function SiteNav() {
         pathname={pathname}
         isStory={isStory}
         isLightPage={isLightPage}
-        scrolled={scrolled}
         minimalNav={minimalNav}
         isPresenterMode={isPresenterMode}
         onTogglePresent={togglePresenterMode}
@@ -75,7 +74,6 @@ function NavInner({
   pathname,
   isStory,
   isLightPage,
-  scrolled,
   minimalNav,
   isPresenterMode,
   onTogglePresent,
@@ -83,12 +81,11 @@ function NavInner({
   pathname: string;
   isStory: boolean;
   isLightPage: boolean;
-  scrolled: boolean;
   minimalNav: boolean;
   isPresenterMode: boolean;
   onTogglePresent: () => void;
 }) {
-  const useDarkText = isLightPage && !scrolled;
+  const useDarkText = isLightPage;
   const visibleLinks = minimalNav
     ? navLinks.filter((l) => l.href === "/story" || l.href === "/contact")
     : navLinks;

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 import { profile } from "@/content/resume";
-import { GameHUD } from "@/components/game/GameHUD";
+import { nowBuilding, heroStats } from "@/content/homepage";
 import { Button } from "@/components/ui/button";
 import { easeApple } from "@/lib/motion";
 
@@ -12,7 +12,7 @@ const wordVariants = {
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: 0.3 + i * 0.08, duration: 0.6, ease: easeApple },
+    transition: { delay: 0.25 + i * 0.08, duration: 0.6, ease: easeApple },
   }),
 };
 
@@ -23,13 +23,12 @@ export function HomeHero() {
   return (
     <section
       id="hero"
-      className="game-section-dark game-scanlines relative scroll-mt-20 overflow-hidden px-6 pt-28 pb-20 text-[var(--apple-gray-100)] md:px-12 md:pt-36 md:pb-28"
+      className="relative scroll-mt-20 overflow-hidden bg-[var(--apple-gray-100)] px-6 pt-28 pb-16 text-[var(--apple-black)] md:px-12 md:pt-36 md:pb-20"
     >
       <div
         className={`pointer-events-none absolute inset-0 overflow-hidden ${reduceMotion ? "" : "hero-gradient-pulse"}`}
       >
-        <div className="absolute left-1/2 top-1/4 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(0,212,255,0.1)_0%,transparent_70%)]" />
-        <div className="absolute right-1/4 bottom-1/4 h-[300px] w-[300px] rounded-full bg-[radial-gradient(circle,rgba(180,140,255,0.06)_0%,transparent_70%)]" />
+        <div className="absolute left-1/2 top-0 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(0,113,227,0.08)_0%,transparent_70%)]" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-[980px] text-center">
@@ -37,7 +36,7 @@ export function HomeHero() {
           initial={reduceMotion ? false : { opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: easeApple }}
-          className="font-game text-[10px] tracking-[0.2em] text-[var(--game-cyan)] uppercase md:text-xs"
+          className="section-label"
         >
           {profile.title}
         </motion.p>
@@ -66,33 +65,44 @@ export function HomeHero() {
         <motion.p
           initial={reduceMotion ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-          className="mx-auto mt-6 max-w-2xl text-lg text-[var(--apple-gray-300)] md:text-xl"
+          transition={{ delay: 0.55, duration: 0.6 }}
+          className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground md:text-xl"
         >
           {profile.tagline}
         </motion.p>
 
-        <GameHUD />
+        <motion.p
+          initial={reduceMotion ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7, duration: 0.5 }}
+          className="mx-auto mt-4 max-w-xl text-sm text-muted-foreground"
+        >
+          {nowBuilding.body}
+        </motion.p>
+
+        <motion.p
+          initial={reduceMotion ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8, duration: 0.5 }}
+          className="mt-6 text-sm text-[var(--apple-gray-400)]"
+        >
+          {heroStats.map((s) => `${s.value}${s.suffix ?? ""} ${s.label}`).join(" · ")}
+        </motion.p>
 
         <motion.div
           initial={reduceMotion ? false : { opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 0.6 }}
+          transition={{ delay: 0.95, duration: 0.6 }}
           className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <Button
             asChild
             size="lg"
-            className="game-pixel-border bg-[var(--game-cyan)] px-8 font-semibold text-[var(--game-bg)] hover:bg-[var(--game-green)]"
+            className="bg-[var(--apple-blue)] px-8 font-medium text-white hover:bg-[var(--apple-blue-hover)]"
           >
-            <Link href="/contact">Get in touch →</Link>
+            <Link href="/contact">Get in touch</Link>
           </Button>
-          <Button
-            asChild
-            variant="outline"
-            size="lg"
-            className="border-[var(--game-border)] bg-transparent text-white hover:border-[var(--game-cyan)] hover:bg-[var(--game-cyan)]/10"
-          >
+          <Button asChild variant="outline" size="lg">
             <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
               Download resume
             </Link>
@@ -102,14 +112,14 @@ export function HomeHero() {
         <motion.p
           initial={reduceMotion ? false : { opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 0.5 }}
+          transition={{ delay: 1.1, duration: 0.5 }}
           className="mt-6"
         >
           <Link
             href="/story?present=1"
-            className="font-game text-[10px] tracking-wider text-[var(--game-gold)] transition hover:text-[var(--game-green)]"
+            className="text-sm text-[var(--apple-blue)] transition hover:underline"
           >
-            ▶ Present full story
+            Present full story →
           </Link>
         </motion.p>
       </div>

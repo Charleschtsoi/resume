@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion, useReducedMotion } from "motion/react";
 import { featuredLinks } from "@/content/homepage";
-import { AchievementBadge } from "@/components/game/AchievementBadge";
+import { StatusLabel } from "@/components/ui/StatusLabel";
 import { fadeInView } from "@/lib/motion";
 
 export function FeaturedWorkTeaser() {
@@ -12,7 +12,7 @@ export function FeaturedWorkTeaser() {
   return (
     <section
       id="work-teaser"
-      className="game-section-dark scroll-mt-20 px-6 py-20 text-[var(--apple-gray-100)] md:px-12 md:py-28"
+      className="scroll-mt-20 bg-[var(--apple-gray-100)] px-6 py-20 md:px-12 md:py-28"
     >
       <div className="mx-auto max-w-[980px]">
         <motion.p
@@ -20,21 +20,21 @@ export function FeaturedWorkTeaser() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInView}
-          className="font-game text-[10px] tracking-[0.2em] text-[var(--game-cyan)] uppercase"
+          className="section-label"
         >
-          Selected Work
+          Selected work
         </motion.p>
         <motion.h2
           initial={reduceMotion ? false : "hidden"}
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInView}
-          className="mt-4 text-headline font-semibold tracking-tight"
+          className="mt-4 text-headline font-semibold tracking-tight text-[var(--apple-black)]"
         >
-          Built, shipped, and in production.
+          A few things I&apos;ve worked on.
         </motion.h2>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-8 border-t border-border pt-10 md:grid-cols-3 md:gap-10">
           {featuredLinks.map((link, i) => (
             <motion.article
               key={link.id}
@@ -42,30 +42,27 @@ export function FeaturedWorkTeaser() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
-              whileHover={reduceMotion ? undefined : { y: -4 }}
-              className="game-card flex h-full flex-col rounded-2xl p-6"
+              className="flex h-full flex-col"
             >
               <div className="flex items-start justify-between gap-2">
-                <h3 className="text-lg font-semibold">{link.title}</h3>
-                <div className="flex flex-col items-end gap-1">
-                  {link.achievement && <AchievementBadge tier={link.achievement} />}
-                  {link.tag && (
-                    <span className="rounded-full bg-[var(--game-cyan)]/10 px-2 py-0.5 text-xs text-[var(--game-cyan)]">
-                      {link.tag}
-                    </span>
-                  )}
-                </div>
+                <h3 className="text-lg font-semibold text-[var(--apple-black)]">
+                  {link.title}
+                </h3>
+                {link.status && <StatusLabel>{link.status}</StatusLabel>}
               </div>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-[var(--apple-gray-300)]">
+              {link.tag && (
+                <p className="mt-1 text-xs text-muted-foreground">{link.tag}</p>
+              )}
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {link.headline}
               </p>
               <Link
                 href={link.href}
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
-                className="mt-6 font-game text-[10px] tracking-wider text-[var(--game-gold)] hover:text-[var(--game-green)]"
+                className="mt-6 text-sm font-medium text-[var(--apple-blue)] hover:underline"
               >
-                {link.external ? "▶ Open live" : "▶ View details"}
+                {link.external ? "Open live →" : "View details →"}
               </Link>
             </motion.article>
           ))}
@@ -74,9 +71,9 @@ export function FeaturedWorkTeaser() {
         <div className="mt-10 text-center">
           <Link
             href="/work"
-            className="font-game text-[10px] tracking-wider text-[var(--game-cyan)] hover:text-[var(--game-green)]"
+            className="text-sm text-[var(--apple-blue)] hover:underline"
           >
-            ▶ See all curated work
+            See all selected work →
           </Link>
         </div>
       </div>

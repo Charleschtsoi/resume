@@ -8,8 +8,6 @@ import {
   presenterChapterOrder,
   coreStrengths,
 } from "@/content/resume";
-import { getStoryQuest } from "@/content/game-theme";
-import { QuestLevel } from "@/components/game/QuestLevel";
 import { usePresenterMode } from "@/lib/presenter-mode";
 
 const chapterLabels: Record<string, string> = {
@@ -104,7 +102,7 @@ export function PresenterControls() {
 
   return (
     <div
-      className="fixed right-0 bottom-0 left-0 z-50 border-t border-[var(--game-border)] bg-[var(--game-bg)]/95 px-4 py-3 backdrop-blur-xl md:px-6"
+      className="fixed right-0 bottom-0 left-0 z-50 border-t border-white/10 bg-[var(--apple-black)]/95 px-4 py-3 backdrop-blur-xl md:px-6"
       role="toolbar"
       aria-label="Presenter navigation"
     >
@@ -114,7 +112,7 @@ export function PresenterControls() {
             type="button"
             onClick={goPrev}
             disabled={safeIndex <= 0}
-            className="rounded-lg border border-[var(--game-border)] px-3 py-1.5 font-game text-[10px] tracking-wider text-white uppercase transition hover:border-[var(--game-cyan)] hover:bg-[var(--game-cyan)]/10 disabled:opacity-30"
+            className="rounded-lg border border-white/20 px-3 py-1.5 text-xs font-medium text-white transition hover:border-[var(--apple-blue)] hover:bg-white/5 disabled:opacity-30"
             aria-label="Previous chapter"
           >
             ← Prev
@@ -123,12 +121,12 @@ export function PresenterControls() {
             type="button"
             onClick={goNext}
             disabled={safeIndex >= presenterChapterOrder.length - 1}
-            className="rounded-lg border border-[var(--game-border)] px-3 py-1.5 font-game text-[10px] tracking-wider text-white uppercase transition hover:border-[var(--game-cyan)] hover:bg-[var(--game-cyan)]/10 disabled:opacity-30"
+            className="rounded-lg border border-white/20 px-3 py-1.5 text-xs font-medium text-white transition hover:border-[var(--apple-blue)] hover:bg-white/5 disabled:opacity-30"
             aria-label="Next chapter"
           >
             Next →
           </button>
-          <span className="hidden font-game text-[9px] tracking-wider text-[var(--apple-gray-400)] uppercase sm:inline">
+          <span className="hidden text-xs text-[var(--apple-gray-400)] sm:inline">
             ← → keys
           </span>
         </div>
@@ -136,23 +134,19 @@ export function PresenterControls() {
         <div className="flex flex-wrap gap-2 overflow-x-auto pb-1">
           {presenterChapterOrder.map((id) => {
             const isActive = activeId === id;
-            const quest = getStoryQuest(id);
             return (
               <button
                 key={id}
                 type="button"
                 onClick={() => scrollToChapter(id)}
                 aria-current={isActive ? "true" : undefined}
-                className={`flex shrink-0 items-center gap-2 rounded-lg border px-3 py-1 text-xs font-medium transition ${
+                className={`flex shrink-0 items-center rounded-lg border px-3 py-1 text-xs font-medium transition ${
                   isActive
-                    ? "border-[var(--game-cyan)] bg-[var(--game-cyan)]/20 text-[var(--game-gold)]"
-                    : "border-[var(--game-border)] bg-white/5 text-[var(--apple-gray-300)] hover:border-[var(--game-cyan)]/40"
+                    ? "border-[var(--apple-blue)] bg-[var(--apple-blue)]/20 text-white"
+                    : "border-white/15 bg-white/5 text-[var(--apple-gray-300)] hover:border-white/30"
                 }`}
               >
-                <QuestLevel level={quest.level} active={isActive} />
-                <span className="font-game text-[9px] tracking-wider uppercase">
-                  {chapterLabels[id] ?? id}
-                </span>
+                {chapterLabels[id] ?? id}
               </button>
             );
           })}

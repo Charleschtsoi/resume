@@ -20,7 +20,7 @@ export function PageHeader({ label, title, subtitle, children }: PageHeaderProps
         initial={reduceMotion ? false : "hidden"}
         animate="visible"
         variants={fadeInView}
-        className="font-game text-[10px] tracking-[0.2em] text-[var(--apple-blue)] uppercase"
+        className="section-label"
       >
         {label}
       </motion.p>

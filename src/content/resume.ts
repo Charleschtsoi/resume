@@ -2,7 +2,7 @@ export const profile = {
   name: "Charles Tsoi",
   title: "AI · Machine Learning · App Development",
   tagline:
-    "14 years in enterprise delivery (since 2012) — now building and shipping AI, machine learning, and mobile products end to end.",
+    "Fourteen years in enterprise delivery — now learning and building in AI, machine learning, and mobile products.",
   location: "Hong Kong",
   email: "charleschtsoi@gmail.com",
   links: {
@@ -10,16 +10,16 @@ export const profile = {
     github: "https://github.com/Charleschtsoi",
     medium: "https://medium.com/@charleschtsoi",
   },
-  proofLine: "AI · ML · App development · Apple · AAHK",
+  proofLine: "AI · ML · App development · Apple · Accenture · AAHK",
   currentOccupation: "Project Manager",
   yearsExperience: 14,
   careerSpan: "2012 – 2026",
   interviewerSubline:
-    "Strong in AI agents, machine learning, and app development — open to any project where I can help",
+    "Experience with AI agents, machine learning, and app development — happy to help where I can contribute",
   ctaTagline:
-    "Open to collaborations, consulting, and full-time roles. If you have a problem in AI, ML, or app development — let's talk.",
+    "Open to collaborations, consulting, and full-time roles. If you have a problem in AI, ML, or app development, I’d be glad to talk.",
   availabilityLine:
-    "Available for AI, machine learning, and mobile app projects — from PoC to App Store.",
+    "Available for AI, machine learning, and mobile app projects — from early PoC through shipping.",
   seoTitle: "AI, Machine Learning & App Development",
   seoDescription:
     "Charles Tsoi — AI, machine learning, and app development. Enterprise LLM agents, production ML products, and mobile apps. Open to projects where I can help.",
@@ -44,11 +44,11 @@ export type NarrativeChapter = {
 };
 
 export const coreStrengths = {
-  title: "What I bring",
+  title: "What I can contribute",
   bullets: [
-    "AI & ML: LungLens live in production; led AAHK LLM monitoring agent design and vendor delivery (estimated 80% less manual reporting time)",
-    "Product: 14 years across Apple, HKJC, Cathay, AAHK — Cathay mobile MAU ~10k → ~120k (12x)",
-    "Architecture: Solace event-driven migration at HKJC; docserverless edge compute at Apple",
+    "AI & ML: LungLens in production; AAHK LLM monitoring agent — product design and vendor delivery (estimated 80% less manual reporting time)",
+    "Product: Fourteen years across Apple, HKJC, Cathay, AAHK — Cathay mobile MAU ~10k → ~120k (12x) during my ownership",
+    "Architecture: Solace event-driven work at HKJC; docserverless edge compute at Apple",
     "Building now: 北辰 (North Star) astrology app for iOS; writing on GenAI systems on Medium",
   ],
 };
@@ -70,9 +70,9 @@ export const narrativeChapters: NarrativeChapter[] = [
     headline: "A consistent thread.",
     subheadline: "Product → architecture → AI",
     openingLine:
-      "Thanks for having me. Let me give you the short version of how I got here — because on paper it might look like a few moves, but there's actually a very consistent thread.",
+      "Thanks for having me. Here's a short version of how I got here — on paper it can look like a few jumps, but there's a fairly consistent thread.",
     paragraphs: [
-      "The thread is this: I've spent 14 years progressively moving from digital product delivery, to systems architecture, to AI — and at every step, I was the person sitting between business stakeholders and engineering teams, translating what one side needs into what the other side builds.",
+      "The thread is this: over fourteen years I've moved from digital product delivery, to systems architecture, to AI — usually sitting between business stakeholders and engineering teams, helping translate what one side needs into what the other side builds.",
     ],
     theme: "dark",
   },
@@ -83,8 +83,8 @@ export const narrativeChapters: NarrativeChapter[] = [
     headline: "Six years at Cathay Pacific.",
     subheadline: "Where product ownership fundamentals took root",
     paragraphs: [
-      "I started at Cathay Pacific — six years as a Product Owner building their mobile app and modernising legacy notification systems. Under that ownership the app grew from roughly 10,000 to 120,000 monthly active users. That's where I learned product ownership fundamentals: backlog discipline, stakeholder negotiation, and how to integrate new frontends with old backend systems like PSS.",
-      "Six years at one company also taught me what it means to own a product across its full lifecycle — not just launch it, but maintain it, evolve it, and fight for it.",
+      "I started at Cathay Pacific — six years as a Product Owner on their mobile app and related notification systems. During that time the app grew from roughly 10,000 to 120,000 monthly active users. That's where I learned backlog discipline, stakeholder negotiation, and how to integrate new frontends with older backends like PSS.",
+      "Six years at one company also taught me what it means to own a product across its lifecycle — not only launch, but maintain and evolve it.",
     ],
     metrics: [
       { value: "12x", label: "Mobile MAU growth (~10k → ~120k)" },
@@ -92,9 +92,9 @@ export const narrativeChapters: NarrativeChapter[] = [
       { value: "NotiFLY", label: "Modernised notifications" },
     ],
     highlights: [
-      "Led Cathay Pacific Mobile App — grew monthly active users from ~10,000 to ~120,000 (12x)",
+      "Product ownership on Cathay Pacific Mobile App — MAU ~10,000 → ~120,000 (12x)",
       "Defined XML/JSON structures integrating mobile frontend with legacy Passenger Service Systems (PSS)",
-      "Spearheaded NotiFLY revamp — migrated legacy notification system to modern messaging architecture",
+      "Helped revamp NotiFLY — migrated legacy notifications toward a modern messaging architecture",
     ],
     theme: "light",
   },
@@ -102,11 +102,11 @@ export const narrativeChapters: NarrativeChapter[] = [
     id: "bridge",
     label: "HKJC & Accenture",
     period: "2019 – 2022",
-    headline: "Regulated systems. Architectural rigour.",
+    headline: "Regulated systems. Careful architecture.",
     subheadline: "HKJC + Accenture",
     paragraphs: [
-      "From there I moved through HKJC and Accenture. At Jockey Club, I led a Solace migration — moving core infrastructure from traditional REST APIs to event-based messaging for real-time, high-concurrency betting in a regulated environment.",
-      "At Accenture, I sharpened the architecture side — defining API contracts, shifting teams from feature factories to value-driven delivery.",
+      "From there I moved through HKJC and Accenture. At Jockey Club, I worked on a Solace migration — moving core infrastructure from traditional REST APIs toward event-based messaging for real-time, high-concurrency betting in a regulated environment.",
+      "At Accenture, I spent more time on the architecture side — API contracts and helping teams shift from feature factories toward value-driven delivery.",
     ],
     metrics: [
       { value: "Solace", label: "REST → event-based messaging (HKJC)" },
@@ -114,21 +114,21 @@ export const narrativeChapters: NarrativeChapter[] = [
       { value: "Zero downtime", label: "Regulated real-time systems" },
     ],
     highlights: [
-      "Led Solace migration at HKJC — traditional APIs to event-based messaging for real-time odds",
-      "API contracts (Swagger) reducing integration rework by 20% (Accenture)",
-      "Shifted mobile squads from feature factory to value-driven architecture",
+      "Solace migration at HKJC — traditional APIs toward event-based messaging for real-time odds",
+      "API contracts (Swagger) reducing integration rework by ~20% (Accenture)",
+      "Helped shift mobile squads from feature factory toward value-driven architecture",
     ],
-    theme: "dark",
+    theme: "light",
   },
   {
     id: "apple",
     label: "Apple",
     period: "2022 – 2024",
-    headline: "A standard, not a technology.",
+    headline: "A standard, not only a technology.",
     subheadline: "iWork serverless · Genmoji delivery",
     paragraphs: [
-      "Then Apple. Two years as Engineering Project Manager — including the docserverless edge project, which moved numerical computation from server-side to user devices. What I took from Apple wasn't only a technology — it was a standard. Every decision went through architectural review, every dependency was mapped, every release was evidence-based.",
-      "That level of rigour is exactly what I'd bring to any regulated, high-stakes environment.",
+      "Then Apple — two years as Engineering Project Manager, including work on the docserverless edge project, which moved numerical computation from server-side to user devices. What I took from Apple wasn't only a technology — it was a bar for how carefully decisions were reviewed, dependencies mapped, and releases evidenced.",
+      "That kind of care is what I try to bring into regulated, high-stakes environments.",
     ],
     metrics: [
       { value: "Edge", label: "docserverless — compute on devices" },
@@ -136,9 +136,9 @@ export const narrativeChapters: NarrativeChapter[] = [
       { value: "Genmoji", label: "Cross-team API delivery" },
     ],
     highlights: [
-      "Led docserverless — moved numerical computation from server-side to edge user devices",
+      "docserverless — numerical computation moved from server-side to edge user devices",
       "Partnered on iWork backend serverless migration — architectural reviews & dependency mapping",
-      "Primary technical unblocker for API dependencies across CoreML, UI Engineering, and QA",
+      "Helped unblock API dependencies across CoreML, UI Engineering, and QA",
     ],
     theme: "light",
   },
@@ -149,7 +149,7 @@ export const narrativeChapters: NarrativeChapter[] = [
     headline: "AI in production. Scope as a skill.",
     subheadline: "Airport Authority Hong Kong · 2 years",
     paragraphs: [
-      "Two years in at Airport Authority — leading product design and vendor delivery for LLM-based agents in production, running vendor technical due diligence, and gatekeeping scope. One example: an infrastructure monitoring agent (Power Automate + Dynatrace + ServiceNow) that replaced manual health reporting for senior management.",
+      "At Airport Authority I've been involved in product design and vendor delivery for LLM-based agents in production, vendor technical due diligence, and keeping scope honest. One example: an infrastructure monitoring agent (Power Automate + Dynatrace + ServiceNow) that reduced manual health reporting for senior management.",
     ],
     metrics: [
       { value: "~80%", label: "Estimated less manual reporting time" },
@@ -157,22 +157,22 @@ export const narrativeChapters: NarrativeChapter[] = [
       { value: "Scope", label: "Gatekeeping in practice" },
     ],
     highlights: [
-      "Led product design and vendor delivery for an LLM monitoring agent — estimated 80% reduction in manual reporting time",
+      "Product design and vendor delivery for an LLM monitoring agent — estimated 80% reduction in manual reporting time",
       "Vendor technical due diligence on Microsoft ecosystem — API, security, scalability",
-      "End-to-end delivery of new Insurance System — legacy mainframe to cloud migration",
+      "Delivery support on a new Insurance System — legacy mainframe to cloud migration",
       "Hands-on: LungLens live at lunglenshk.vercel.app — see Work page",
     ],
-    theme: "dark",
+    theme: "light",
   },
   {
     id: "fit",
     label: "Education",
     period: "Education & momentum",
-    headline: "Always building credibility.",
+    headline: "Still learning.",
     subheadline: "CUHK MSc · Continuous learning",
     paragraphs: [
-      "I'm finishing my MSc in IT Management at CUHK, deliberately steering coursework toward AI and data science — not because the programme requires it, but because I wanted hands-on technical credibility to back up the product and architecture decisions I make every day.",
-      "That combination — enterprise delivery experience plus formal depth in data science and system design — is how I stay effective across product, architecture, and AI initiatives.",
+      "I'm finishing my MSc in IT Management at CUHK, steering coursework toward AI and data science so I have more hands-on technical grounding behind the product and architecture work I do day to day.",
+      "Enterprise delivery experience plus formal study in data science and system design is how I try to stay useful across product, architecture, and AI initiatives.",
     ],
     highlights: [
       "MSc IT Management, CUHK — focus: Data Science, AI, System Design (Expected Q1 2027)",
@@ -232,9 +232,9 @@ export const experience: ExperienceEntry[] = [
     location: "Hong Kong",
     period: "Mar 2024 – Present",
     bullets: [
-      "Led product design and vendor delivery for an LLM-based monitoring agent (Power Automate + Dynatrace API + ServiceNow) that automated infrastructure health reporting for senior management — estimated 80% reduction in manual reporting time.",
-      "Conducted deep-dive architectural assessments of Microsoft ecosystem vendors — API capabilities, security protocols, scalability limits.",
-      "Leading end-to-end technical delivery of new Insurance System; managing data migration from legacy mainframes to cloud workflows.",
+      "Product design and vendor delivery for an LLM-based monitoring agent (Power Automate + Dynatrace API + ServiceNow) that automated infrastructure health reporting — estimated 80% reduction in manual reporting time.",
+      "Architectural assessments of Microsoft ecosystem vendors — API capabilities, security protocols, scalability limits.",
+      "Supporting end-to-end technical delivery of a new Insurance System; data migration from legacy mainframes to cloud workflows.",
     ],
   },
   {
@@ -243,9 +243,9 @@ export const experience: ExperienceEntry[] = [
     location: "Hong Kong",
     period: "Oct 2022 – Sept 2024",
     bullets: [
-      "Led the docserverless project — moved numerical computation from server-side to edge user devices.",
+      "Worked on the docserverless project — moved numerical computation from server-side to edge user devices.",
       "Partnered with Engineering Leads on iWork backend serverless migration; facilitated architectural reviews and dependency mapping.",
-      "Primary technical unblocker for API dependency risks between CoreML, UI Engineering, and QA for WWDC releases.",
+      "Helped unblock API dependency risks between CoreML, UI Engineering, and QA for WWDC releases.",
     ],
   },
   {
@@ -264,7 +264,7 @@ export const experience: ExperienceEntry[] = [
     location: "Hong Kong",
     period: "May 2019 – July 2021",
     bullets: [
-      "Led Solace migration — moved core infrastructure from traditional REST APIs to event-based messaging for real-time odds and high-concurrency betting.",
+      "Worked on Solace migration — moved core infrastructure from traditional REST APIs toward event-based messaging for real-time odds and high-concurrency betting.",
       "Conducted feasibility studies for high-volume solutions; analyzed latency vs throughput trade-offs.",
       "Defined technical specs for Critical Information Dissemination APIs with strict security key protocols.",
     ],
@@ -275,7 +275,7 @@ export const experience: ExperienceEntry[] = [
     location: "Hong Kong",
     period: "Oct 2018 – May 2019",
     bullets: [
-      "Led technical rollout of Watsons Vietnam flagship e-commerce site (watsons.vn) and mobile app.",
+      "Supported technical rollout of Watsons Vietnam flagship e-commerce site (watsons.vn) and mobile app.",
       "Technical gatekeeper for production — coordinated APAC deployments during high-traffic campaigns.",
     ],
   },
@@ -285,8 +285,8 @@ export const experience: ExperienceEntry[] = [
     location: "Hong Kong",
     period: "Nov 2012 – Sept 2018",
     bullets: [
-      "Led Cathay Pacific Mobile App — grew monthly active users from ~10,000 to ~120,000 (12x); defined XML/JSON structures integrating mobile frontend with legacy PSS.",
-      "Spearheaded NotiFLY revamp — migrated legacy notification system to modern messaging architecture.",
+      "Product ownership on Cathay Pacific Mobile App — MAU ~10,000 → ~120,000 (12x); defined XML/JSON structures integrating mobile frontend with legacy PSS.",
+      "Helped revamp NotiFLY — migrated legacy notification system toward a modern messaging architecture.",
     ],
   },
 ];

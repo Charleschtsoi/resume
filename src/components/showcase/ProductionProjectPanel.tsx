@@ -14,18 +14,13 @@ export function ProductionProjectPanel({ project }: ProductionProjectPanelProps)
       : project.status === "coming-soon"
         ? "In Progress"
         : "Repo only";
-  const statusClass =
-    project.status === "live"
-      ? "game-badge-meta font-game text-[8px] uppercase"
-      : project.status === "coming-soon"
-        ? "game-badge-soon font-game text-[8px] uppercase"
-        : "rounded-full bg-[var(--apple-gray-100)] px-2.5 py-0.5 text-xs text-muted-foreground";
+  const statusClass = "text-xs text-muted-foreground";
 
   return (
     <details
       id={project.slug}
       open={project.defaultOpen}
-      className="group game-card-light scroll-mt-24 rounded-2xl"
+      className="group scroll-mt-24 border-t border-border"
     >
       <summary className="cursor-pointer list-none px-6 py-5 [&::-webkit-details-marker]:hidden">
         <div className="flex flex-wrap items-start justify-between gap-3">
@@ -34,9 +29,7 @@ export function ProductionProjectPanel({ project }: ProductionProjectPanelProps)
               <h3 className="text-xl font-semibold text-[var(--apple-black)]">
                 {project.name}
               </h3>
-              <span className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${statusClass}`}>
-                {statusLabel}
-              </span>
+              <span className={statusClass}>{statusLabel}</span>
             </div>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               {project.oneLiner}

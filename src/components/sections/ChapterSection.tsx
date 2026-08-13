@@ -6,8 +6,7 @@ import Link from "next/link";
 import type { NarrativeChapter } from "@/content/resume";
 import { profile } from "@/content/resume";
 import { githubBridge } from "@/content/github-work";
-import { getStoryQuest } from "@/content/game-theme";
-import { QuestLevel } from "@/components/game/QuestLevel";
+import { getStoryChapterTitle } from "@/content/game-theme";
 import { NarrativeReveal } from "@/components/motion/NarrativeReveal";
 import { ScrollChapter } from "@/components/motion/ScrollChapter";
 import { MetricStrip } from "@/components/sections/MetricStrip";
@@ -21,7 +20,7 @@ export function HeroSection({ chapter }: { chapter: NarrativeChapter }) {
   const ref = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
   const { heroHeightClass, disableScrollEffects } = usePresenterMode();
-  const quest = getStoryQuest(chapter.id);
+  const chapterTitle = getStoryChapterTitle(chapter.id);
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -38,16 +37,16 @@ export function HeroSection({ chapter }: { chapter: NarrativeChapter }) {
       id={chapter.id}
       ref={ref}
       aria-labelledby={`${chapter.id}-heading`}
-      className={`game-section-dark game-scanlines relative scroll-mt-20 ${heroHeightClass} snap-start snap-always text-[var(--apple-gray-100)]`}
+      className={`section-dark relative scroll-mt-20 ${heroHeightClass} snap-start snap-always`}
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(0,212,255,0.12)_0%,transparent_70%)]" />
+        <div className="absolute left-1/2 top-1/3 h-[480px] w-[480px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(0,113,227,0.15)_0%,transparent_70%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_60%,var(--apple-black)_100%)]" />
       </div>
 
       <div className="sticky top-0 flex min-h-screen flex-col justify-center overflow-y-auto px-6 py-28 md:px-12 md:py-32">
         <div className="relative z-10 mx-auto w-full max-w-[980px]">
-          <p className="text-center font-game text-[10px] tracking-[0.2em] text-[var(--game-cyan)] uppercase md:text-xs">
+          <p className="text-center text-xs font-medium tracking-wide text-[var(--apple-blue)] uppercase md:text-sm">
             {profile.title}
           </p>
           <h1 className="mt-3 text-center text-4xl font-semibold tracking-tight md:text-5xl lg:text-6xl">
@@ -61,15 +60,9 @@ export function HeroSection({ chapter }: { chapter: NarrativeChapter }) {
           </p>
 
           <div className="mt-8 flex justify-center">
-            <div className="game-hud inline-flex items-center gap-3 rounded-lg px-4 py-2">
-              <QuestLevel level={quest.level} active />
-              <div>
-                <p className="font-game text-[9px] tracking-widest text-[var(--game-gold)] uppercase">
-                  {quest.questTitle}
-                </p>
-                <p className="text-xs text-[var(--apple-gray-400)]">Career story</p>
-              </div>
-            </div>
+            <p className="rounded-full border border-white/15 px-4 py-2 text-xs text-[var(--apple-gray-300)]">
+              {chapterTitle} · Career story
+            </p>
           </div>
 
           {skipHeroMotion ? (
@@ -80,7 +73,7 @@ export function HeroSection({ chapter }: { chapter: NarrativeChapter }) {
               >
                 {chapter.headline}
               </h2>
-              <p className="mt-4 text-center font-game text-[10px] tracking-[0.2em] text-[var(--game-cyan)] uppercase">
+              <p className="mt-4 text-center text-sm tracking-wide text-[var(--apple-gray-400)] uppercase">
                 {chapter.subheadline}
               </p>
               {chapter.openingLine && (
@@ -103,7 +96,7 @@ export function HeroSection({ chapter }: { chapter: NarrativeChapter }) {
               </motion.h2>
               <motion.p
                 style={{ opacity: subOpacity }}
-                className="mt-4 text-center font-game text-[10px] tracking-[0.2em] text-[var(--game-cyan)] uppercase"
+                className="mt-4 text-center text-sm tracking-wide text-[var(--apple-gray-400)] uppercase"
               >
                 {chapter.subheadline}
               </motion.p>
@@ -135,7 +128,7 @@ export function HeroSection({ chapter }: { chapter: NarrativeChapter }) {
 }
 
 export function ChapterSection({ chapter }: ChapterSectionProps) {
-  const quest = getStoryQuest(chapter.id);
+  const chapterTitle = getStoryChapterTitle(chapter.id);
   const mutedClass =
     chapter.theme === "dark"
       ? "text-[var(--apple-gray-300)]"
@@ -143,28 +136,22 @@ export function ChapterSection({ chapter }: ChapterSectionProps) {
 
   return (
     <ScrollChapter id={chapter.id} theme={chapter.theme}>
-      <div className="flex items-start gap-4">
-        <QuestLevel level={quest.level} active />
-        <div className="min-w-0 flex-1 space-y-4">
-          <p className="font-game text-[9px] leading-relaxed tracking-widest text-[var(--game-gold)] uppercase">
-            <span className="block">Level {quest.level}</span>
-            <span className="block text-[var(--game-cyan)]">{quest.questTitle}</span>
-          </p>
-          {chapter.period && (
-            <p className="font-game text-[10px] tracking-[0.15em] text-[var(--game-cyan)] uppercase">
-              {chapter.period}
-            </p>
-          )}
-          <h2
-            id={`${chapter.id}-heading`}
-            className="text-headline font-semibold tracking-tight text-balance"
-          >
-            {chapter.headline}
-          </h2>
-          {chapter.subheadline && (
-            <p className={`text-xl md:text-2xl ${mutedClass}`}>{chapter.subheadline}</p>
-          )}
-        </div>
+      <div className="space-y-4">
+        <p className="text-xs font-medium tracking-wide text-[var(--apple-blue)] uppercase">
+          {chapterTitle}
+        </p>
+        {chapter.period && (
+          <p className="text-sm text-muted-foreground">{chapter.period}</p>
+        )}
+        <h2
+          id={`${chapter.id}-heading`}
+          className="text-headline font-semibold tracking-tight text-balance"
+        >
+          {chapter.headline}
+        </h2>
+        {chapter.subheadline && (
+          <p className={`text-xl md:text-2xl ${mutedClass}`}>{chapter.subheadline}</p>
+        )}
       </div>
       {chapter.metrics && chapter.metrics.length > 0 && (
         <MetricStrip metrics={chapter.metrics} variant={chapter.theme} />
@@ -179,9 +166,9 @@ export function ChapterSection({ chapter }: ChapterSectionProps) {
           <p className="mt-8">
             <Link
               href={githubBridge.href}
-              className="inline-flex items-center gap-2 rounded-lg border border-[var(--game-cyan)]/40 bg-[var(--game-cyan)]/10 px-4 py-2 font-game text-[10px] tracking-wider text-[var(--game-gold)] uppercase transition hover:bg-[var(--game-cyan)]/20"
+              className="text-sm font-medium text-[var(--apple-blue)] hover:underline"
             >
-              ▶ Curated GitHub → Work
+              Selected GitHub work →
             </Link>
           </p>
         )}
