@@ -60,20 +60,18 @@ export default function ContactForm() {
   }
 
   const inputClassName =
-    "mt-2 w-full rounded-lg border border-[var(--game-border)] bg-[var(--game-bg)]/60 px-4 py-3 text-[var(--apple-gray-100)] placeholder:text-[var(--apple-gray-400)] outline-none transition focus:border-[var(--game-cyan)] focus:ring-1 focus:ring-[var(--game-cyan)]";
+    "mt-2 w-full rounded-lg border border-border bg-white px-4 py-3 text-[var(--apple-black)] placeholder:text-muted-foreground outline-none transition focus:border-[var(--apple-blue)] focus:ring-1 focus:ring-[var(--apple-blue)]";
 
   return (
     <form
       onSubmit={handleSubmit}
-      className="game-hud rounded-lg p-6 md:p-8"
+      className="rounded-2xl border border-border bg-white p-6 md:p-8"
       noValidate
     >
-      <p className="font-game text-[10px] tracking-[0.2em] text-[var(--game-gold)] uppercase">
-        Send a message
-      </p>
+      <p className="section-label">Send a message</p>
 
       <div className="mt-6 grid gap-5 md:grid-cols-2">
-        <label className="block text-sm text-[var(--apple-gray-300)]">
+        <label className="block text-sm text-muted-foreground">
           Name
           <input
             name="name"
@@ -89,7 +87,7 @@ export default function ContactForm() {
           />
         </label>
 
-        <label className="block text-sm text-[var(--apple-gray-300)]">
+        <label className="block text-sm text-muted-foreground">
           Email
           <input
             name="email"
@@ -106,7 +104,7 @@ export default function ContactForm() {
         </label>
       </div>
 
-      <label className="mt-5 block text-sm text-[var(--apple-gray-300)]">
+      <label className="mt-5 block text-sm text-muted-foreground">
         Subject
         <input
           name="subject"
@@ -121,7 +119,7 @@ export default function ContactForm() {
         />
       </label>
 
-      <label className="mt-5 block text-sm text-[var(--apple-gray-300)]">
+      <label className="mt-5 block text-sm text-muted-foreground">
         Message
         <textarea
           name="message"
@@ -139,7 +137,7 @@ export default function ContactForm() {
       {status === "success" && (
         <p
           role="status"
-          className="mt-5 rounded-lg border border-[var(--game-green)]/40 bg-[var(--game-green)]/10 px-4 py-3 text-sm text-[var(--game-green)]"
+          className="mt-5 rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800"
         >
           Message sent. I&apos;ll get back to you soon.
         </p>
@@ -148,7 +146,7 @@ export default function ContactForm() {
       {status === "error" && (
         <p
           role="alert"
-          className="mt-5 rounded-lg border border-red-400/40 bg-red-500/10 px-4 py-3 text-sm text-red-300"
+          className="mt-5 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
         >
           {errorMessage}
         </p>
@@ -157,9 +155,9 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="mt-6 inline-flex items-center justify-center rounded-lg bg-[var(--game-cyan)] px-6 py-3 text-sm font-semibold text-[var(--game-bg)] transition hover:bg-[var(--game-green)] disabled:cursor-not-allowed disabled:opacity-60"
+        className="mt-6 inline-flex items-center justify-center rounded-lg bg-[var(--apple-blue)] px-6 py-3 text-sm font-medium text-white transition hover:bg-[var(--apple-blue-hover)] disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {status === "loading" ? "Sending…" : "Send Message →"}
+        {status === "loading" ? "Sending…" : "Send message"}
       </button>
     </form>
   );

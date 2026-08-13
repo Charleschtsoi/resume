@@ -35,13 +35,13 @@ export const githubProfileUrl = `${profile.links.github}?tab=repositories`;
 
 export const githubWorkIntro = {
   title: "Selected work",
-  subtitle: "Problem → what I built → outcome",
+  subtitle: "Problem → what was built → outcome",
   framingParagraph:
     "Career and product work across AI, mobile, and enterprise systems. Each card is grounded in a real role, stack, and result — not self-rated scores.",
   openingScript:
-    "Here's a curated set of shipped and in-progress work — enterprise delivery and products I've built myself.",
+    "Here’s a selection of work I’ve been part of — some enterprise delivery, some products I’ve built myself.",
   closingScript:
-    "Happy to go deeper on any of these — architecture decisions, stakeholder trade-offs, or how I'd approach your problem.",
+    "Happy to go deeper on any of these — architecture decisions, stakeholder trade-offs, or how I’d approach your problem.",
 };
 
 export const workPillars: Record<

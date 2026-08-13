@@ -53,7 +53,7 @@ async function loadMediumPosts(): Promise<MediumFeed> {
 
 function SkeletonCard() {
   return (
-    <div className="game-card-light animate-pulse rounded-2xl p-6">
+    <div className="border border-border bg-white animate-pulse rounded-2xl p-6">
       <div className="mb-4 flex gap-2">
         <div className="h-5 w-14 rounded bg-black/10" />
         <div className="h-5 w-16 rounded bg-black/10" />
@@ -123,7 +123,7 @@ export default function MediumBlog() {
     return (
       <div
         role="alert"
-        className="game-card-light rounded-2xl p-8 text-center"
+        className="border border-border bg-white rounded-2xl p-8 text-center"
       >
         <p className="text-[var(--apple-black)]">✗ {error}</p>
         <button
@@ -139,7 +139,7 @@ export default function MediumBlog() {
 
   return (
     <div className="space-y-8">
-      <div className="game-card-light flex flex-col gap-3 rounded-2xl p-5 sm:flex-row sm:items-center sm:justify-between">
+      <div className="border border-border bg-white flex flex-col gap-3 rounded-2xl p-5 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="text-sm text-muted-foreground">
             Published Articles:{" "}
@@ -157,9 +157,9 @@ export default function MediumBlog() {
           href="https://medium.com/@charleschtsoi"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-game text-[10px] tracking-wider text-[var(--apple-blue)] hover:underline"
+          className="text-sm text-[var(--apple-blue)] hover:underline"
         >
-          ▶ View All on Medium
+          View All on Medium
         </a>
       </div>
 
@@ -170,14 +170,14 @@ export default function MediumBlog() {
           {posts.map((post) => (
             <article
               key={post.id}
-              className="game-card-light flex h-full flex-col rounded-2xl p-6 transition hover:-translate-y-1"
+              className="border border-border bg-white flex h-full flex-col rounded-2xl p-6 transition hover:-translate-y-1"
             >
               {post.categories.length > 0 && (
                 <div className="mb-3 flex flex-wrap gap-2">
                   {post.categories.slice(0, 3).map((category) => (
                     <span
                       key={`${post.id}-${category}`}
-                      className="rounded border border-[var(--game-cyan)]/30 bg-[var(--game-cyan)]/10 px-2 py-0.5 font-game text-[9px] tracking-wider text-[var(--apple-blue)] uppercase"
+                      className="text-xs text-muted-foreground"
                     >
                       {category}
                     </span>
@@ -203,9 +203,9 @@ export default function MediumBlog() {
                   href={post.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-game text-[10px] tracking-wider text-[var(--apple-blue)] hover:underline"
+                  className="text-sm text-[var(--apple-blue)] hover:underline"
                 >
-                  ▶ Read
+                  Read
                 </a>
               </div>
             </article>

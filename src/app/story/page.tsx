@@ -30,31 +30,24 @@ export default function StoryPage() {
 
       <RoleFitSection />
 
-      <section className="game-section-dark scroll-mt-20 px-6 py-24 text-center text-[var(--apple-gray-100)] md:px-12 md:py-32">
+      <section className="scroll-mt-20 border-t border-border bg-white px-6 py-24 text-center md:px-12 md:py-32">
         <div className="mx-auto max-w-[720px]">
-          <p className="font-game text-[10px] tracking-[0.2em] text-[var(--game-cyan)] uppercase">
-            Campaign Complete
-          </p>
-          <h2 className="mt-4 text-headline font-semibold tracking-tight">
+          <p className="section-label">Next step</p>
+          <h2 className="mt-4 text-headline font-semibold tracking-tight text-[var(--apple-black)]">
             Let&apos;s connect.
           </h2>
-          <p className="mt-6 text-lg text-[var(--apple-gray-300)] md:text-xl">
+          <p className="mt-6 text-lg text-muted-foreground md:text-xl">
             {profile.ctaTagline}
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button
               asChild
               size="lg"
-              className="game-pixel-border bg-[var(--game-cyan)] px-8 font-semibold text-[var(--game-bg)] hover:bg-[var(--game-green)]"
+              className="bg-[var(--apple-blue)] px-8 text-white hover:bg-[var(--apple-blue-hover)]"
             >
-              <Link href="/contact">Get in touch →</Link>
+              <Link href="/contact">Get in touch</Link>
             </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="border-[var(--game-border)] bg-transparent text-white hover:border-[var(--game-cyan)] hover:bg-[var(--game-cyan)]/10"
-            >
+            <Button asChild variant="outline" size="lg">
               <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
                 Download resume
               </Link>

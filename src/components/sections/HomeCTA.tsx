@@ -10,7 +10,7 @@ export function HomeCTA() {
   const reduceMotion = useReducedMotion();
 
   return (
-    <section className="scroll-mt-20 bg-[var(--apple-gray-100)] px-6 py-24 text-center md:px-12 md:py-32">
+    <section className="scroll-mt-20 border-t border-border bg-white px-6 py-24 text-center md:px-12 md:py-32">
       <motion.div
         initial={reduceMotion ? false : "hidden"}
         whileInView="visible"
@@ -18,11 +18,9 @@ export function HomeCTA() {
         variants={fadeInView}
         className="mx-auto max-w-[720px]"
       >
-        <p className="font-game text-[10px] tracking-[0.2em] text-[var(--apple-blue)] uppercase">
-          Open to projects
-        </p>
+        <p className="section-label">Open to projects</p>
         <h2 className="mt-4 text-headline font-semibold tracking-tight text-[var(--apple-black)]">
-          Let&apos;s build something.
+          Happy to help where I can contribute.
         </h2>
         <p className="mt-6 text-lg text-muted-foreground md:text-xl">
           {profile.ctaTagline}
@@ -38,11 +36,7 @@ export function HomeCTA() {
           >
             <Link href="/contact">Get in touch</Link>
           </Button>
-          <Button
-            asChild
-            variant="outline"
-            size="lg"
-          >
+          <Button asChild variant="outline" size="lg">
             <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
               Download resume
             </Link>

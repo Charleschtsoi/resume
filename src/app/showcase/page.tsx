@@ -34,16 +34,10 @@ export default function ShowcasePage() {
           {productionShowcaseIntro.framing}
         </p>
 
-        <div className="game-hud mt-6 inline-flex items-center gap-3 rounded-lg px-4 py-2">
-          <span className="font-game text-[10px] tracking-wider text-[var(--game-cyan)] uppercase">
-            {liveCount} live
-          </span>
-          <span className="text-[var(--game-border)]">|</span>
-          <span className="font-game text-[10px] tracking-wider text-[var(--game-gold)] uppercase">
-            {productionProjects.length - liveCount} repo-only
-          </span>
-        </div>
-        <p className="mt-2 text-sm text-muted-foreground">Click a project to expand details</p>
+        <p className="mt-6 text-sm text-muted-foreground">
+          {liveCount} live · {productionProjects.length - liveCount} repo-only —
+          click a project to expand details
+        </p>
 
         <div className="mt-10 space-y-4">
           {productionProjects.map((project) => (
@@ -52,14 +46,12 @@ export default function ShowcasePage() {
         </div>
 
         <div className="mt-12 flex flex-wrap gap-4">
-          <Button asChild variant="outline" className="border-[var(--game-border)]">
-            <Link href="/work" className="font-game text-[10px] tracking-wider uppercase">
-              ▶ Curated work
-            </Link>
+          <Button asChild variant="outline">
+            <Link href="/work">Selected work →</Link>
           </Button>
           <Button
             asChild
-            className="game-pixel-border bg-[var(--game-cyan)] font-semibold text-[var(--game-bg)] hover:bg-[var(--game-green)]"
+            className="bg-[var(--apple-blue)] text-white hover:bg-[var(--apple-blue-hover)]"
           >
             <Link
               href="https://github.com/Charleschtsoi?tab=repositories"

@@ -19,7 +19,7 @@ export function WritingSection() {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInView}
-          className="font-game text-[10px] tracking-[0.2em] text-[var(--apple-blue)] uppercase"
+          className="section-label"
         >
           Writing
         </motion.p>
@@ -51,7 +51,7 @@ export function WritingSection() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.08, duration: 0.5 }}
               whileHover={reduceMotion ? undefined : { y: -4 }}
-              className="game-card-light flex h-full flex-col rounded-2xl p-6"
+              className="border border-border bg-white flex h-full flex-col rounded-2xl p-6"
             >
               <h3 className="text-lg font-semibold leading-snug text-[var(--apple-black)]">
                 {article.title}
@@ -63,9 +63,9 @@ export function WritingSection() {
                 href={article.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-6 font-game text-[10px] tracking-wider text-[var(--apple-blue)] hover:underline"
+                className="mt-6 text-sm text-[var(--apple-blue)] hover:underline"
               >
-                ▶ Read on Medium
+                Read on Medium
               </Link>
             </motion.article>
           ))}

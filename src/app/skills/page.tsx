@@ -8,11 +8,12 @@ import {
 import SkillsVisualization from "@/components/SkillsVisualization";
 import { SkillsGrid } from "@/components/sections/SkillsGrid";
 import { SkillsPageHeader } from "@/components/sections/SkillsPageHeader";
+import { StrengthTabs } from "@/components/sections/StrengthTabs";
 
 export const metadata: Metadata = {
   title: `Skills — ${profile.name}`,
   description:
-    "Technical skills, certifications, and education — animated visualization with category filtering.",
+    "Technical skills, certifications, and education — practical inventory with category filtering.",
 };
 
 export default function SkillsPage() {
@@ -26,6 +27,10 @@ export default function SkillsPage() {
 
         <div className="mt-12">
           <SkillsVisualization />
+        </div>
+
+        <div className="mt-16">
+          <StrengthTabs />
         </div>
 
         <SkillsGrid

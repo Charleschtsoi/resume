@@ -14,32 +14,32 @@ const CATEGORY_META: Record<
   SkillCategory | "all",
   { label: string; color: string }
 > = {
-  all: { label: "All Skills", color: "var(--game-cyan)" },
-  ai: { label: "AI & ML", color: "#00d4ff" },
-  product: { label: "Product", color: "#ffd700" },
-  technical: { label: "Technical", color: "#b48cff" },
-  tools: { label: "Tools", color: "#00ff88" },
+  all: { label: "All skills", color: "var(--apple-blue)" },
+  ai: { label: "AI & ML", color: "#0071e3" },
+  product: { label: "Product", color: "#1d1d1f" },
+  technical: { label: "Technical", color: "#6e6e73" },
+  tools: { label: "Tools", color: "#86868b" },
 };
 
 const skills: Skill[] = [
-  { name: "Machine Learning", category: "ai", color: "#00d4ff" },
-  { name: "LLM Integration", category: "ai", color: "#00d4ff" },
-  { name: "GenAI Systems", category: "ai", color: "#00d4ff" },
-  { name: "Data Science", category: "ai", color: "#00d4ff" },
-  { name: "Product Management", category: "product", color: "#ffd700" },
-  { name: "Agile / Scrum", category: "product", color: "#ffd700" },
-  { name: "Stakeholder Alignment", category: "product", color: "#ffd700" },
-  { name: "Product Strategy", category: "product", color: "#ffd700" },
-  { name: "Event-Driven Architecture", category: "technical", color: "#b48cff" },
-  { name: "API Design (REST/JSON)", category: "technical", color: "#b48cff" },
-  { name: "Next.js / React", category: "technical", color: "#b48cff" },
-  { name: "Python", category: "technical", color: "#b48cff" },
-  { name: "System Integration", category: "technical", color: "#b48cff" },
-  { name: "Power Automate", category: "tools", color: "#00ff88" },
-  { name: "ServiceNow", category: "tools", color: "#00ff88" },
-  { name: "Dynatrace / Monitoring", category: "tools", color: "#00ff88" },
-  { name: "JIRA / Confluence", category: "tools", color: "#00ff88" },
-  { name: "Tableau / Visualization", category: "tools", color: "#00ff88" },
+  { name: "Machine Learning", category: "ai", color: "#0071e3" },
+  { name: "LLM Integration", category: "ai", color: "#0071e3" },
+  { name: "GenAI Systems", category: "ai", color: "#0071e3" },
+  { name: "Data Science", category: "ai", color: "#0071e3" },
+  { name: "Product Management", category: "product", color: "#1d1d1f" },
+  { name: "Agile / Scrum", category: "product", color: "#1d1d1f" },
+  { name: "Stakeholder Alignment", category: "product", color: "#1d1d1f" },
+  { name: "Product Strategy", category: "product", color: "#1d1d1f" },
+  { name: "Event-Driven Architecture", category: "technical", color: "#6e6e73" },
+  { name: "API Design (REST/JSON)", category: "technical", color: "#6e6e73" },
+  { name: "Next.js / React", category: "technical", color: "#6e6e73" },
+  { name: "Python", category: "technical", color: "#6e6e73" },
+  { name: "System Integration", category: "technical", color: "#6e6e73" },
+  { name: "Power Automate", category: "tools", color: "#86868b" },
+  { name: "ServiceNow", category: "tools", color: "#86868b" },
+  { name: "Dynatrace / Monitoring", category: "tools", color: "#86868b" },
+  { name: "JIRA / Confluence", category: "tools", color: "#86868b" },
+  { name: "Tableau / Visualization", category: "tools", color: "#86868b" },
 ];
 
 const FILTERS: Array<SkillCategory | "all"> = [
@@ -98,8 +98,8 @@ export default function SkillsVisualization() {
               onClick={() => setSelectedCategory(filter)}
               className={`rounded-lg border px-3 py-2 text-xs font-medium transition ${
                 active
-                  ? "border-[var(--game-cyan)] bg-[var(--game-cyan)]/15 text-[var(--apple-black)]"
-                  : "border-border bg-white/70 text-muted-foreground hover:border-[var(--game-cyan)]/50 hover:text-[var(--apple-black)]"
+                  ? "border-[var(--apple-blue)] bg-[var(--apple-blue)]/10 text-[var(--apple-black)]"
+                  : "border-border bg-white text-muted-foreground hover:border-[var(--apple-blue)]/40 hover:text-[var(--apple-black)]"
               }`}
             >
               {CATEGORY_META[filter].label}
@@ -109,18 +109,14 @@ export default function SkillsVisualization() {
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2">
-        <div className="game-card-light rounded-2xl p-5">
-          <p className="font-game text-[10px] tracking-wider text-[var(--apple-blue)] uppercase">
-            Skills
-          </p>
+        <div className="border-t border-border pt-5">
+          <p className="section-label">Skills</p>
           <p className="mt-2 text-3xl font-semibold text-[var(--apple-black)]">
             {filteredSkills.length}
           </p>
         </div>
-        <div className="game-card-light rounded-2xl p-5">
-          <p className="font-game text-[10px] tracking-wider text-[var(--apple-blue)] uppercase">
-            Category
-          </p>
+        <div className="border-t border-border pt-5">
+          <p className="section-label">Category</p>
           <p className="mt-2 text-xl font-semibold text-[var(--apple-black)]">
             {CATEGORY_META[selectedCategory].label}
           </p>
@@ -131,7 +127,7 @@ export default function SkillsVisualization() {
         {filteredSkills.map((skill, index) => (
           <div
             key={skill.name}
-            className="game-card-light flex items-center gap-3 rounded-2xl p-4 transition hover:shadow-[0_0_20px_rgba(0,212,255,0.12)]"
+            className="flex items-center gap-3 border-t border-border pt-4"
             style={{
               opacity: animated ? 1 : 0,
               transform: animated ? "translateY(0)" : "translateY(12px)",
@@ -150,10 +146,8 @@ export default function SkillsVisualization() {
         ))}
       </div>
 
-      <div className="game-card-light rounded-2xl p-6">
-        <p className="font-game text-[10px] tracking-[0.2em] text-[var(--apple-blue)] uppercase">
-          By category
-        </p>
+      <div className="border-t border-border pt-6">
+        <p className="section-label">By category</p>
         <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {categoryCounts.map((item) => (
             <div key={item.category} className="text-center">

@@ -39,7 +39,7 @@ export function ScrollChapter({
   const isDark = theme === "dark";
   const skipEffects = reduceMotion || disableScrollEffects;
   const bgClass = isDark
-    ? "game-section-dark text-[var(--apple-gray-100)]"
+    ? "section-dark"
     : "bg-[var(--apple-gray-100)] text-[var(--apple-black)]";
 
   return (

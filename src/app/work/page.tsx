@@ -11,6 +11,7 @@ import {
 import { WorkPillarSection } from "@/components/work/WorkPillarSection";
 import { ProjectCard } from "@/components/work/ProjectCard";
 import { PageHeader } from "@/components/layout/PageHeader";
+import { ValuePillars } from "@/components/sections/ValuePillars";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
@@ -42,19 +43,17 @@ export default function WorkPage() {
         </p>
 
         <div className="mt-6">
-          <Button
-            asChild
-            variant="outline"
-            className="border-[var(--game-border)] font-game text-[10px] tracking-wider uppercase"
-          >
-            <Link href="/showcase">▶ See live deployments</Link>
+          <Button asChild variant="outline">
+            <Link href="/showcase">See live deployments →</Link>
           </Button>
         </div>
 
-        <div className="game-card-light mt-8 rounded-2xl p-6 md:p-8">
-          <p className="font-game text-[10px] tracking-[0.2em] text-[var(--apple-blue)] uppercase">
-            Opening line
-          </p>
+        <div className="mt-12">
+          <ValuePillars />
+        </div>
+
+        <div className="mt-8 border border-border bg-white p-6 md:p-8">
+          <p className="section-label">Opening line</p>
           <p className="speaker-note mt-3 text-base italic text-muted-foreground">
             {githubWorkIntro.openingScript}
           </p>
@@ -69,32 +68,27 @@ export default function WorkPage() {
         ))}
 
         <section className="mt-16" aria-labelledby="optional-projects">
-          <h2
-            id="optional-projects"
-            className="font-game text-[10px] tracking-[0.2em] text-[var(--apple-blue)] uppercase"
-          >
+          <h2 id="optional-projects" className="section-label">
             Also worth a look
           </h2>
           <p className="mt-2 text-lg font-semibold text-[var(--apple-black)]">
             Side projects and experiments
           </p>
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
+          <div className="mt-6 grid gap-8 md:grid-cols-2">
             {optionalProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
         </section>
 
-        <section className="game-card-light mt-16 rounded-2xl p-8">
-          <p className="font-game text-[10px] tracking-[0.2em] text-[var(--apple-blue)] uppercase">
-            Closing line
-          </p>
+        <section className="mt-16 border border-border bg-white p-8">
+          <p className="section-label">Closing line</p>
           <p className="speaker-note mt-3 text-base italic text-muted-foreground">
             {githubWorkIntro.closingScript}
           </p>
           <p className="mt-6 text-sm text-muted-foreground">
-            Short on time? Show <strong>LungLens</strong> + the{" "}
-            <strong>AAHK LLM agent</strong>, then link to full experience.
+            Short on time? Show LungLens and the AAHK LLM agent, then link to full
+            experience.
           </p>
         </section>
 
@@ -102,25 +96,21 @@ export default function WorkPage() {
           <Button
             asChild
             size="lg"
-            className="game-pixel-border bg-[var(--game-cyan)] font-semibold text-[var(--game-bg)] hover:bg-[var(--game-green)]"
+            className="bg-[var(--apple-blue)] text-white hover:bg-[var(--apple-blue-hover)]"
           >
             <Link
               href={githubProfileUrl}
               target="_blank"
               rel="noopener noreferrer"
             >
-              View all repositories on GitHub
+              View repositories on GitHub
             </Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="border-[var(--game-border)]">
-            <Link href="/" className="font-game text-[10px] tracking-wider uppercase">
-              ▶ Back to home
-            </Link>
+          <Button asChild variant="outline" size="lg">
+            <Link href="/">Back to home →</Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="border-[var(--game-border)]">
-            <Link href="/experience" className="font-game text-[10px] tracking-wider uppercase">
-              ▶ Experience
-            </Link>
+          <Button asChild variant="outline" size="lg">
+            <Link href="/experience">Experience →</Link>
           </Button>
         </div>
       </div>

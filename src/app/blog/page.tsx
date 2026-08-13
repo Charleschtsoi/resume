@@ -15,7 +15,7 @@ export default function BlogPage() {
       className="min-h-screen bg-[var(--apple-gray-100)] pt-24 pb-16"
     >
       <div className="mx-auto max-w-[980px] px-6 md:px-12">
-        <p className="font-game text-[10px] tracking-[0.2em] text-[var(--apple-blue)] uppercase">
+        <p className="section-label">
           Writing
         </p>
         <h1 className="mt-4 text-headline font-semibold tracking-tight text-[var(--apple-black)]">
