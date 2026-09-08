@@ -145,9 +145,9 @@ export const narrativeChapters: NarrativeChapter[] = [
   {
     id: "aahk",
     label: "AAHK",
-    period: "2024 – Present",
+    period: "2025 – Present",
     headline: "AI in production. Scope as a skill.",
-    subheadline: "Airport Authority Hong Kong · 2 years",
+    subheadline: "Airport Authority Hong Kong",
     paragraphs: [
       "At Airport Authority I've been involved in product design and vendor delivery for LLM-based agents in production, vendor technical due diligence, and keeping scope honest. One example: an infrastructure monitoring agent (Power Automate + Dynatrace + ServiceNow) that reduced manual health reporting for senior management.",
     ],
@@ -232,7 +232,7 @@ export const experience: ExperienceEntry[] = [
     company: "Airport Authority Hong Kong",
     role: "Project Manager",
     location: "Hong Kong",
-    period: "Mar 2024 – Present",
+    period: "Mar 2025 – Present",
     scan: "Product design and vendor delivery for an LLM monitoring agent — estimated 80% less manual reporting time.",
     bullets: [
       "Product design and vendor delivery for an LLM-based monitoring agent (Power Automate + Dynatrace API + ServiceNow) that automated infrastructure health reporting — estimated 80% reduction in manual reporting time.",

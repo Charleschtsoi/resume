@@ -138,7 +138,7 @@ export const timelineMilestones: TimelineMilestone[] = [
   {
     id: "aahk",
     company: "Airport Authority Hong Kong",
-    period: "2024 – Present",
+    period: "2025 – Present",
     role: "Project Manager",
     chapterTitle: "AI in production",
     teaser: [
