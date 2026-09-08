@@ -222,6 +222,8 @@ export type ExperienceEntry = {
   role: string;
   location: string;
   period: string;
+  /** One-line outcome for the homepage CV scan */
+  scan: string;
   bullets: string[];
 };
 
@@ -231,6 +233,7 @@ export const experience: ExperienceEntry[] = [
     role: "Project Manager",
     location: "Hong Kong",
     period: "Mar 2024 – Present",
+    scan: "Product design and vendor delivery for an LLM monitoring agent — estimated 80% less manual reporting time.",
     bullets: [
       "Product design and vendor delivery for an LLM-based monitoring agent (Power Automate + Dynatrace API + ServiceNow) that automated infrastructure health reporting — estimated 80% reduction in manual reporting time.",
       "Architectural assessments of Microsoft ecosystem vendors — API capabilities, security protocols, scalability limits.",
@@ -242,6 +245,7 @@ export const experience: ExperienceEntry[] = [
     role: "Engineering Project Manager (Specialized Consultant)",
     location: "Hong Kong",
     period: "Oct 2022 – Sept 2024",
+    scan: "Worked on docserverless — numerical computation moved from server-side to edge devices.",
     bullets: [
       "Worked on the docserverless project — moved numerical computation from server-side to edge user devices.",
       "Partnered with Engineering Leads on iWork backend serverless migration; facilitated architectural reviews and dependency mapping.",
@@ -253,6 +257,7 @@ export const experience: ExperienceEntry[] = [
     role: "Business & Integration Architecture Specialist",
     location: "Hong Kong",
     period: "Aug 2021 – Sept 2022",
+    scan: "Defined API contracts (Swagger), reducing integration rework by about 20%.",
     bullets: [
       "Translated business requirements into technical user stories and defined API contracts (Swagger), reducing integration rework by 20%.",
       "Shifted two mobile development squads from feature factory to value-driven architectural approach.",
@@ -263,6 +268,7 @@ export const experience: ExperienceEntry[] = [
     role: "IT Solutions Analyst (Horse Racing)",
     location: "Hong Kong",
     period: "May 2019 – July 2021",
+    scan: "Worked on Solace migration — REST APIs toward event-based messaging for real-time odds.",
     bullets: [
       "Worked on Solace migration — moved core infrastructure from traditional REST APIs toward event-based messaging for real-time odds and high-concurrency betting.",
       "Conducted feasibility studies for high-volume solutions; analyzed latency vs throughput trade-offs.",
@@ -274,6 +280,7 @@ export const experience: ExperienceEntry[] = [
     role: "Senior Business Analyst (eLab)",
     location: "Hong Kong",
     period: "Oct 2018 – May 2019",
+    scan: "Supported technical rollout of Watsons Vietnam e-commerce site and mobile app.",
     bullets: [
       "Supported technical rollout of Watsons Vietnam flagship e-commerce site (watsons.vn) and mobile app.",
       "Technical gatekeeper for production — coordinated APAC deployments during high-traffic campaigns.",
@@ -284,6 +291,7 @@ export const experience: ExperienceEntry[] = [
     role: "Product Owner / Assistant Digital Manager",
     location: "Hong Kong",
     period: "Nov 2012 – Sept 2018",
+    scan: "Product ownership on the Cathay Pacific mobile app — MAU ~10,000 → ~120,000 (12x).",
     bullets: [
       "Product ownership on Cathay Pacific Mobile App — MAU ~10,000 → ~120,000 (12x); defined XML/JSON structures integrating mobile frontend with legacy PSS.",
       "Helped revamp NotiFLY — migrated legacy notification system toward a modern messaging architecture.",
@@ -318,10 +326,31 @@ export const chapterIds = narrativeChapters.map((c) => c.id);
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/story", label: "Story" },
+  { href: "/work", label: "Work" },
+  { href: "/contact", label: "Contact" },
+];
+
+export const footerLinks = [
+  { href: "/", label: "Home" },
+  { href: "/story", label: "Story" },
   { href: "/experience", label: "Experience" },
   { href: "/skills", label: "Skills" },
   { href: "/work", label: "Work" },
   { href: "/showcase", label: "Showcase" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
+];
+
+/** Compact skill line for the homepage CV */
+export const homeSkills = [
+  "API design",
+  "Event-driven architecture",
+  "LLM agents",
+  "Product management",
+  "Agile / Scrum",
+  "Python",
+  "Next.js",
+  "Solace",
+  "Vendor evaluation",
+  "System integration",
 ];

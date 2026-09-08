@@ -6,7 +6,7 @@ Role-agnostic career portfolio with an Apple-inspired marketing layout and Accen
 
 ## Features
 
-- **Homepage hub** (`/`) — Light hero, career timeline, selected work teaser, CTA
+- **Homepage** (`/`) — One-page CV: masthead, six roles with a short outcome each, compact skills
 - **Career story** (`/story`) — Scroll narrative (Cathay → HKJC/Accenture → Apple → AAHK → education → strengths)
 - **Presenter mode** — `/story?present=1` or nav **Present** on Story: shorter sections, chapter toolbar, arrow-key navigation
 - **Work page** — Focus areas, curated repos with role relevance and talk tracks ([`/work`](http://localhost:3000/work))
@@ -59,7 +59,7 @@ Best for live walkthroughs with interviewers:
 
 | Route | Description |
 |-------|-------------|
-| `/` | Hero → timeline → featured work → CTA |
+| `/` | One-page CV — roles, education, certs, skills |
 | `/story` | Career narrative + presenter mode |
 | `/experience` | Full career timeline |
 | `/skills` | Skills, strengths, education, certifications |

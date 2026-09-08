@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { profile } from "@/content/resume";
+import { footerLinks, profile } from "@/content/resume";
 
 export function PageFooter() {
   return (
@@ -10,23 +10,17 @@ export function PageFooter() {
           <p className="mt-1 text-sm">{profile.title}</p>
         </div>
         <div className="flex flex-wrap gap-4 text-sm">
+          {footerLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="hover:text-[var(--apple-blue)]"
+            >
+              {link.label}
+            </Link>
+          ))}
           <Link href={profile.links.linkedin} className="hover:text-[var(--apple-blue)]">
             LinkedIn
-          </Link>
-          <Link href="/work" className="hover:text-[var(--apple-blue)]">
-            Work
-          </Link>
-          <Link href="/showcase" className="hover:text-[var(--apple-blue)]">
-            Showcase
-          </Link>
-          <Link href="/skills" className="hover:text-[var(--apple-blue)]">
-            Skills
-          </Link>
-          <Link href="/blog" className="hover:text-[var(--apple-blue)]">
-            Blog
-          </Link>
-          <Link href="/contact" className="hover:text-[var(--apple-blue)]">
-            Contact
           </Link>
           <Link href={profile.links.github} className="hover:text-[var(--apple-blue)]">
             GitHub
