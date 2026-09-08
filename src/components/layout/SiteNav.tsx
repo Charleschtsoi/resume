@@ -4,11 +4,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import { profile, navLinks } from "@/content/resume";
+import { profile, navLinks, footerLinks } from "@/content/resume";
 import { usePresenterMode } from "@/lib/presenter-mode";
-import { Button } from "@/components/ui/button";
 
-const detailLinks = navLinks.filter(
+const detailLinks = footerLinks.filter(
   (l) => l.href !== "/" && l.href !== "/story" && l.href !== "/contact"
 );
 
@@ -160,24 +159,6 @@ function NavInner({
             >
               {isPresenterMode ? "Presenting" : "Present"}
             </button>
-          )}
-          <span
-            className={`hidden rounded-full border px-3 py-1 text-xs font-medium lg:inline ${
-              useDarkText
-                ? "border-border bg-white/60 text-[var(--apple-gray-400)]"
-                : "border-white/20 bg-white/5 text-[var(--apple-gray-300)]"
-            }`}
-          >
-            {profile.proofLine}
-          </span>
-          {!minimalNav && (
-            <Button
-              asChild
-              size="sm"
-              className="hidden bg-[var(--apple-blue)] text-white hover:bg-[var(--apple-blue-hover)] sm:inline-flex"
-            >
-              <Link href="/contact">Get in touch</Link>
-            </Button>
           )}
         </div>
       </div>
