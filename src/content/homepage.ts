@@ -142,8 +142,8 @@ export const timelineMilestones: TimelineMilestone[] = [
     role: "Assistant Manager, IT",
     chapterTitle: "AI in production",
     teaser: [
-      "Product design and vendor delivery for an LLM monitoring agent — estimated 80% less manual reporting time",
-      "Vendor diligence and legacy-to-cloud migration",
+      "LLM monitoring agent for 63 production systems — report prep cut from ~4 hours to 20 minutes per system",
+      "Agentic AI proof of concept — ~80% less manual query time in testing",
     ],
     storyAnchor: "aahk",
   },
@@ -161,12 +161,13 @@ export const strengthTabs: StrengthTab[] = [
     id: "ai",
     label: "AI & ML",
     metric: {
-      value: "~80%",
-      label: "Estimated reduction in manual reporting time (AAHK LLM agent)",
+      value: "4h → 20m",
+      label: "Health report prep per system across 63 AAHK systems (LLM agent)",
     },
     bullets: [
       "LungLens — full-stack AI health literacy tool, live at lunglenshk.vercel.app",
       "AAHK LLM monitoring agent — Power Automate + Dynatrace + ServiceNow; product design and vendor delivery",
+      "AAHK agentic AI proof of concept — ~80% less manual query time in testing",
       "Writing on GenAI systems architecture and multimodal AI on Medium",
       "MSc coursework in data science, AI, and system design",
     ],
@@ -220,7 +221,7 @@ export const featuredLinks: FeaturedLink[] = [
     id: "aahk-agent",
     title: "AAHK LLM Monitoring Agent",
     headline:
-      "Product design and vendor delivery — estimated 80% less manual reporting time",
+      "Health reporting for 63 production systems — ~4 hours → 20 minutes of prep per system",
     href: "/work#aahk-llm-monitoring-agent",
     tag: "Enterprise AI",
     status: "In production",

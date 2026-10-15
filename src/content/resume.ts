@@ -46,7 +46,7 @@ export type NarrativeChapter = {
 export const coreStrengths = {
   title: "What I can contribute",
   bullets: [
-    "AI & ML: LungLens in production; AAHK LLM monitoring agent — product design and vendor delivery (estimated 80% less manual reporting time)",
+    "AI & ML: LungLens in production; AAHK LLM monitoring agent for 63 production systems (~4 hours → 20 minutes of report prep per system); agentic AI proof of concept (~80% less manual query time in testing)",
     "Product: Fourteen years across Apple, HKJC, Cathay, AAHK — Cathay mobile MAU ~10k → ~120k (12x) during my ownership",
     "Architecture: Solace event-driven work at HKJC; docserverless edge compute at Apple",
     "Building now: 北辰 (North Star) astrology app for iOS; writing on GenAI systems on Medium",
@@ -149,15 +149,16 @@ export const narrativeChapters: NarrativeChapter[] = [
     headline: "AI in production. Scope as a skill.",
     subheadline: "Airport Authority Hong Kong · Assistant Manager, IT",
     paragraphs: [
-      "At Airport Authority I've been involved in product design and vendor delivery for LLM-based agents in production, vendor technical due diligence, and keeping scope honest. One example: an infrastructure monitoring agent (Power Automate + Dynatrace + ServiceNow) that reduced manual health reporting for senior management.",
+      "At Airport Authority I've been involved in product design and vendor delivery for LLM-based agents in production, vendor technical due diligence, and keeping scope honest. One example: an infrastructure monitoring agent (Power Automate + Dynatrace + ServiceNow) that automated monthly health reporting for 63 production systems, cutting preparation from about 4 hours to 20 minutes per system. I also ran a 10-week agentic AI proof of concept — capacity-planning and report agents — that cut manual query time by about 80% in testing.",
     ],
     metrics: [
-      { value: "~80%", label: "Estimated less manual reporting time" },
+      { value: "4h → 20m", label: "Health report prep per system (63 systems)" },
+      { value: "~80%", label: "Less manual query time in PoC testing" },
       { value: "10 weeks", label: "Capacity planning AI proof of concept" },
-      { value: "Scope", label: "Gatekeeping in practice" },
     ],
     highlights: [
-      "Product design and vendor delivery for an LLM monitoring agent — estimated 80% reduction in manual reporting time",
+      "Product design and vendor delivery for an LLM monitoring agent — health reporting for 63 systems cut from ~4 hours to 20 minutes per system",
+      "Agentic AI proof of concept (capacity planning + report agents) — ~80% less manual query time in testing",
       "Vendor technical due diligence on Microsoft ecosystem — API, security, scalability",
       "Delivery support on a new Insurance System — legacy mainframe to cloud migration",
       "Hands-on: LungLens live at lunglenshk.vercel.app — see Work page",
@@ -233,9 +234,10 @@ export const experience: ExperienceEntry[] = [
     role: "Assistant Manager, IT",
     location: "Hong Kong",
     period: "Mar 2025 – Present",
-    scan: "Product design and vendor delivery for an LLM monitoring agent — estimated 80% less manual reporting time.",
+    scan: "LLM monitoring agent for 63 production systems (~4h → 20m report prep each); agentic AI PoC with ~80% less manual query time in testing.",
     bullets: [
-      "Product design and vendor delivery for an LLM-based monitoring agent (Power Automate + Dynatrace API + ServiceNow) that automated infrastructure health reporting — estimated 80% reduction in manual reporting time.",
+      "Product design and vendor delivery for an LLM-based monitoring agent (Power Automate + Dynatrace API + ServiceNow) that automated monthly health reporting for 63 production systems — preparation cut from about 4 hours to 20 minutes per system.",
+      "Ran a 10-week agentic AI proof of concept (capacity-planning and report agents) — owned requirements, data cleansing, and the security check; manual query time fell by about 80% in testing.",
       "Architectural assessments of Microsoft ecosystem vendors — API capabilities, security protocols, scalability limits.",
       "Supporting end-to-end technical delivery of a new Insurance System; data migration from legacy mainframes to cloud workflows.",
     ],

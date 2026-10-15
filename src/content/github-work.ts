@@ -99,7 +99,7 @@ export const featuredProjects: WorkProject[] = [
       "Senior management relied on manual infrastructure health reports (CPU, RAM, downtime).",
     built:
       "LLM-based monitoring agent that automates infrastructure health reporting via Power Automate, Dynatrace API, and ServiceNow. Led product design and vendor delivery — not coded solo.",
-    outcome: "Estimated 80% reduction in manual reporting time",
+    outcome: "Report preparation for 63 production systems cut from about 4 hours to 20 minutes per system",
     talkTrack:
       "Enterprise AI delivery at AAHK — requirements, design, and vendor management, not a solo coding story.",
     tags: ["LLM Agents", "Enterprise", "AAHK"],
