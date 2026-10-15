@@ -19,6 +19,7 @@ export const storyChapterTitle: Record<string, string> = {
 
 export const experienceChapterTitle: Record<string, string> = {
   "Airport Authority Hong Kong": "AI in production",
+  "Independent Consultant": "Automation consulting",
   Apple: "Edge & serverless delivery",
   Accenture: "Integration architecture",
   "The Hong Kong Jockey Club": "Event-driven messaging",

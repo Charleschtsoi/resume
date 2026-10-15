@@ -11,7 +11,7 @@ export const profile = {
     medium: "https://medium.com/@charleschtsoi",
   },
   proofLine: "AI · ML · App development · Apple · Accenture · AAHK",
-  currentOccupation: "Project Manager",
+  currentOccupation: "Assistant Manager, IT",
   yearsExperience: 14,
   careerSpan: "2012 – 2026",
   interviewerSubline:
@@ -145,15 +145,15 @@ export const narrativeChapters: NarrativeChapter[] = [
   {
     id: "aahk",
     label: "AAHK",
-    period: "2024 – Present",
+    period: "2025 – Present",
     headline: "AI in production. Scope as a skill.",
-    subheadline: "Airport Authority Hong Kong · 2 years",
+    subheadline: "Airport Authority Hong Kong · Assistant Manager, IT",
     paragraphs: [
       "At Airport Authority I've been involved in product design and vendor delivery for LLM-based agents in production, vendor technical due diligence, and keeping scope honest. One example: an infrastructure monitoring agent (Power Automate + Dynatrace + ServiceNow) that reduced manual health reporting for senior management.",
     ],
     metrics: [
       { value: "~80%", label: "Estimated less manual reporting time" },
-      { value: "10 weeks", label: "Capacity planning AI delivery" },
+      { value: "10 weeks", label: "Capacity planning AI proof of concept" },
       { value: "Scope", label: "Gatekeeping in practice" },
     ],
     highlights: [
@@ -230,14 +230,24 @@ export type ExperienceEntry = {
 export const experience: ExperienceEntry[] = [
   {
     company: "Airport Authority Hong Kong",
-    role: "Project Manager",
+    role: "Assistant Manager, IT",
     location: "Hong Kong",
-    period: "Mar 2024 – Present",
+    period: "Mar 2025 – Present",
     scan: "Product design and vendor delivery for an LLM monitoring agent — estimated 80% less manual reporting time.",
     bullets: [
       "Product design and vendor delivery for an LLM-based monitoring agent (Power Automate + Dynatrace API + ServiceNow) that automated infrastructure health reporting — estimated 80% reduction in manual reporting time.",
       "Architectural assessments of Microsoft ecosystem vendors — API capabilities, security protocols, scalability limits.",
       "Supporting end-to-end technical delivery of a new Insurance System; data migration from legacy mainframes to cloud workflows.",
+    ],
+  },
+  {
+    company: "Independent Consultant",
+    role: "Technical Consulting & AI Automation",
+    location: "Hong Kong",
+    period: "Sept 2024 – Feb 2025",
+    scan: "Requirements, workflow design, and automation prototypes for SMEs and startups using Python, n8n, and LLMs.",
+    bullets: [
+      "Delivered requirements discovery, workflow design, automation prototypes, build oversight, and handover for SME and startup clients using Python, n8n, and LLM integrations.",
     ],
   },
   {

@@ -1,5 +1,6 @@
 export type CompanyIconSlug =
   | "aahk"
+  | "independent"
   | "apple"
   | "accenture"
   | "hkjc"
@@ -23,6 +24,11 @@ const companyIconMeta: Record<string, CompanyIconMeta> = {
     accent: "#99b9bf",
     src: "/companies/aahk.png",
     wide: true,
+  },
+  "Independent Consultant": {
+    slug: "independent",
+    label: "Independent Consultant",
+    accent: "#4b5563",
   },
   Apple: {
     slug: "apple",
